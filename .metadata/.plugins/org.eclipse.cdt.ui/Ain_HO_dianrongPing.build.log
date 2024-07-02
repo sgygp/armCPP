@@ -1,0 +1,11 @@
+11:01:07 **** Incremental Build of configuration Debug for project Ain_HO_dianrongPing ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ain_HO_dianrongPing.elf"
+   text	   data	    bss	    dec	    hex	filename
+  53647	    200	    824	  54671	   d58f	Ain_HO_dianrongPing.elf
+已结束构建： Ain_HO_dianrongPing.siz
+ 
+
+11:01:07 Build Finished. 0 errors, 0 warnings. (took 284ms)
+

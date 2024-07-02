@@ -1,0 +1,30 @@
+08:54:11 **** 构建 of configuration Debug for project C8T6_LCD ****
+make all 
+正在构建文件： ../src/IIC.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/IIC.d" -MT"src/IIC.o" -c -o "src/IIC.o" "../src/IIC.cpp"
+已结束构建： ../src/IIC.cpp
+ 
+正在构建文件： ../src/LTR381.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/LTR381.d" -MT"src/LTR381.o" -c -o "src/LTR381.o" "../src/LTR381.cpp"
+已结束构建： ../src/LTR381.cpp
+ 
+正在构建目标： C8T6_LCD.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"C8T6_LCD.map" --specs=nano.specs -o "C8T6_LCD.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/BlinkLed.o ./src/IIC.o ./src/LCD0301.o ./src/LCD0658.o ./src/LCD1601.o ./src/LTR381.o ./src/Timer.o ./src/_write.o ./src/delay.o ./src/main.o   
+已结束构建目标： C8T6_LCD.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "C8T6_LCD.elf"  "C8T6_LCD.hex"
+已结束构建： C8T6_LCD.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_LCD.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6463	    176	    420	   7059	   1b93	C8T6_LCD.elf
+已结束构建： C8T6_LCD.siz
+ 
+
+08:54:12 Build Finished. 0 errors, 0 warnings. (took 1s.39ms)
+

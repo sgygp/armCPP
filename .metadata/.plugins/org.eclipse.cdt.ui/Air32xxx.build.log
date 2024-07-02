@@ -1,0 +1,11 @@
+20:27:23 **** Incremental Build of configuration Debug for project Air32xxx ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32xxx.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4715	    176	    412	   5303	   14b7	Air32xxx.elf
+已结束构建： Air32xxx.siz
+ 
+
+20:27:23 Build Finished. 0 errors, 0 warnings. (took 331ms)
+

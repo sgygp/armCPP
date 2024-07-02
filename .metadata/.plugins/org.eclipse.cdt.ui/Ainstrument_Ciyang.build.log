@@ -1,0 +1,60 @@
+15:04:09 **** 构建 of configuration Debug for project Ainstrument_Ciyang ****
+make all 
+正在构建文件： ../src/Ainstrument.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Ainstrument.d" -MT"src/Ainstrument.o" -c -o "src/Ainstrument.o" "../src/Ainstrument.cpp"
+已结束构建： ../src/Ainstrument.cpp
+ 
+正在构建文件： ../src/BJ.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BJ.d" -MT"src/BJ.o" -c -o "src/BJ.o" "../src/BJ.cpp"
+已结束构建： ../src/BJ.cpp
+ 
+正在构建文件： ../src/DwinDGUS.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/DwinDGUS.d" -MT"src/DwinDGUS.o" -c -o "src/DwinDGUS.o" "../src/DwinDGUS.cpp"
+已结束构建： ../src/DwinDGUS.cpp
+ 
+正在构建文件： ../src/HeartPID.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/HeartPID.d" -MT"src/HeartPID.o" -c -o "src/HeartPID.o" "../src/HeartPID.cpp"
+已结束构建： ../src/HeartPID.cpp
+ 
+正在构建文件： ../src/HistoryData.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/HistoryData.d" -MT"src/HistoryData.o" -c -o "src/HistoryData.o" "../src/HistoryData.cpp"
+已结束构建： ../src/HistoryData.cpp
+ 
+正在构建文件： ../src/Screen.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Screen.d" -MT"src/Screen.o" -c -o "src/Screen.o" "../src/Screen.cpp"
+已结束构建： ../src/Screen.cpp
+ 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建文件： ../src/usart2.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/usart2.d" -MT"src/usart2.o" -c -o "src/usart2.o" "../src/usart2.cpp"
+已结束构建： ../src/usart2.cpp
+ 
+正在构建目标： Ainstrument_Ciyang.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Ainstrument_Ciyang.map" --specs=nano.specs -o "Ainstrument_Ciyang.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/AT24C16.o ./src/Ainstrument.o ./src/Anjian.o ./src/BJ.o ./src/Beep.o ./src/BlinkLed.o ./src/DS18B20.o ./src/DwinDGUS.o ./src/HeartPID.o ./src/HistoryData.o ./src/KeyMove.o ./src/O2.o ./src/Quxian0_1.o ./src/Screen.o ./src/Shuru.o ./src/Timer.o ./src/TimerPWM.o ./src/Usart1.o ./src/WatchDog.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f10x_can.o ./src/stm32f10x_dma.o ./src/stm32f10x_iwdg.o ./src/stm32f10x_spi.o ./src/stm32f10x_tim.o ./src/stm32f10x_usart.o ./src/usart2.o   
+已结束构建目标： Ainstrument_Ciyang.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Ainstrument_Ciyang.elf"  "Ainstrument_Ciyang.hex"
+已结束构建： Ainstrument_Ciyang.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument_Ciyang.elf"
+   text	   data	    bss	    dec	    hex	filename
+  45551	    200	   1504	  47255	   b897	Ainstrument_Ciyang.elf
+已结束构建： Ainstrument_Ciyang.siz
+ 
+
+15:04:11 Build Finished. 0 errors, 0 warnings. (took 2s.328ms)
+

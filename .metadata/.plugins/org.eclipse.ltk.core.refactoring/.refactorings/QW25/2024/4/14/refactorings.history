@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“bsp_msg.h, bsp.h, demo_spi_flash.h, stm32h7xx_it.h”移至“include”" description="将 4 个资源移至“include”" destination="include" element1="/H7B0_QW25Qxx/include/bsp_msg.h" element2="/H7B0_QW25Qxx/include/bsp.h" element3="/H7B0_QW25Qxx/include/demo_spi_flash.h" element4="/H7B0_QW25Qxx/include/stm32h7xx_it.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="4" stamp="1712287914243" updateReferences="true"/>
+</session>

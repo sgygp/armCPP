@@ -1,0 +1,11 @@
+15:55:47 **** 构建 of configuration Debug for project C6T6_bujindianji ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C6T6_bujindianji.elf"
+   text	   data	    bss	    dec	    hex	filename
+   7711	    176	    424	   8311	   2077	C6T6_bujindianji.elf
+已结束构建： C6T6_bujindianji.siz
+ 
+
+15:55:47 Build Finished. 0 errors, 0 warnings. (took 384ms)
+

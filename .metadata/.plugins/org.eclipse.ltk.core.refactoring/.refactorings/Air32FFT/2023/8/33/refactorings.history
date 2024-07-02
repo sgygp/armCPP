@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Air32FFT/FFT”重命名为“kissFFT”" description="重命名资源“FFT”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FFT" name="kissFFT" stamp="1692323935521" updateReferences="true"/>
+</session>

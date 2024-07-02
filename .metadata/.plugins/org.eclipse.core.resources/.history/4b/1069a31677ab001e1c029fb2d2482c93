@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "diag/Trace.h"
+#include "delay.h"
+#include "Sleep.h"
+
+#include "Timer.h"
+#include "oled.h"
+#include "bmp.h"
+
+#include "owmy.h"
+#include "M601.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+float oldWendu=0;
+void ShowWendu()
+{
+	char string[6]={' '};
+	string[3]='.';
+
+	volatile float m_wendu=GetTemp();
+	if(m_wendu<=oldWendu)
+		return;
+
+	oldWendu=m_wendu;
+	if(m_wendu<0)
+	{
+		string[0]='-';
+		m_wendu=-m_wendu;
+	}else
+	{
+		if(m_wendu>99.99)
+		{
+			string[0]='1';
+			m_wendu-=100;
+		}
+	}
+	int xx=	m_wendu*100;
+	string[5]=xx%10+'0';xx/=10;
+	string[4]=xx%10+'0';xx/=10;
+	string[2]=xx%10+'0';xx/=10;
+	string[1]=xx%10+'0';xx/=10;
+	xx=	m_wendu*100;
+	if(xx<1000)
+		string[1]=' ';
+	OLED_ShowString(8,16,string,16,1);
+	OLED_Refresh();
+
+}
+int main(int argc, char* argv[]) {
+	// Send a greeting to the trace device (skipped on Release).
+	trace_puts("Hello ARM World!");
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOC, ENABLE);
+
+	// At this stage the system clock should have already been configured
+	// at high speed.
+	trace_printf("System clock: %u Hz\n", SystemCoreClock);
+
+	Timer timer;
+	timer.start();
+
+	OW_Init();
+
+
+
+	OLED_Init();
+	OLED_ColorTurn(0);//0正常显示，1 反色显示
+	OLED_DisplayTurn(0);//0正常显示 1 屏幕翻转显示
+
+
+	uint32_t ms = 0;
+	OLED_ShowPicture(0,0,64,32,BMP1,1);
+	OLED_Refresh();
+	delay_ms(1000);
+//	OLED_Clear();
+//	OLED_ShowChinese(0,0,0,16,1);//温度
+//	OLED_ShowChinese(16,0,1,16,1);//
+//	OLED_ShowChinese(32,0,2,16,1);//
+//	OLED_ShowString(0,16,"2023/10",16,1);
+//	OLED_Refresh();
+//	delay_ms(500);
+	OLED_Clear();
+	OLED_ShowChinese(16,0,0,16,1);//温度
+	OLED_ShowChinese(32,0,1,16,1);//
+
+
+
+	/*
+	OLED_ShowString(0,0,"ASCII:",16,1);
+	OLED_ShowString(0,16,"CODE:",16,1);
+	OLED_ShowChar(48,0,t,16,1);//显示ASCII字符
+	t++;
+	if(t>'~')t=' ';
+	OLED_ShowNum(40,16,t,3,16,1);
+	OLED_Refresh();
+	delay_ms(500);
+	OLED_Clear();
+  OLED_ShowChinese(0,4,0,24,1); //24*24 中
+	OLED_ShowChinese(24,0,0,32,1);//32*32 中
+	OLED_Refresh();
+  delay_ms(500);
+	OLED_Clear();
+	OLED_ShowString(0,0,"A",12,1);//6*12 “ABC”
+  OLED_ShowString(16,0,"B",16,1);//8*16 “ABC”
+	OLED_ShowString(36,0,"C",24,1);//8*16 “ABC”
+  OLED_Refresh();
+	delay_ms(500);
+	 */
+		ShowWendu();
+
+	while (1) {
+		__WFI();
+		if (Timer::m_bMS5) {
+			ms += 5;
+			if (ms % 1000 == 5)
+				ShowWendu();
+			if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0))
+				break;
+			if (ms % 300000 == 0)
+				break;
+		}
+	}
+	OLED_DisPlay_Off();
+	delay_ms(1000);
+	Sleep::sleep();
+
+
+}
+
+
+#pragma GCC diagnostic pop
+
+// ----------------------------------------------------------------------------

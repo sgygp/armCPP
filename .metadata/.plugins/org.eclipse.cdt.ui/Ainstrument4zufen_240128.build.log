@@ -1,0 +1,11 @@
+13:00:43 **** Incremental Build of configuration Debug for project Ainstrument4zufen_240128 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument4zufen_240128.elf"
+   text	   data	    bss	    dec	    hex	filename
+  64503	    180	    608	  65291	   ff0b	Ainstrument4zufen_240128.elf
+已结束构建： Ainstrument4zufen_240128.siz
+ 
+
+13:00:44 Build Finished. 0 errors, 0 warnings. (took 618ms)
+

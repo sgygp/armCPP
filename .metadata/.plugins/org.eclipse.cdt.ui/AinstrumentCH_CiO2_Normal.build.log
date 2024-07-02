@@ -1,0 +1,11 @@
+15:45:08 **** 构建 of configuration Debug for project AinstrumentCH_CiO2_Normal ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentCH_CiO2_Normal.elf"
+   text	   data	    bss	    dec	    hex	filename
+  49287	    196	   2060	  51543	   c957	AinstrumentCH_CiO2_Normal.elf
+已结束构建： AinstrumentCH_CiO2_Normal.siz
+ 
+
+15:45:09 Build Finished. 0 errors, 0 warnings. (took 388ms)
+

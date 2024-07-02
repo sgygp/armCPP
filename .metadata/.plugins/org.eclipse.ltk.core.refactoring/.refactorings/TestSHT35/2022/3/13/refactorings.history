@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“TestSHT35/include/AT24C16.h”重命名为“SHT30.h”" description="重命名资源“AT24C16.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/AT24C16.h" name="SHT30.h" stamp="1648000562888" updateReferences="true"/>&#x0A;<refactoring comment="将资源“TestSHT35/src/AT24C16.cpp”重命名为“SHT30.cpp”" description="重命名资源“AT24C16.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/AT24C16.cpp" name="SHT30.cpp" stamp="1648000573858" updateReferences="true"/>
+</session>

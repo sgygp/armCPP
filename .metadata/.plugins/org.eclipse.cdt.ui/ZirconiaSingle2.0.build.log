@@ -1,0 +1,11 @@
+19:40:22 **** 构建 of configuration Debug for project ZirconiaSingle2.0 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ZirconiaSingle2.0.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16211	    176	  40428	  56815	   ddef	ZirconiaSingle2.0.elf
+已结束构建： ZirconiaSingle2.0.siz
+ 
+
+19:40:22 Build Finished. 0 errors, 0 warnings. (took 219ms)
+

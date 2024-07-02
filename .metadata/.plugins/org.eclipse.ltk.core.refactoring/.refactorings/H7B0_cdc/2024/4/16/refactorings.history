@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“STM32H7B0VBTX_FLASH.ld, STM32H7B0VBTX_RAM.ld”移至“ldscripts”" description="将 2 个资源移至“ldscripts”" destination="ldscripts" element1="/H7CDC/STM32H7B0VBTX_FLASH.ld" element2="/H7CDC/STM32H7B0VBTX_RAM.ld" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1713343191183" updateReferences="true"/>
+</session>

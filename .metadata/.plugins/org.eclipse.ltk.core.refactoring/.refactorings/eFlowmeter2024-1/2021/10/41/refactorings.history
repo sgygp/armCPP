@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“CtrPulse.h, LCD7565.h”移至“include”" description="将 2 个资源移至“include”" destination="include" element1="src/CtrPulse.h" element2="src/LCD7565.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1633685006876" updateReferences="true"/>
+</session>

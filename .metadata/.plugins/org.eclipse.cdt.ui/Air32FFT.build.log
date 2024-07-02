@@ -1,0 +1,11 @@
+15:46:57 **** Incremental Build of configuration Debug for project Air32FFT ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32FFT.elf"
+   text	   data	    bss	    dec	    hex	filename
+  24064	    136	   1720	  25920	   6540	Air32FFT.elf
+已结束构建： Air32FFT.siz
+ 
+
+15:46:57 Build Finished. 0 errors, 0 warnings. (took 221ms)
+

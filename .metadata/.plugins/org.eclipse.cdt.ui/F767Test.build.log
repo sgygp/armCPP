@@ -1,0 +1,192 @@
+09:16:11 **** 构建 of configuration Debug for project F767Test ****
+make all 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal.o" "../system/src/stm32f7-hal/stm32f7xx_hal.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_cortex.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_cortex.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_cortex.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_cortex.o" "../system/src/stm32f7-hal/stm32f7xx_hal_cortex.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_cortex.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.o" "../system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.o" "../system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_flash.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_flash.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_flash.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_flash.o" "../system/src/stm32f7-hal/stm32f7xx_hal_flash.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_flash.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_gpio.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_gpio.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_gpio.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_gpio.o" "../system/src/stm32f7-hal/stm32f7xx_hal_gpio.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_gpio.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_iwdg.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_iwdg.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_iwdg.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_iwdg.o" "../system/src/stm32f7-hal/stm32f7xx_hal_iwdg.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_iwdg.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_jpeg.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_jpeg.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_jpeg.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_jpeg.o" "../system/src/stm32f7-hal/stm32f7xx_hal_jpeg.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_jpeg.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_mdios.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_mdios.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_mdios.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_mdios.o" "../system/src/stm32f7-hal/stm32f7xx_hal_mdios.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_mdios.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_pwr.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_pwr.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_pwr.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_pwr.o" "../system/src/stm32f7-hal/stm32f7xx_hal_pwr.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_pwr.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.o" "../system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_rcc.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_rcc.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_rcc.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_rcc.o" "../system/src/stm32f7-hal/stm32f7xx_hal_rcc.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_rcc.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.o" "../system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.c
+ 
+正在构建文件： ../system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-bad-function-cast -Wno-conversion -Wno-sign-conversion -Wno-unused-parameter -Wno-sign-compare -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.d" -MT"system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.o" -c -o "system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.o" "../system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.c"
+已结束构建： ../system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.c
+ 
+正在构建文件： ../system/src/newlib/_cxx.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"system/src/newlib/_cxx.d" -MT"system/src/newlib/_cxx.o" -c -o "system/src/newlib/_cxx.o" "../system/src/newlib/_cxx.cpp"
+已结束构建： ../system/src/newlib/_cxx.cpp
+ 
+正在构建文件： ../system/src/newlib/_exit.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/newlib/_exit.d" -MT"system/src/newlib/_exit.o" -c -o "system/src/newlib/_exit.o" "../system/src/newlib/_exit.c"
+已结束构建： ../system/src/newlib/_exit.c
+ 
+正在构建文件： ../system/src/newlib/_sbrk.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/newlib/_sbrk.d" -MT"system/src/newlib/_sbrk.o" -c -o "system/src/newlib/_sbrk.o" "../system/src/newlib/_sbrk.c"
+已结束构建： ../system/src/newlib/_sbrk.c
+ 
+正在构建文件： ../system/src/newlib/_startup.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -DOS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/newlib/_startup.d" -MT"system/src/newlib/_startup.d" -c -o "system/src/newlib/_startup.o" "../system/src/newlib/_startup.c"
+已结束构建： ../system/src/newlib/_startup.c
+ 
+正在构建文件： ../system/src/newlib/_syscalls.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/newlib/_syscalls.d" -MT"system/src/newlib/_syscalls.o" -c -o "system/src/newlib/_syscalls.o" "../system/src/newlib/_syscalls.c"
+已结束构建： ../system/src/newlib/_syscalls.c
+ 
+正在构建文件： ../system/src/newlib/assert.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/newlib/assert.d" -MT"system/src/newlib/assert.o" -c -o "system/src/newlib/assert.o" "../system/src/newlib/assert.c"
+已结束构建： ../system/src/newlib/assert.c
+ 
+正在构建文件： ../system/src/diag/Trace.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/diag/Trace.d" -MT"system/src/diag/Trace.o" -c -o "system/src/diag/Trace.o" "../system/src/diag/Trace.c"
+已结束构建： ../system/src/diag/Trace.c
+ 
+正在构建文件： ../system/src/diag/trace_impl.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/diag/trace_impl.d" -MT"system/src/diag/trace_impl.o" -c -o "system/src/diag/trace_impl.o" "../system/src/diag/trace_impl.c"
+已结束构建： ../system/src/diag/trace_impl.c
+ 
+正在构建文件： ../system/src/cortexm/_initialize_hardware.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/cortexm/_initialize_hardware.d" -MT"system/src/cortexm/_initialize_hardware.o" -c -o "system/src/cortexm/_initialize_hardware.o" "../system/src/cortexm/_initialize_hardware.c"
+已结束构建： ../system/src/cortexm/_initialize_hardware.c
+ 
+正在构建文件： ../system/src/cortexm/_reset_hardware.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/cortexm/_reset_hardware.d" -MT"system/src/cortexm/_reset_hardware.o" -c -o "system/src/cortexm/_reset_hardware.o" "../system/src/cortexm/_reset_hardware.c"
+已结束构建： ../system/src/cortexm/_reset_hardware.c
+ 
+正在构建文件： ../system/src/cortexm/exception_handlers.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/cortexm/exception_handlers.d" -MT"system/src/cortexm/exception_handlers.o" -c -o "system/src/cortexm/exception_handlers.o" "../system/src/cortexm/exception_handlers.c"
+已结束构建： ../system/src/cortexm/exception_handlers.c
+ 
+正在构建文件： ../system/src/cmsis/system_stm32f7xx.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/cmsis/system_stm32f7xx.d" -MT"system/src/cmsis/system_stm32f7xx.o" -c -o "system/src/cmsis/system_stm32f7xx.o" "../system/src/cmsis/system_stm32f7xx.c"
+已结束构建： ../system/src/cmsis/system_stm32f7xx.c
+ 
+正在构建文件： ../system/src/cmsis/vectors_stm32f767xx.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"system/src/cmsis/vectors_stm32f767xx.d" -MT"system/src/cmsis/vectors_stm32f767xx.o" -c -o "system/src/cmsis/vectors_stm32f767xx.o" "../system/src/cmsis/vectors_stm32f767xx.c"
+已结束构建： ../system/src/cmsis/vectors_stm32f767xx.c
+ 
+正在构建文件： ../src/BlinkLed.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BlinkLed.d" -MT"src/BlinkLed.o" -c -o "src/BlinkLed.o" "../src/BlinkLed.cpp"
+已结束构建： ../src/BlinkLed.cpp
+ 
+正在构建文件： ../src/Timer.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Timer.d" -MT"src/Timer.o" -c -o "src/Timer.o" "../src/Timer.cpp"
+已结束构建： ../src/Timer.cpp
+ 
+正在构建文件： ../src/_initialize_hardware.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"src/_initialize_hardware.d" -MT"src/_initialize_hardware.o" -c -o "src/_initialize_hardware.o" "../src/_initialize_hardware.c"
+../src/_initialize_hardware.c: In function 'SystemClock_Config':
+../src/_initialize_hardware.c:150:2: warning: #warning "Please check if the SystemClock_Config() settings match your board!" [-Wcpp]
+ #warning "Please check if the SystemClock_Config() settings match your board!"
+  ^
+已结束构建： ../src/_initialize_hardware.c
+ 
+正在构建文件： ../src/_write.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -MMD -MP -MF"src/_write.d" -MT"src/_write.o" -c -o "src/_write.o" "../src/_write.c"
+已结束构建： ../src/_write.c
+ 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:108:2: warning: #warning "Unknown board, assume PA5, active high." [-Wcpp]
+ #warning "Unknown board, assume PA5, active high."
+  ^
+已结束构建： ../src/main.cpp
+ 
+正在构建文件： ../src/stm32f7xx_hal_msp.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F767xx -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f7-hal" -std=gnu11 -Wno-missing-prototypes -Wno-missing-declarations -MMD -MP -MF"src/stm32f7xx_hal_msp.d" -MT"src/stm32f7xx_hal_msp.d" -c -o "src/stm32f7xx_hal_msp.o" "../src/stm32f7xx_hal_msp.c"
+已结束构建： ../src/stm32f7xx_hal_msp.c
+ 
+正在构建目标： F767Test.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"F767Test.map" --specs=nano.specs -o "F767Test.elf"  ./system/src/stm32f7-hal/stm32f7xx_hal.o ./system/src/stm32f7-hal/stm32f7xx_hal_cortex.o ./system/src/stm32f7-hal/stm32f7xx_hal_crc_ex.o ./system/src/stm32f7-hal/stm32f7xx_hal_dfsdm.o ./system/src/stm32f7-hal/stm32f7xx_hal_flash.o ./system/src/stm32f7-hal/stm32f7xx_hal_gpio.o ./system/src/stm32f7-hal/stm32f7xx_hal_iwdg.o ./system/src/stm32f7-hal/stm32f7xx_hal_jpeg.o ./system/src/stm32f7-hal/stm32f7xx_hal_mdios.o ./system/src/stm32f7-hal/stm32f7xx_hal_pwr.o ./system/src/stm32f7-hal/stm32f7xx_hal_pwr_ex.o ./system/src/stm32f7-hal/stm32f7xx_hal_rcc.o ./system/src/stm32f7-hal/stm32f7xx_hal_rcc_ex.o ./system/src/stm32f7-hal/stm32f7xx_hal_smartcard_ex.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f7xx.o ./system/src/cmsis/vectors_stm32f767xx.o  ./src/BlinkLed.o ./src/Timer.o ./src/_initialize_hardware.o ./src/_write.o ./src/main.o ./src/stm32f7xx_hal_msp.o   
+已结束构建目标： F767Test.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "F767Test.elf"  "F767Test.hex"
+已结束构建： F767Test.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F767Test.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9275	    164	    436	   9875	   2693	F767Test.elf
+已结束构建： F767Test.siz
+ 
+
+09:16:21 Build Finished. 0 errors, 2 warnings. (took 10s.280ms)
+

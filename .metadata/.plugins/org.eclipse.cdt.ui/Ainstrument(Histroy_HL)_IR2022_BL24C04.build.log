@@ -1,0 +1,11 @@
+15:17:09 **** 构建 of configuration Debug for project Ainstrument(Histroy_HL)_IR2022_BL24C04 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_IR2022_BL24C04.elf"
+   text	   data	    bss	    dec	    hex	filename
+  50431	    200	  17372	  68003	  109a3	Ainstrument(Histroy_HL)_IR2022_BL24C04.elf
+已结束构建： Ainstrument(Histroy_HL)_IR2022_BL24C04.siz
+ 
+
+15:17:09 Build Finished. 0 errors, 0 warnings. (took 274ms)
+

@@ -1,0 +1,11 @@
+08:20:47 **** Incremental Build of configuration Debug for project 7H7B0_SD ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "7H7B0_SD.elf"
+   text	   data	    bss	    dec	    hex	filename
+  46413	   4268	   5796	  56477	   dc9d	7H7B0_SD.elf
+已结束构建： 7H7B0_SD.siz
+ 
+
+08:20:48 Build Finished. 0 errors, 0 warnings. (took 934ms)
+

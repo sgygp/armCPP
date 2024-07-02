@@ -1,0 +1,11 @@
+15:39:47 **** Incremental Build of configuration Debug for project RCT6_W25FS_SDFS ****
+make all 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "RCT6_W25FS_SDFS.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 196271	    176	   1320	 197767	  30487	RCT6_W25FS_SDFS.elf
+已结束构建： RCT6_W25FS_SDFS.siz
+ 
+
+15:39:47 Build Finished. 0 errors, 0 warnings. (took 344ms)
+

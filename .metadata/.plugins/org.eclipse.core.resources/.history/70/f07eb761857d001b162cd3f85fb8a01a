@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "diag/Trace.h"
+
+#include "Timer.h"
+#include "BlinkLed.h"
+#include "flash.h"
+#include "W25X16.h"
+#include "Uart1.h"
+#include "Uart5.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+int main(int argc, char* argv[]) {
+	trace_puts("Hello ARM World!");
+	trace_printf("System clock: %u Hz\n", SystemCoreClock);
+
+	Timer timer;
+	timer.start();
+
+	BlinkLed blinkLed;
+	blinkLed.powerUp();
+
+	Uart1 m_com1;
+	m_com1.init(115200);
+
+	COM5 m_com5;
+	m_com5.init(115200);
+		for (int var = 0; var < 10; ++var) {
+			m_com5.m_FA[var] = var;
+		}
+
+
+	uint32_t m_ms5 = 0;
+
+	while (1) {
+		if (m_ms5 != Timer::ms5_jishu) {
+			m_ms5 = Timer::ms5_jishu;
+			if (m_ms5 % 400 < 100)//3Ãë
+				blinkLed.turnOn();
+			else
+				blinkLed.turnOff();
+
+			if (m_ms5 % 200 == 0) {
+				m_com1.SendString("12435489175\n");
+				m_com5.FasongX(10);
+
+				trace_printf("Second %u\n", m_ms5 / 200);
+
+
+			}
+		}
+	}
+}
+
+#pragma GCC diagnostic pop
+
+// ----------------------------------------------------------------------------
+
+//	FlashData m_data;
+//	u16 buf[10];
+//	for (int var = 0; var < 10; ++var) {
+//		buf[var] = var * 10;
+//	}
+//	m_data.FLASH_Write(0, buf, 10);
+//	for (int var = 0; var < 10; ++var) {
+//		buf[var] = 0;
+//	}
+//	m_data.FLASH_Read(0, buf, 10);
+
+//	W25X16 m_w25;
+//	m_w25.init();
+//	u32 id = m_w25.SPI_FLASH_readdeviceID();
+//	trace_printf("id= %u\n", id);
+//
+//	id = m_w25.SPI_FLASH_madeID();
+//	trace_printf("madeID= %u\n", id);
+//	m_w25.SPI_FLASH_SectorErase(0);
+//	for (int var = 0; var < 256; ++var) {
+//		m_w25.spi1_tx[4 + var] = var;
+//	}
+//	m_w25.SPI_FLASH_PageWriteData(0, 256);
+//	m_w25.SPI_FLASH_PageReadData(0, 256);
+

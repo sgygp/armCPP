@@ -1,0 +1,56 @@
+	struct FAT32_DBR {
+	unsigned char BS_jmpBoot[3];		//跳转指令 offset: 0
+	unsigned char BS_OEMName[8];		//原始制造商 offset: 3
+	unsigned char BPB_BytesPerSec[2];	//每扇区字节数 offset:11
+	unsigned char BPB_SecPerClus[1]; 	//每簇扇区数 offset:13
+	unsigned char BPB_RsvdSecCnt[2]; 	//保留扇区数目 offset:14
+	unsigned char BPB_NumFATs[1]; 		//此卷中FAT表数 offset:16
+	unsigned char BPB_RootEntCnt[2];	//FAT32为0 offset:17
+	unsigned char BPB_TotSec16[2]; 		//FAT32为0 offset:19
+	unsigned char BPB_Media[1];		//存储介质 offset:21
+	unsigned char BPB_FATSz16[2];		//FAT32为 0 offset:22
+	unsigned char BPB_SecPerTrk[2];		//磁道扇区数 offset:24
+	unsigned char BPB_NumHeads[2];		//磁头数 offset:26
+	unsigned char BPB_HiddSec[4]; 		//FAT区前隐扇区数 offset:28
+	unsigned char BPB_TotSec32[4];		//该卷总扇区数 offset:32
+	unsigned char BPB_FATSz32[4]; 		//一个FAT表扇区数 offset:36
+	unsigned char BPB_ExtFlags[2];		//FAT32特有 offset:40
+	unsigned char BPB_FSVer[2];		//FAT32特有 offset:42
+	unsigned char BPB_RootClus[4];		//根目录簇号 offset:44
+	unsigned char FSInfo[2];		//保留扇区FSINFO扇区数 offset:48
+	unsigned char BPB_BkBootSec[2];		//通常为6 offset:50
+	unsigned char BPB_Reserved[12];		//扩展用 offset:52
+	unsigned char BS_DrvNum[1];		//offset:64
+	unsigned char BS_Reserved1[1];		//offset:65
+	unsigned char BS_BootSig[1];		//offset:66
+	unsigned char BS_VolID[4];		//offset:67
+	unsigned char BS_FilSysType[11];	//offset:71
+	unsigned char BS_FilSysType1[8];	//"FAT32 " offset:82
+};
+	SD_CardInfo m_CardInfo;
+	trace_printf("sectors=%u\n", SD_GetSectorCount());
+	if (SD_GetCardInfo(&m_CardInfo) == SD_OK)
+		trace_printf("Rongliang=%u\n", m_CardInfo.CardCapacity);
+
+	u8 *bufff = new u8[512 * 4];
+	SD_ReadDisk2(bufff, 0, 1);
+	FAT32_DBR *m_DBR = (FAT32_DBR*) bufff;
+	trace_printf("disk_initialize=%s\n", m_DBR->BS_OEMName);
+	u16 baoliu = *(u16*) m_DBR->BPB_RsvdSecCnt;
+	u32 fats = *(u32*) (m_DBR->BPB_FATSz32);
+	SD_ReadDisk2(bufff, baoliu, 1);
+	SD_ReadDisk2(bufff, baoliu + fats, 1);
+	SD_ReadDisk2(bufff, baoliu + fats * 2, 1);
+	SD_ReadDisk2(bufff, baoliu + fats * 2+8*1, 1);
+	
+	
+	 MKFS_PARM abc;
+	 abc.align=8;//数据对齐到扇区
+	 abc.au_size=65536;//簇大小
+	 abc.fmt=FM_FAT;
+	 abc.n_fat=2;
+	 abc.n_root=512;//根目录文件个数
+	 res = f_mkfs("", &abc,work , sizeof work);
+	 trace_printf("f_mkfs=%u\n", res);
+
+	

@@ -1,0 +1,177 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "diag/Trace.h"
+#include "Timer.h"
+#include "math.h"
+#include "delay.h"
+#include "set.h"
+#include "Screen.h"
+#include "dianzhen.h"
+#include "HX711.h"
+#include "Sleep.h"
+#include "Ainstrument.h"
+#include "TimerPWM.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+const u16 DIANYARONGLIANG[]={3220,3680,3740,3770,3790,3820,3870,3920,3980,4060,4200};
+float jisuanDianliang(u16 dianya)
+{
+	float xx=0;
+	if(dianya<3220)
+		xx=0;
+	else if(dianya>4200)
+		xx=99.9;
+	else
+	{
+		int i=0;
+		for(;i<10;i++)
+		{
+			if(dianya>=DIANYARONGLIANG[i]&&dianya<DIANYARONGLIANG[i+1])
+				break;
+		}
+		float  ff=dianya-DIANYARONGLIANG[i];
+		ff=ff/(DIANYARONGLIANG[i+1]-DIANYARONGLIANG[i]);
+		xx=i*10.0+ff*10.0;
+		if(xx>99.9)
+			xx=99.9;
+	}
+	return xx;
+}
+
+void AinstrRun(Ainstrument &ainstr, float a, float b, float wendu) {
+	ainstr.setCanshuZhi(101, a);
+	ainstr.setCanshuZhi(102, b);
+	ainstr.setCanshuZhi(103, wendu); //当前控制恒温的温度
+	ainstr.setCanshuZhi(104, 0.0); //探测器温度
+	ainstr.online();
+
+}
+
+int main(int argc, char* argv[])//开发板，8MHz电流2.9mA，72MHz电流11mA，256MHz电流31mA
+{
+
+	//trace_puts("Hello ARM World!");
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOB, ENABLE);
+	bool usbON=false;
+	if(!Set::getV33())
+	{
+		for(int i=0;i<100;i++)
+		{
+			if(Set::getPA0()==RESET)
+				Sleep::sleep();
+			delay_ms(10);
+		}
+	}else
+		usbON=true;
+
+	//RCC256::init();
+	RCC_ClocksTypeDef clocks;
+	RCC_GetClocksFreq(&clocks); //获取时钟频率
+
+	SystemCoreClock=clocks.SYSCLK_Frequency;
+	Hx711 m_711;
+	m_711.init();
+
+
+	Set::setOn();
+	Ainstrument ainstr1(0); //参数从0开始保存
+	ainstr1.init();
+	Timer m_timer;
+	m_timer.start();
+	Screen m_screen(&ainstr1);
+
+	uint32_t ms = 0;
+	static long m_711data[2]={0};
+	u8 mode=0;
+	//	volatile u32 cpuTick=0;
+	float m_dianyaMV=0;
+	u8 xiangMs5=0;
+	if(usbON)
+	{
+		m_screen.initUSB();
+		while(1)
+		{
+			__WFI();
+			if (Timer::m_bMS5) {
+				Timer::m_bMS5=false;
+				ms += 5;
+
+				if (ms%500==0) {
+					m_711data[mode]=m_711.ReadHX711(mode*2);
+					mode=(mode+1)%2;
+
+					if (ms % 1000 == 0) {
+						m_dianyaMV+=m_711data[1]>>11;
+						if (ms % 3000 == 0) {//每3秒计算一次电池电压
+							float ff=m_dianyaMV*4127.0/6027.0;
+							ainstr1.setCanshuZhi(200,jisuanDianliang(ff));//将电池电压数据放入ainstr中，用于SCREEN显示
+							m_dianyaMV=0;
+						}
+					}
+				}
+				if(!m_screen.showBat(ms))
+					break;
+			}
+		}
+	}
+	TimerPWM m_tim4;
+	m_tim4.init(80,25);
+	m_tim4.set(true);
+	delay_ms(100);
+	m_tim4.set(false);
+	m_screen.init();
+	Anjian::init();
+
+	while (1) {
+		__WFI();
+		if (Timer::m_bMS5) {
+			Timer::m_bMS5=false;
+			ms += 5;
+			if(Anjian::bXiang)
+			{
+				Anjian::bXiang=0;
+				xiangMs5=3;
+			}
+			if(xiangMs5)
+			{
+				xiangMs5--;
+				if(xiangMs5)
+					m_tim4.set(true);
+				else
+					m_tim4.set(false);
+
+			}
+			if (ms%500==0) {
+				m_711data[mode]=m_711.ReadHX711(mode*2);
+				mode=(mode+1)%2;
+
+				if (ms % 1000 == 0) {
+
+					//cpuTick=0;//1秒钟，8M:660000;72M:cpuTick= 8997184 128:cpuTick= 15997256;256:31998661
+					AinstrRun(ainstr1, (m_711data[0])>>11, 1,0) ;
+					m_dianyaMV+=m_711data[1]>>11;
+					if (ms % 3000 == 0) {//每3秒计算一次电池电压
+						float ff=m_dianyaMV*4127.0/6027.0;
+						ainstr1.setCanshuZhi(200,jisuanDianliang(ff));//将电池电压数据放入ainstr中，用于SCREEN显示
+						m_dianyaMV=0;
+
+					}
+				}
+			}
+
+			if(!m_screen.run(ms))
+				break;
+		}
+	}
+	Sleep::sleep();
+	//	while(1);
+}
+
+#pragma GCC diagnostic pop
+
+// ----------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="F:\工具\IAR\stvp\STVP_CmdLine.exe"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-BoardName=ST-LINK&#13;&#10;-Device=STM8S103F3&#13;&#10;-Port=USB&#13;&#10;-ProgMode=SWIM&#13;&#10;-FileProg=${project_name}.hex&#13;&#10;-progress&#13;&#10;-verif&#13;&#10;-verbose"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/${project_name}/Debug}"/>
+</launchConfiguration>

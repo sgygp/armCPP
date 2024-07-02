@@ -1,0 +1,11 @@
+16:29:12 **** Incremental Build of configuration Debug for project Ainstrument(Histroy_HL)_ganwei（三组份板） ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_ganwei（三组份板）.elf"
+   text	   data	    bss	    dec	    hex	filename
+  46975	    200	   1480	  48655	   be0f	Ainstrument(Histroy_HL)_ganwei（三组份板）.elf
+已结束构建： Ainstrument(Histroy_HL)_ganwei（三组份板）.siz
+ 
+
+16:29:13 Build Finished. 0 errors, 0 warnings. (took 536ms)
+

@@ -1,0 +1,11 @@
+12:16:58 **** Incremental Build of configuration Debug for project Ainstrument_CL2_Modbus ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument_CL2_Modbus.elf"
+   text	   data	    bss	    dec	    hex	filename
+  43407	    200	  19888	  63495	   f807	Ainstrument_CL2_Modbus.elf
+已结束构建： Ainstrument_CL2_Modbus.siz
+ 
+
+12:16:58 Build Finished. 0 errors, 0 warnings. (took 536ms)
+

@@ -1,0 +1,11 @@
+16:19:36 **** Incremental Build of configuration Debug for project 1H7B0_LCD1.14 ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "1H7B0_LCD1.14.elf"
+   text	   data	    bss	    dec	    hex	filename
+  42269	    172	   1192	  43633	   aa71	1H7B0_LCD1.14.elf
+已结束构建： 1H7B0_LCD1.14.siz
+ 
+
+16:19:37 Build Finished. 0 errors, 0 warnings. (took 398ms)
+

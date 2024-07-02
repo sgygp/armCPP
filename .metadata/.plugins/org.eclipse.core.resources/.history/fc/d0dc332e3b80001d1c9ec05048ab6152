@@ -1,0 +1,50 @@
+/*
+ * anjian.h
+ *
+ *  Created on: 2019Äê11ÔÂ21ÈÕ
+ *      Author: Administrator
+ */
+
+#ifndef ANJIAN_H_
+#define ANJIAN_H_
+#include "stm32f10x_conf.h"
+
+#define ANJIANYANSHIKAISHI (10/5)
+#define ANJIANJIANGE (200/5)
+#define ENTER			1
+#define  UP				2
+#define  DOWN		4
+#define  RIGHT			8
+#define LEFT			16
+
+#define ANJIAN_RCC1 	RCC_APB2Periph_GPIOB
+#define ANJIAN_PORT1 GPIOB
+#define ANJIAN_RCC2 	RCC_APB2Periph_GPIOC
+#define ANJIAN_PORT2 GPIOC
+
+#define _ROW1_ 	GPIO_Pin_2
+#define _ROW2_ 	GPIO_Pin_1
+
+#define _COL1_ 	GPIO_Pin_0
+#define _COL2_ 	GPIO_Pin_5
+#define _COL3_ 	GPIO_Pin_4
+
+class Anjian {
+public:
+	Anjian();
+public:
+	static	void KeyInit();
+	static		u32 GetKey();
+	static		u8 m_pJianW;
+	static		u8 m_pJianR;
+	static		u32 m_bufJian[10];
+	static		int m_ms_shoucianxia;
+	static		int m_ms_anxiahou;
+	static		u8 DoKey();
+	static		void set0(u16 a);
+	static		void setNull(u16 a);
+	static 		void run();
+
+};
+
+#endif /* ANJIAN_H_ */

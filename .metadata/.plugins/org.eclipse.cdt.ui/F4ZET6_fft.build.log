@@ -1,0 +1,11 @@
+09:04:32 **** Incremental Build of configuration Debug for project F4ZET6_fft ****
+make all 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "F4ZET6_fft.elf"
+   text	   data	    bss	    dec	    hex	filename
+  23989	    180	    420	  24589	   600d	F4ZET6_fft.elf
+已结束构建： F4ZET6_fft.siz
+ 
+
+09:04:33 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

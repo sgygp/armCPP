@@ -1,0 +1,11 @@
+09:50:34 **** Incremental Build of configuration Debug for project H7B0_WDL_1.0 ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B0_WDL_1.0.elf"
+   text	   data	    bss	    dec	    hex	filename
+  60325	    420	  16644	  77389	  12e4d	H7B0_WDL_1.0.elf
+已结束构建： H7B0_WDL_1.0.siz
+ 
+
+09:50:35 Build Finished. 0 errors, 0 warnings. (took 1s.38ms)
+

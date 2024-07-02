@@ -1,0 +1,30 @@
+10:56:55 **** Incremental Build of configuration Debug for project Zirconia ****
+make all 
+正在构建文件： ../src/Adc_Dma.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Adc_Dma.d" -MT"src/Adc_Dma.o" -c -o "src/Adc_Dma.o" "../src/Adc_Dma.cpp"
+已结束构建： ../src/Adc_Dma.cpp
+ 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建目标： Zirconia.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Zirconia.map" --specs=nano.specs -o "Zirconia.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/Adc_Dma.o ./src/BlinkLed.o ./src/CanF3.o ./src/Timer.o ./src/Timer3.o ./src/WatchDog.o ./src/ZrO2.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f10x_adc.o ./src/stm32f10x_can.o ./src/stm32f10x_dma.o ./src/stm32f10x_iwdg.o ./src/stm32f10x_tim.o   
+已结束构建目标： Zirconia.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Zirconia.elf"  "Zirconia.hex"
+已结束构建： Zirconia.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Zirconia.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13491	    180	    484	  14155	   374b	Zirconia.elf
+已结束构建： Zirconia.siz
+ 
+
+10:56:58 Build Finished. 0 errors, 0 warnings. (took 2s.809ms)
+

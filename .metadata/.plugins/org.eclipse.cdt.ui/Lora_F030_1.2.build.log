@@ -1,0 +1,25 @@
+09:27:34 **** Incremental Build of configuration Debug for project Lora_F030_1.2 ****
+make all 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F030 -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f0-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建目标： Lora_F030_1.2.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Lora_F030_1.2.map" --specs=nano.specs -o "Lora_F030_1.2.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/COM.o ./src/CRC16.o ./src/GetPA0.o ./src/LoraE32.o ./src/LoraSet.o ./src/Modbus.o ./src/Pubmp.o ./src/RtcBkp.o ./src/Set.o ./src/Stop.o ./src/Timer.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f0xx_misc.o ./src/stm32f0xx_pwr.o ./src/stm32f0xx_rtc.o ./src/stm32f0xx_usart.o   
+已结束构建目标： Lora_F030_1.2.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Lora_F030_1.2.elf"  "Lora_F030_1.2.hex"
+已结束构建： Lora_F030_1.2.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Lora_F030_1.2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13379	    192	    952	  14523	   38bb	Lora_F030_1.2.elf
+已结束构建： Lora_F030_1.2.siz
+ 
+
+09:27:35 Build Finished. 0 errors, 0 warnings. (took 900ms)
+

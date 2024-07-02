@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Ainstrument_CL2_COM4/include/HeartPID.h”重命名为“PID.h”" description="重命名资源“HeartPID.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/HeartPID.h" name="PID.h" stamp="1627283811616" updateReferences="true"/>&#x0A;<refactoring comment="将资源“Ainstrument_CL2_COM4/src/HeartPID.cpp”重命名为“PID.cpp”" description="重命名资源“HeartPID.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/HeartPID.cpp" name="PID.cpp" stamp="1627283824482" updateReferences="true"/>
+</session>

@@ -1,0 +1,178 @@
+/*
+ * anjian.cpp
+ *
+ *  Created on: 2019年11月21日
+ *      Author: Administrator
+ */
+#include <Anjian.h>
+#include "Timer.h"
+#include "delay.h"
+
+u8 Anjian::m_pJianW;
+u8 Anjian::m_pJianR;
+u32 Anjian::m_bufJian[10];
+int Anjian::m_ms_shoucianxia;
+int Anjian::m_ms_anxiahou;
+
+
+Anjian::Anjian() {
+	m_pJianW = 0;
+	m_pJianR = 0;
+	for (int i = 0; i < 10; i++)
+		m_bufJian[i] = 0;
+	m_ms_shoucianxia = -1;
+	m_ms_anxiahou = -1;
+
+}
+void Anjian::set0(u16 a) {
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin = a; //
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_Init(ANJIAN_PORT1, &GPIO_InitStructure);
+	GPIO_ResetBits(ANJIAN_PORT2, a);
+	Delay::delay_us(10);
+}
+void Anjian::setNull(u16 a) {
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin = a; //
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_Init(ANJIAN_PORT2, &GPIO_InitStructure);
+	Delay::delay_us(10);
+}
+void Anjian::KeyInit() {
+	m_ms_shoucianxia = -1;
+	m_ms_anxiahou = -1;
+
+	RCC_APB2PeriphClockCmd(ANJIAN_RCC1, ENABLE); //使能时钟
+	RCC_APB2PeriphClockCmd(ANJIAN_RCC2, ENABLE); //使能时钟
+
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin = _ROW1_ | _ROW2_; //
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_Init(ANJIAN_PORT1, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Pin = _COL1_ | _COL2_|_COL3_; //
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_Init(ANJIAN_PORT2, &GPIO_InitStructure);
+
+}
+u32 Anjian::GetKey() {
+	u32 www;
+	if (m_pJianR == m_pJianW)
+		return 0;
+	else {
+		www = m_bufJian[m_pJianR];
+		m_pJianR = (m_pJianR + 1) % 10;
+		return www;
+	}
+}
+u8 Anjian::DoKey() {
+	u8 a = 0;
+	u32 t1 = 0;
+	t1 = (Timer::ms5_jishu + Timer::MAXSHU - m_ms_shoucianxia);
+	t1 = t1 % Timer::MAXSHU;
+	u32 t2 = 0;
+	t2 = (Timer::ms5_jishu + Timer::MAXSHU - m_ms_anxiahou);
+	t2 = t2 % Timer::MAXSHU;
+	set0(_COL3_);
+	if (GPIO_ReadInputDataBit(ANJIAN_PORT1, _ROW2_) == RESET) {
+		if (t2 > ANJIANJIANGE) {
+			if (m_ms_shoucianxia == -1)
+				m_ms_shoucianxia = Timer::ms5_jishu;
+			else {
+				if (t1 > ANJIANYANSHIKAISHI) {
+					a |= ENTER;
+					m_ms_shoucianxia = -1;
+					m_ms_anxiahou = Timer::ms5_jishu;
+				}
+			}
+		}
+	}
+	if (GPIO_ReadInputDataBit(ANJIAN_PORT1, _ROW1_) == RESET) {
+		if (t2 > ANJIANJIANGE) {
+			if (m_ms_shoucianxia == -1)
+				m_ms_shoucianxia = Timer::ms5_jishu;
+			else {
+				if (t1 > ANJIANYANSHIKAISHI) {
+					a |= UP;
+					m_ms_shoucianxia = -1;
+					m_ms_anxiahou = Timer::ms5_jishu;
+				}
+			}
+		}
+	}
+	if (GPIO_ReadInputDataBit(ANJIAN_PORT2, _COL1_) == RESET) {
+		if (t2 > ANJIANJIANGE) {
+			if (m_ms_shoucianxia == -1)
+				m_ms_shoucianxia = Timer::ms5_jishu;
+			else {
+				if (t1 > ANJIANYANSHIKAISHI) {
+					a |= RIGHT;
+					m_ms_shoucianxia = -1;
+					m_ms_anxiahou = Timer::ms5_jishu;
+				}
+			}
+		}
+	}
+	setNull(_COL3_);
+	set0(_COL2_);
+	if (GPIO_ReadInputDataBit(ANJIAN_PORT1, _ROW2_) == RESET) {
+		if (t2 > ANJIANJIANGE) {
+			if (m_ms_shoucianxia == -1)
+				m_ms_shoucianxia = Timer::ms5_jishu;
+			else {
+				if (t1 > ANJIANYANSHIKAISHI) {
+					a |= DOWN;
+					m_ms_shoucianxia = -1;
+					m_ms_anxiahou = Timer::ms5_jishu;
+				}
+			}
+		}
+	}
+	if (GPIO_ReadInputDataBit(ANJIAN_PORT1, _ROW1_) == RESET) {
+		if (t2 > ANJIANJIANGE) {
+			if (m_ms_shoucianxia == -1)
+				m_ms_shoucianxia = Timer::ms5_jishu;
+			else {
+				if (t1 > ANJIANYANSHIKAISHI) {
+					a |= LEFT;
+					m_ms_shoucianxia = -1;
+					m_ms_anxiahou = Timer::ms5_jishu;
+				}
+			}
+		}
+	}
+
+//	if (GPIO_ReadInputDataBit(ANJIAN_PORT, _COL3_) == RESET) {
+//		if (t2 > ANJIANJIANGE) {
+//			if (m_ms_shoucianxia == -1)
+//				m_ms_shoucianxia = Timer::ms5_jishu;
+//			else {
+//				if (t1 > ANJIANYANSHIKAISHI) {
+//					a |= XXXX;
+//					m_ms_shoucianxia = -1;
+//					m_ms_anxiahou = Timer::ms5_jishu;
+//				}
+//			}
+//		}
+//		m_ms_shoucianxia = Timer::ms5_jishu;
+//	}
+
+
+	setNull(_COL2_);
+
+	return a;
+}
+void Anjian::run( )
+{
+	u8	key = DoKey(); //判断是否有按键按下
+	if (!key)
+		return;
+	m_bufJian[m_pJianW] = key;
+	m_pJianW = (m_pJianW + 1) % 10;
+	Timer::m_anxia = 1;
+}
+

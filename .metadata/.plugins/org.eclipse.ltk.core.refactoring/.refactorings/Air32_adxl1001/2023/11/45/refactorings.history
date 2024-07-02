@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Air32_adxl1002/Debug/Air32_adxl1002.hex”重命名为“adxl1001__11.8.hex”" description="重命名资源“Air32_adxl1002.hex”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/Air32_adxl1002.hex" name="adxl1001__11.8.hex" stamp="1699404373768" updateReferences="true"/>&#x0A;<refactoring comment="将资源“Air32_adxl1002/Debug/Air32_adxl1002.hex”重命名为“1002-11.8.hex”" description="重命名资源“Air32_adxl1002.hex”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/Air32_adxl1002.hex" name="1002-11.8.hex" stamp="1699438647821" updateReferences="true"/>
+</session>

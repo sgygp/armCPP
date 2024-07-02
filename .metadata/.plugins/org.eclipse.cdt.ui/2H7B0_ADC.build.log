@@ -1,0 +1,11 @@
+18:58:00 **** Incremental Build of configuration Debug for project 2H7B0_ADC ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "2H7B0_ADC.elf"
+   text	   data	    bss	    dec	    hex	filename
+  60497	    172	   1464	  62133	   f2b5	2H7B0_ADC.elf
+已结束构建： 2H7B0_ADC.siz
+ 
+
+18:58:01 Build Finished. 0 errors, 0 warnings. (took 484ms)
+

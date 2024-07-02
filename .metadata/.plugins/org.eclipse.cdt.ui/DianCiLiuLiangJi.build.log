@@ -1,0 +1,25 @@
+17:19:33 **** Incremental Build of configuration Debug for project DianCiLiuLiangJi ****
+make all 
+正在构建文件： ../src/CtrPulse.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/CtrPulse.d" -MT"src/CtrPulse.o" -c -o "src/CtrPulse.o" "../src/CtrPulse.cpp"
+已结束构建： ../src/CtrPulse.cpp
+ 
+正在构建目标： DianCiLiuLiangJi.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"DianCiLiuLiangJi.map" --specs=nano.specs -o "DianCiLiuLiangJi.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/ADC.o ./src/AT24C16.o ./src/Anjian.o ./src/BJ.o ./src/Beep.o ./src/CtrPulse.o ./src/Diaodian.o ./src/LCD7565.o ./src/Quxian0_1.o ./src/RealQuxian.o ./src/Screen.o ./src/Shuru.o ./src/Timer.o ./src/Timer2PWM.o ./src/Yiqi.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f10x_adc.o ./src/stm32f10x_bkp.o ./src/stm32f10x_dac.o ./src/stm32f10x_dma.o ./src/stm32f10x_exti.o ./src/stm32f10x_pwr.o ./src/stm32f10x_tim.o   
+已结束构建目标： DianCiLiuLiangJi.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "DianCiLiuLiangJi.elf"  "DianCiLiuLiangJi.hex"
+已结束构建： DianCiLiuLiangJi.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "DianCiLiuLiangJi.elf"
+   text	   data	    bss	    dec	    hex	filename
+  51383	    180	    616	  52179	   cbd3	DianCiLiuLiangJi.elf
+已结束构建： DianCiLiuLiangJi.siz
+ 
+
+17:19:34 Build Finished. 0 errors, 0 warnings. (took 800ms)
+

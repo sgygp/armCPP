@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“AntDataPLC_1.4/AntDataPLC-1.3”重命名为“AntDataPLC-1.5”" description="重命名资源“AntDataPLC-1.3”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="AntDataPLC-1.3" name="AntDataPLC-1.5" stamp="1626394443242" updateReferences="true"/>
+</session>

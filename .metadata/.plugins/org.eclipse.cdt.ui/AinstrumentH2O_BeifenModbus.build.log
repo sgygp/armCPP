@@ -1,0 +1,11 @@
+11:14:03 **** Incremental Build of configuration Debug for project AinstrumentH2O_BeifenModbus ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentH2O_BeifenModbus.elf"
+   text	   data	    bss	    dec	    hex	filename
+  54511	    200	   1484	  56195	   db83	AinstrumentH2O_BeifenModbus.elf
+已结束构建： AinstrumentH2O_BeifenModbus.siz
+ 
+
+11:14:03 Build Finished. 0 errors, 0 warnings. (took 380ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="删除 2 个资源" deleteContents="true" description="删除 2 个资源" element1="/f4plcMain1.1.3" element2="/f4plcTeminal1.1.1" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1620260045744"/>
+</session>

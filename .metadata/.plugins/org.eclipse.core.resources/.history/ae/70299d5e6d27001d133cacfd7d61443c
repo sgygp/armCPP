@@ -1,0 +1,300 @@
+/*
+ * Terminal.cpp
+ *
+ *  Created on: 2020年9月28日
+ *      Author: Administrator
+ */
+
+#include <CRC16.h>
+#include <delay.h>
+#include "Timer.h"
+#include <string.h>
+#include <Terminal.h>
+#include "Lora.h"
+#include "Devices.h"
+
+void Terminal::init(Devices *devs) {
+	m_com2_485.USART2_Init(9600);
+	m_com3.USART3_Init(115200);
+	m_24.init();
+	ReadCanshu();
+	m_time485 = 5;
+	WriteCanshu();
+	if (m_addr > 200 || m_time485 < 5 || m_xindao > 31 || m_time485 > 6000
+			|| m_terminalNum > 20) {
+		m_addr = 1;
+		m_xindao = 23;
+		m_terminalNum = 10;
+		m_time485 = 300;
+		m_bDigonghao=false;
+		WriteCanshu();
+	}
+	m_devs = devs;
+}
+void Terminal::ReadCanshu() {
+	m_24.Read24c16(&m_addr, 0, 1);
+	m_24.Read24c16(&m_xindao, 1, 1);
+	m_24.Read24c16(&m_terminalNum, 2, 1);
+	m_24.Read24c16(&m_bDigonghao, 3, 1);
+	m_24.Read24c16((u8*) &m_time485, 10, 2);
+
+}
+void Terminal::WriteCanshu() {
+	m_24.Write24c16(&m_addr, 0, 1);
+	m_24.Write24c16(&m_xindao, 1, 1);
+	m_24.Write24c16(&m_terminalNum, 2, 1);
+	m_24.Write24c16(&m_bDigonghao, 3, 1);
+	m_24.Write24c16((u8*) &m_time485, 10, 2);
+}
+u8 Terminal::ReadCOM() {
+	u8 x = m_com2_485.m_COM_shouPos;
+	if (!x) {
+		if (isConfig)
+			return 0;
+		x = m_com3.m_COM_shouPos;
+		if (!x)
+			return 0;
+		else {
+			isCOM3 = true;
+			u32 dd = (Timer::ms5_jishu + Timer::MAXSHU
+					- m_com3.m_COM_curShou_ms5);
+			dd = dd % Timer::MAXSHU;
+			if (dd < COM3_SHOUKONGXIAN)
+				return 0;
+			m_com3.m_COM_shouPos = 0;
+
+		}
+	} else {
+		isCOM3 = false;
+		u32 dd = (Timer::ms5_jishu + Timer::MAXSHU
+				- m_com2_485.m_COM_curShou_ms5);
+		dd = dd % Timer::MAXSHU;
+		if (dd < COM2_SHOUKONGXIAN)
+			return 0;
+		m_com2_485.m_COM_shouPos = 0;
+	}
+	return x;
+}
+void Terminal::FasongX(u8 geshu) {
+
+	if (geshu == 0)
+		return;
+	if (isCOM3)
+		m_com3.FasongX(geshu);
+	else
+		m_com2_485.FasongX(geshu);
+
+}
+void Terminal::PutCommand(u8 buf[], u8 geshu) {
+	if (geshu == 0)
+		return;
+	m_commandBuf[m_pW][0] = geshu;
+	memcpy(m_commandBuf[m_pW] + 1, buf, geshu);
+	m_pW = (m_pW + 1) % 10;
+}
+void Terminal::DoCommand() {
+	if (m_pR == m_pW)
+		return;
+	u8 len = m_commandBuf[m_pR][0];
+	if (isCOM3)
+		memcpy(m_com3.m_COM_FA, m_commandBuf[m_pR] + 1, len);
+	else
+		memcpy(m_com2_485.m_COM_FA, m_commandBuf[m_pR] + 1, len);
+	m_pR = (m_pR + 1) % 10;
+	FasongX(len);
+}
+u16 Terminal::getWord(u8 *b) {
+	u16 u = b[0];
+	u <<= 8;
+	u |= b[1];
+	return u;
+}
+
+u32 Terminal::toCommand(u8 buf[]) //正常状态，0106 0004 0001 -》0400 0001相当于buf[0][3][4][5]//	因为4固定为0，1固定为06（写寄存器）
+		{
+	u32 uu = 0;
+	uu = buf[3] + 1;
+	uu <<= 8;
+	uu |= 0;
+	uu <<= 8;
+	uu |= buf[4];
+	uu <<= 8;
+	uu |= buf[5];
+	return uu;
+}
+/*
+
+ u32 Terminal::toCommand06(u8 buf[]) //透传状态，相当于buf[0][3][4][5]//	因为4固定为0，1固定为06（写寄存器）
+ {
+ u32 uu = 0;
+ uu = buf[0];
+ uu <<= 8;
+ uu |= buf[3];
+ uu <<= 8;
+ uu |= buf[4];
+ uu <<= 8;
+ uu |= buf[5];
+ return uu;
+ }
+ */
+
+u32 Terminal::JieShiCommand(Lora &lora) {
+	u8 len = ReadCOM();
+	if (len == 0)
+		return 0;
+	u8 *buf;
+	if (isCOM3)
+		buf = m_com3.m_COM_SHOU;
+	else
+		buf = m_com2_485.m_COM_SHOU;
+	u32 uu = 0;
+	if (buf[0] == 0xc0 || (buf[0] == 0xc1 && buf[1] == 0xc1 && buf[2] == 0xc1)
+			|| (buf[0] == 0xc3 && buf[1] == 0xc3 && buf[2] == 0xc3)
+			|| (buf[0] == 0xc4 && buf[1] == 0xc4 && buf[2] == 0xc4)) { //C0设置参数，C1读取参数,3个C4复位退出设置状态
+		isConfig = true;
+	}
+	if (isConfig) {
+		if (!isCOM3)
+			lora.PutCommand(buf, len);
+		return 0;
+	} else {
+		if (len != 8)
+			return 0;
+	}
+	if(buf[0]==0xff&&buf[1]==0xff)
+	{
+		isConfig=false;
+		memcpy(m_peizhidigonghao,buf,8);
+		PutCommand(buf, len);
+		return 0;
+	}
+	if ((buf[0] != this->m_addr) &&(buf[0] !=0xff)) //正常工作状态，不是本机地址并且也不是改写本设备地址，不处理，改写本设备地址时，不考虑地址
+		return 0;
+	u16 crc = CRC16::JisuanCRC(buf, len - 2, false);
+	u16 bufCRC = buf[len - 1];
+	bufCRC <<= 8;
+	bufCRC |= buf[len - 2];
+	if (crc != bufCRC)
+		return 0;
+	u16 jicunqidizhi = getWord(buf + 2);
+	u16 jicunqishu = getWord(buf + 4);
+	if (buf[1] == 0x03) {
+		u8 *b = new u8[50];
+		memset(b, 0, 50);
+		b[0] = buf[0];
+		b[1] = 0x03;
+		b[2] = jicunqishu * 2;
+		if (jicunqidizhi + jicunqishu <= Devices::DEVICEMAXNUM) { //读取0x00-0x0a寄存器数据
+			for (u8 i = 0; i < jicunqishu; i++) {
+				b[3 + i * 2] = 0;
+				b[3 + i * 2 + 1] = m_devs->state[jicunqidizhi + i];
+			}
+			CRC16::JisuanCRC(b, jicunqishu * 2 + 3, true);
+			PutCommand(b, jicunqishu * 2 + 5);
+		} else if (jicunqidizhi >= 30 && jicunqidizhi + jicunqishu <= 50) { //读取0x00-0x0a寄存器数据
+			for (u8 i = 0; i < jicunqishu; i++) {
+				u16 uu = m_devs->shidu[jicunqidizhi - 30 + i];
+				b[3 + i * 2] = uu >> 8;
+				b[3 + i * 2 + 1] = uu;
+			}
+			CRC16::JisuanCRC(b, jicunqishu * 2 + 3, true);
+			PutCommand(b, jicunqishu * 2 + 5);
+		} else if (jicunqidizhi >= 98 && jicunqidizhi + jicunqishu <= 115) { //读取0x00-0x0a寄存器数据
+			u8 addr2 = 99 - 98;
+			u8 *b2 = new u8[40];
+			memset(b2, 0, 40);
+			b2[addr2 * 2 + 1] = m_addr;
+			addr2 = 101 - 98;
+			b2[addr2 * 2 + 1] = m_terminalNum;
+			addr2 = 102 - 98;
+			b2[addr2 * 2] = m_time485 >> 8;
+			b2[addr2 * 2 + 1] = m_time485;
+			addr2 = 103 - 98;
+			b2[addr2 * 2 + 1] = m_bDigonghao;
+			addr2 = 111 - 98;
+			b2[addr2 * 2 + 1] = m_xindao;
+			memcpy(b + 3, b2, jicunqishu * 2);
+			delete []b2;
+			CRC16::JisuanCRC(b, jicunqishu * 2 + 3, true);
+			PutCommand(b, jicunqishu * 2 + 5);
+		}
+		delete []b;
+	} else if (buf[1] == 0x06 && buf[2] == 0x00) { //下置数据
+		bool ok = false;
+		bool isCun = false;
+		switch (buf[3]) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 19: //010600010001   站号1开
+			uu = toCommand(buf);
+			ok = true;
+			break;
+		case 99: //修改本机地址
+			if (buf[4] == 0) {
+				m_addr = buf[5];
+				ok = true;
+				isCun = true;
+			}
+			break;
+		case 101: //终端数
+			if (buf[4] == 0) {
+				m_terminalNum = buf[5];
+				ok = true;
+				isCun = true;
+			}
+			break;
+		case 102: //修改485通讯时间
+		{
+			u16 u = buf[4];
+			u <<= 8;
+			u |= buf[5];
+			m_time485 = u;
+			isCun = true;
+			ok = true;
+		}
+			break;
+		case 103: //低功耗模式
+			if (buf[4] == 0) {
+				m_bDigonghao = buf[5];
+				ok = true;
+				isCun = true;
+			}
+			break;
+		case 111: //修改通讯信道
+			if (buf[4] == 0) {
+				m_xindao = buf[5];
+				ok = true;
+				isCun = true;
+			}
+			break;
+		default:
+			break;
+		}
+		if (ok) {
+			if (isCun)
+				WriteCanshu();
+			PutCommand(buf, len);
+		}
+	}
+	return uu;
+
+}
+//01 03 00 00 00 03 05 cb
+//01 03 06 00 00 01 01 00 00 71 49

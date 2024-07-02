@@ -1,0 +1,11 @@
+09:53:15 **** Incremental Build of configuration Debug for project Ainstrument(History_HL)_Three ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(History_HL)_Three.elf"
+   text	   data	    bss	    dec	    hex	filename
+  50431	    200	   1504	  52135	   cba7	Ainstrument(History_HL)_Three.elf
+已结束构建： Ainstrument(History_HL)_Three.siz
+ 
+
+09:53:15 Build Finished. 0 errors, 0 warnings. (took 540ms)
+

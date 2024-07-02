@@ -1,0 +1,25 @@
+08:24:27 **** 构建 of configuration Debug for project f4plcTeminal1.1.1 ****
+make all 
+正在构建文件： ../src/Can1.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Can1.d" -MT"src/Can1.o" -c -o "src/Can1.o" "../src/Can1.cpp"
+已结束构建： ../src/Can1.cpp
+ 
+正在构建目标： f4plcTeminal1.1.1.elf
+正在调用： GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"f4plcTeminal1.1.1.map" --specs=nano.specs -o "f4plcTeminal1.1.1.elf"  ./system/src/stm32f4-stdperiph/misc.o ./system/src/stm32f4-stdperiph/stm32f4xx_can.o ./system/src/stm32f4-stdperiph/stm32f4xx_gpio.o ./system/src/stm32f4-stdperiph/stm32f4xx_iwdg.o ./system/src/stm32f4-stdperiph/stm32f4xx_rcc.o ./system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o ./system/src/stm32f4-stdperiph/stm32f4xx_usart.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f407xx.o  ./src/AntData_PortSet.o ./src/BenjiTerminal.o ./src/BlinkLed.o ./src/COM.o ./src/CRC16.o ./src/Can1.o ./src/Cunchu.o ./src/Modbus.o ./src/Timer.o ./src/W25X16.o ./src/WatchDog.o ./src/_write.o ./src/delay.o ./src/main.o   
+已结束构建目标： f4plcTeminal1.1.1.elf
+ 
+正在调用： GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "f4plcTeminal1.1.1.elf"  "f4plcTeminal1.1.1.hex"
+已结束构建： f4plcTeminal1.1.1.hex
+ 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "f4plcTeminal1.1.1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19739	    216	   2504	  22459	   57bb	f4plcTeminal1.1.1.elf
+已结束构建： f4plcTeminal1.1.1.siz
+ 
+
+08:24:28 Build Finished. 0 errors, 0 warnings. (took 1s.485ms)
+

@@ -1,0 +1,11 @@
+20:50:37 **** 构建 of configuration Debug for project Ainstrument_Zirconia ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument_Zirconia.elf"
+   text	   data	    bss	    dec	    hex	filename
+  47207	    200	    968	  48375	   bcf7	Ainstrument_Zirconia.elf
+已结束构建： Ainstrument_Zirconia.siz
+ 
+
+20:50:37 Build Finished. 0 errors, 0 warnings. (took 536ms)
+

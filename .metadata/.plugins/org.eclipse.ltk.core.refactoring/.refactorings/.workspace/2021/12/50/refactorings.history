@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Lora_F030_1.2”重命名为“Lora_F030_1.3”" description="重命名资源“Lora_F030_1.2”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Lora_F030_1.2" name="Lora_F030_1.3" stamp="1638667735654" updateReferences="true"/>&#x0A;<refactoring comment="删除资源“Lora_F030_1.3/Debug”" deleteContents="false" description="删除资源“Lora_F030_1.3/Debug”" element1="/Lora_F030_1.3/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1638667743966"/>
+</session>

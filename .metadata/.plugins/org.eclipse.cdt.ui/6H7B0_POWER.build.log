@@ -1,0 +1,11 @@
+18:00:12 **** Incremental Build of configuration Debug for project 6H7B0_power ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "6H7B0_power.elf"
+   text	   data	    bss	    dec	    hex	filename
+  22081	    172	   1392	  23645	   5c5d	6H7B0_power.elf
+已结束构建： 6H7B0_power.siz
+ 
+
+18:00:12 Build Finished. 0 errors, 0 warnings. (took 782ms)
+

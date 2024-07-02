@@ -1,0 +1,168 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "diag/Trace.h"
+#include"string.h"
+#include "WatchDog.h"
+#include "AntLock.h"
+#include "Cunchu.h"
+#include "Timer.h"
+#include "BlinkLed.h"
+#include "COM.h"
+#include "Modbus.h"
+#include "Can1.h"
+#include "CalendarTimer.h"
+#include "AdcDma10.h"
+#include "DACF4.h"
+#include "AntData_PortSet.h"
+#include "HuanjingShuju.h"
+#include "BenjiTerminal.h"
+#include "AntData_Device.h"
+#include "delay.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+int main(int argc, char *argv[]) {
+	trace_puts("Hello ARM World!");
+	trace_printf("System clock: %u Hz\n", SystemCoreClock);
+	delay_ms(500);
+	Timer timer;
+	timer.start(); //		包含了AntData_PortSet::init();
+	BlinkLed blinkLed;
+	blinkLed.init();
+	CalendarTimer m_CalendarTimer;
+	m_CalendarTimer.init();
+//	m_CalendarTimer.SetCalendarTime(21,03,20,10,45,0x00);//21-3-3 21:9:0
+	AdcDma10 m_ad;
+	m_ad.init();
+	DAC_F4 m_dac;
+	m_dac.init();
+	COM m_com1(0);
+	COM m_com3(1);
+	COM m_com5(2);
+	m_com1.init(187500);
+	m_com3.init(9600);
+	m_com5.init(115200);
+	Can_1 m_can;
+	m_can.init();
+	W25X16 m_w25;
+	m_w25.init();
+	Cunchu m_cunchu;
+	m_cunchu.init(&m_w25);
+//	m_cunchu.MorenCanshu();
+	m_cunchu.ReadCunchu();
+
+	vector<AntData_Device> m_devices;
+	for (int i = 0; i < 32; ++i) { //0,1,2,3,13,14,15,16
+		if (i < 4 || (i > 12 && i < 17) || i > 25)
+			m_devices.push_back(AntData_Device(i, true));
+		else
+			m_devices.push_back(AntData_Device(i, false));
+		m_devices[i].readCanshu();
+	}
+	m_devices[1].m_fanCtrl = true;
+	m_devices[12].m_fanCtrl = true;
+	m_devices[14].m_fanCtrl = true;
+	for (int i = 25; i < 32; i++)
+		m_devices[i].m_fanCtrl = true;
+
+	AntData_Device::set(&m_CalendarTimer);
+
+	Modbus m_modbus1(&m_com1);
+	Modbus m_modbus2(&m_com3);
+	Modbus m_modbus3(&m_com5);
+	BenjiTerminal m_bendi(&m_modbus1, &m_CalendarTimer, &m_devices, false);
+	HuanjingShuju m_huanjingData(&m_modbus2);
+	BenjiTerminal m_yuancheng(&m_modbus3, &m_CalendarTimer, &m_devices, true);
+
+	WatchDog m_dog;
+	m_dog.init(IWDG_Prescaler_8, 500); //500毫秒为超时
+	Ant_Lock m_lock;
+
+	uint32_t ms = 0;
+	u8 oldSec = 0;
+	bool bbb = false;
+	u8 canError = 0;
+	u8 x;
+				u16 *x1;
+	u16 outPortSize = AntData_PortSet::portOut.size();
+	while (1) {
+		__WFI();
+		m_dog.run();
+		if (Timer::bMS5) {
+			Timer::bMS5 = false;
+			ms += 5;
+			if (ms % 500 < 200) //2秒
+				blinkLed.turnOn();
+			else
+				blinkLed.turnOff();
+
+			if (ms % (3000) < (1000 * canError))
+				blinkLed.turnError();
+			else
+				blinkLed.turnNormal();
+
+			m_huanjingData.run(ms);
+			m_bendi.run();
+			m_yuancheng.run();
+			m_CalendarTimer.GetCalendarTime();
+			if (oldSec != m_CalendarTimer.RTC_TimeStructure.RTC_Seconds) {
+				oldSec = m_CalendarTimer.RTC_TimeStructure.RTC_Seconds;
+				m_lock.run();
+				for (u16 i = 0; i < outPortSize; i++) { //本地输出
+					AntData_PortOut out = AntData_PortSet::portOut[i];
+					u8 a = i / 8;
+					u8 b = i % 8;
+					if (AntData_Device::outJDQ[a] & (1 << b))
+						GPIO_SetBits(out.port, out.pin);
+					else
+						GPIO_ResetBits(out.port, out.pin);
+				}
+			}
+			m_dac.out(0, ms % 4095);
+			m_dac.out(1, 4095 - ms % 4095);
+			if (ms % 200 == 0) {
+				bbb = !bbb;
+				m_can.CAN_send_massage(AntData_Device::outJDQ + 3 * (1 + bbb),
+						3, 0x201 + bbb); //3个字节，24路输出
+				if (Can_1::error[bbb] <= CAN_TONGXUANERROR) {
+					Can_1::error[bbb]++;
+					canError &= ~(1 << bbb);
+				} else {
+					canError |= (1 << bbb);
+				}
+			}
+
+			if (ms % 30 == 0) {
+				u8 abc = (ms % 960) / 30;
+				if (abc == 0) {  //读取按键值
+					u8 tt = AntData_PortSet::getKeyWords();
+					AntData_Device::KeyWord = tt;
+					AntData_Device::getCommand();
+					if (tt != 0)
+						trace_printf("-----%u\n", tt);
+
+					x = Cunchu::m_canshu1[7];
+					if (x < 5 && HuanjingShuju::m_OK[x]) //当前站号是0-4，并且通讯无故障
+							{
+						AntData_Device::m_dataOK = true;
+						if (x < 4)
+							x1 = HuanjingShuju::m_data1_4[x];
+						else
+							x1 = HuanjingShuju::m_data5;
+						AntData_Device::m_shidu = x1[0];
+						AntData_Device::m_wendu = x1[1];
+						AntData_Device::m_guangdu = x1[2];
+
+					} else
+						AntData_Device::m_dataOK = false;
+				}
+				m_devices[abc].run();
+			}
+		}
+	}
+}
+
+#pragma GCC diagnostic pop

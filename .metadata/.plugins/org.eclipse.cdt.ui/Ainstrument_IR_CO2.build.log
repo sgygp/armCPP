@@ -1,0 +1,11 @@
+09:13:39 **** 构建 of configuration Debug for project Ainstrument_IR_CO2 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_IR2022.elf"
+   text	   data	    bss	    dec	    hex	filename
+  50623	    200	  17372	  68195	  10a63	Ainstrument(Histroy_HL)_IR2022.elf
+已结束构建： Ainstrument(Histroy_HL)_IR2022.siz
+ 
+
+09:13:40 Build Finished. 0 errors, 0 warnings. (took 583ms)
+

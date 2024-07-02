@@ -1,0 +1,11 @@
+10:09:02 **** 构建 of configuration Debug for project AinstrumentCH_H2O2_Modubs ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentCH_H2O2_Modubs.elf"
+   text	   data	    bss	    dec	    hex	filename
+  75192	    640	   3152	  78984	  13488	AinstrumentCH_H2O2_Modubs.elf
+已结束构建： AinstrumentCH_H2O2_Modubs.siz
+ 
+
+10:09:03 Build Finished. 0 errors, 0 warnings. (took 274ms)
+

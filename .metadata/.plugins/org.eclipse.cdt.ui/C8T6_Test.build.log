@@ -1,0 +1,11 @@
+22:05:53 **** Incremental Build of configuration Debug for project C8T6_Test ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_Test.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9299	    176	    420	   9895	   26a7	C8T6_Test.elf
+已结束构建： C8T6_Test.siz
+ 
+
+22:05:53 Build Finished. 0 errors, 0 warnings. (took 436ms)
+

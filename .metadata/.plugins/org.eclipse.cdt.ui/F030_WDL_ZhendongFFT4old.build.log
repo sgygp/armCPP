@@ -1,0 +1,20 @@
+15:27:16 **** 构建 of configuration Debug for project F030_WDL_ZhendongFFT4old ****
+make all 
+正在构建目标： F030_WDL_ZhendongFFT4old.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -L"include" -Wl,-Map,"F030_WDL_ZhendongFFT4old.map" --specs=nano.specs -o "F030_WDL_ZhendongFFT4old.elf"  ./system/src/stm32f0-stdperiph/stm32f0xx_gpio.o ./system/src/stm32f0-stdperiph/stm32f0xx_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f0xx.o ./system/src/cmsis/vectors_stm32f0xx.o  ./src/ADXL345.o ./src/Anjian.o ./src/BlinkLed.o ./src/COM.o ./src/ExitInt.o ./src/FFTc.o ./src/RtcBkp.o ./src/SPI1C.o ./src/SPI2C.o ./src/Set.o ./src/Shuju.o ./src/Sleep.o ./src/Timer.o ./src/TongxunChuli.o ./src/W25X16.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f0xx_dma.o ./src/stm32f0xx_exti.o ./src/stm32f0xx_misc.o ./src/stm32f0xx_pwr.o ./src/stm32f0xx_rtc.o ./src/stm32f0xx_spi.o ./src/stm32f0xx_syscfg.o ./src/stm32f0xx_usart.o   
+已结束构建目标： F030_WDL_ZhendongFFT4old.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "F030_WDL_ZhendongFFT4old.elf"  "F030_WDL_ZhendongFFT4old.hex"
+已结束构建： F030_WDL_ZhendongFFT4old.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030_WDL_ZhendongFFT4old.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38459	    196	   1040	  39695	   9b0f	F030_WDL_ZhendongFFT4old.elf
+已结束构建： F030_WDL_ZhendongFFT4old.siz
+ 
+
+15:27:17 Build Finished. 0 errors, 0 warnings. (took 520ms)
+

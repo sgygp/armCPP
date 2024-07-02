@@ -1,0 +1,11 @@
+09:58:03 **** Incremental Build of configuration Debug for project AntDataPLC_3.0 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AntDataPLC_3.0.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29663	    220	   2784	  32667	   7f9b	AntDataPLC_3.0.elf
+已结束构建： AntDataPLC_3.0.siz
+ 
+
+09:58:03 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

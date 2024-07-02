@@ -1,0 +1,113 @@
+/*
+ * LCD240128.h
+ *
+ *  Created on: 2021年1月7日
+ *      Author: Administrator
+ */
+
+#ifndef LCD240128_H_
+#define LCD240128_H_
+#include"stm32f10x_conf.h"
+#include "delay.h"
+
+#define GPIO_LCD_WR		GPIO_Pin_0
+#define GPIO_LCD_RD		GPIO_Pin_1
+#define GPIO_LCD_CE		GPIO_Pin_2
+#define GPIO_LCD_CD		GPIO_Pin_3
+
+#define GPIO_LCD_LED	GPIO_Pin_12
+
+
+class LCD240128 {
+public:
+	void Clear();
+	void LCD_Init();
+	void Fill(u8 x, u8 y, u8 x2, u8 y2, u8 z);
+	void Fill_bian();
+	void WriteHZx(u8 x, u8 y, u8 ge, const u8 *buf, bool fan);
+	void WriteHZd(u8 x, u8 y, u8 ge, const u8 *buf, bool fan);
+	void WriteShuzi(u8 x, u8 y, u8 ge, const u8 *buf, bool fan);
+	void WriteXY(u8 x, u8 y, u8 data1, bool fan);
+	void WriteTu(u8 x, u8 y, const u8 *buf, bool fan);
+	void WriteTuHUAFEN(u8 x, u8 y, const u8 *buf, bool fan);
+	void WriteShuju(u8 x, u8 y, float shuju, u8 xiaoshu);
+	void WriteYuanma(u8 x, u8 y, u16 shuju);
+	void WriteTuXXYYY(u8 x, u8 y, u8 ge, u8 xx, u8 yy, const u8 *buf, bool fan);
+	void set();
+
+private:
+	/*void Ch_state(u8 a) {
+
+
+	 GPIO_SetBits(GPIOC, GPIO_LCD_CD);
+	 GPIO_ResetBits(GPIOC, GPIO_LCD_RD);
+
+	 GPIO_InitTypeDef GPIO_InitStructure;    //声明一个结构体变量，用来初始化GPIO
+	 GPIO_InitStructure.GPIO_Pin =
+	 GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4
+	 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;	//
+	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	 GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	 //		while ((x & a) != a)
+	 for (int i = 0; i < 10000; i++) {
+	 x = GPIO_ReadInputData(GPIOA) & 0XFF;
+	 if ((x & a) == a)
+	 break;
+	 Delay::delay_us(1);
+	 }
+	 GPIO_SetBits(GPIOC, GPIO_LCD_RD);
+
+	 GPIO_InitStructure.GPIO_Pin =
+	 GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4
+	 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;	//
+	 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+	 GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	 }
+	 */
+	void WriteData1(u8 a) {
+		enableCE();
+//		Ch_state(0x03);
+		GPIO_ResetBits(GPIOC, GPIO_LCD_CD);
+		GPIO_ResetBits(GPIOC, GPIO_LCD_WR);
+		GPIO_WriteLow(a);
+		GPIO_SetBits(GPIOC, GPIO_LCD_WR);
+		disableCE();
+
+	}
+
+	void WriteCommad(u8 a) {
+		enableCE();
+		//Ch_state(0x03);
+		GPIO_SetBits(GPIOC, GPIO_LCD_CD);
+		GPIO_ResetBits(GPIOC, GPIO_LCD_WR);
+		GPIO_WriteLow(a);
+		GPIO_SetBits(GPIOC, GPIO_LCD_WR);
+		disableCE();
+	}
+	inline void GPIO_WriteLow(u8 a) {
+		u8 k = 1;
+		for (int i = 0; i < 8; i++) {
+			if (a & 0x01)
+				GPIO_SetBits(GPIOA, k);
+			else
+				GPIO_ResetBits(GPIOA, k);
+			a >>= 1;
+			k <<= 1;
+		}
+	}
+	inline void enableCE() {
+		GPIO_ResetBits(GPIOC, GPIO_LCD_CE);
+		//Delay::delay_us(5);
+
+	}
+	inline void disableCE() {
+		GPIO_SetBits(GPIOC, GPIO_LCD_CE);
+
+	}
+};
+
+#endif /* LCD240128_H_ */

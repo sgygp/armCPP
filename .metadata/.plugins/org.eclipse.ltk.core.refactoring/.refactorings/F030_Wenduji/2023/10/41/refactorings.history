@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“F030_Wenduji/src/delay.cpp”重命名为“delay.c”" description="重命名资源“delay.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/delay.cpp" name="delay.c" stamp="1697101622393" updateReferences="true"/>&#x0A;<refactoring comment="将资源“F030_Wenduji/src/delay.c”重命名为“delay.cpp”" description="重命名资源“delay.c”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/delay.c" name="delay.cpp" stamp="1697101709154" updateReferences="true"/>
+</session>

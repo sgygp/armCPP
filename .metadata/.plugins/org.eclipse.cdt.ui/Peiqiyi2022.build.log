@@ -1,0 +1,11 @@
+08:45:51 **** Incremental Build of configuration Debug for project Peiqiyi2022 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Peiqiyi2022.elf"
+   text	   data	    bss	    dec	    hex	filename
+  17987	    396	   2020	  20403	   4fb3	Peiqiyi2022.elf
+已结束构建： Peiqiyi2022.siz
+ 
+
+08:45:51 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

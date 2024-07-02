@@ -1,0 +1,11 @@
+11:32:08 **** Incremental Build of configuration Debug for project 3H7B0_USART ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "3H7B0_USART.elf"
+   text	   data	    bss	    dec	    hex	filename
+  67141	    172	   4584	  71897	  118d9	3H7B0_USART.elf
+已结束构建： 3H7B0_USART.siz
+ 
+
+11:32:08 Build Finished. 0 errors, 0 warnings. (took 732ms)
+

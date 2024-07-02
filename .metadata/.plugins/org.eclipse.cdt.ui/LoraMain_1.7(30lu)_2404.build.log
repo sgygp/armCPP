@@ -1,0 +1,11 @@
+17:25:09 **** Incremental Build of configuration Debug for project LoraMain_1.7(30lu)_2404 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "LoraMain_1.7(30lu)_2404.elf"
+   text	   data	    bss	    dec	    hex	filename
+  17247	    196	   2004	  19447	   4bf7	LoraMain_1.7(30lu)_2404.elf
+已结束构建： LoraMain_1.7(30lu)_2404.siz
+ 
+
+17:25:09 Build Finished. 0 errors, 0 warnings. (took 429ms)
+

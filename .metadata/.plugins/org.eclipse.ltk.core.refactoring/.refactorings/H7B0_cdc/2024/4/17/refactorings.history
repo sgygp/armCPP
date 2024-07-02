@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“H7B0_CDC/KissFFT”重命名为“USB_DEVICE”" description="重命名资源“KissFFT”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="KissFFT" name="USB_DEVICE" stamp="1714118568655" updateReferences="true"/>&#x0A;<refactoring comment="将资源“H7B0_CDC/src/main.cpp”重命名为“main.c”" description="重命名资源“main.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cpp" name="main.c" stamp="1714119406077" updateReferences="true"/>
+</session>

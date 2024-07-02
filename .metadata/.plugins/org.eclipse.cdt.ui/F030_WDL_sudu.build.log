@@ -1,0 +1,11 @@
+09:19:57 **** Incremental Build of configuration Debug for project F030_WDL_sudu ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030_WDL_sudu.elf"
+   text	   data	    bss	    dec	    hex	filename
+  27835	    192	   4628	  32655	   7f8f	F030_WDL_sudu.elf
+已结束构建： F030_WDL_sudu.siz
+ 
+
+09:19:57 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

@@ -1,0 +1,11 @@
+14:21:42 **** Incremental Build of configuration Debug for project Ainstrument_CL2_COM4 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument_CL2_COM4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  47983	    200	  17880	  66063	  1020f	Ainstrument_CL2_COM4.elf
+已结束构建： Ainstrument_CL2_COM4.siz
+ 
+
+14:21:42 Build Finished. 0 errors, 0 warnings. (took 630ms)
+

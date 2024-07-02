@@ -1,0 +1,11 @@
+16:40:04 **** 构建 of configuration Debug for project F4ZET6_CH4_1.4 ****
+make all 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "F4ZET6_CH4_1.4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  42283	    196	  57768	 100247	  18797	F4ZET6_CH4_1.4.elf
+已结束构建： F4ZET6_CH4_1.4.siz
+ 
+
+16:40:04 Build Finished. 0 errors, 0 warnings. (took 592ms)
+

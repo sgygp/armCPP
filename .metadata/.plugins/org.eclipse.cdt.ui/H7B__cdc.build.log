@@ -1,0 +1,11 @@
+17:03:48 **** Incremental Build of configuration Debug for project H7B__cdc ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B__cdc.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29797	   1688	   8368	  39853	   9bad	H7B__cdc.elf
+已结束构建： H7B__cdc.siz
+ 
+
+17:03:49 Build Finished. 0 errors, 0 warnings. (took 765ms)
+

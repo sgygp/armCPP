@@ -1,0 +1,11 @@
+17:33:41 **** Incremental Build of configuration Debug for project WDL_F030_Zhendong1 ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "WDL_F030_Zhendong1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11407	    176	   1244	  12827	   321b	WDL_F030_Zhendong1.elf
+已结束构建： WDL_F030_Zhendong1.siz
+ 
+
+17:33:42 Build Finished. 0 errors, 0 warnings. (took 431ms)
+

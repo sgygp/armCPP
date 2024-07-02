@@ -1,0 +1,25 @@
+09:35:34 **** Incremental Build of configuration Debug for project F4ZET6_CH4 ****
+make all 
+正在构建文件： ../src/BenjiTerminal.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BenjiTerminal.d" -MT"src/BenjiTerminal.o" -c -o "src/BenjiTerminal.o" "../src/BenjiTerminal.cpp"
+已结束构建： ../src/BenjiTerminal.cpp
+ 
+正在构建目标： F4ZET6_CH4.elf
+正在调用： GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"F4ZET6_CH4.map" --specs=nano.specs -o "F4ZET6_CH4.elf"  ./system/src/stm32f4-stdperiph/misc.o ./system/src/stm32f4-stdperiph/stm32f4xx_adc.o ./system/src/stm32f4-stdperiph/stm32f4xx_dma.o ./system/src/stm32f4-stdperiph/stm32f4xx_gpio.o ./system/src/stm32f4-stdperiph/stm32f4xx_iwdg.o ./system/src/stm32f4-stdperiph/stm32f4xx_pwr.o ./system/src/stm32f4-stdperiph/stm32f4xx_rcc.o ./system/src/stm32f4-stdperiph/stm32f4xx_rtc.o ./system/src/stm32f4-stdperiph/stm32f4xx_sdio.o ./system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o ./system/src/stm32f4-stdperiph/stm32f4xx_tim.o ./system/src/stm32f4-stdperiph/stm32f4xx_usart.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f407xx.o  ./src/AdcDma.o ./src/Ainstrument.o ./src/Beep.o ./src/BenjiTerminal.o ./src/COM.o ./src/CRC16.o ./src/CalendarTimer.o ./src/DS18B20.o ./src/HeartPID.o ./src/Hgs.o ./src/II_C.o ./src/Modbus.o ./src/Quxian0_1.o ./src/SSR.o ./src/Timer.o ./src/TimerPWM.o ./src/WatchDog.o ./src/WuHan69.o ./src/_write.o ./src/delay.o ./src/main.o   
+已结束构建目标： F4ZET6_CH4.elf
+ 
+正在调用： GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "F4ZET6_CH4.elf"  "F4ZET6_CH4.hex"
+已结束构建： F4ZET6_CH4.hex
+ 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "F4ZET6_CH4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  42155	    196	  57768	 100119	  18717	F4ZET6_CH4.elf
+已结束构建： F4ZET6_CH4.siz
+ 
+
+09:35:36 Build Finished. 0 errors, 0 warnings. (took 1s.192ms)
+

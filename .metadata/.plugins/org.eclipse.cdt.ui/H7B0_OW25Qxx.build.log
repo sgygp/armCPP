@@ -1,0 +1,63 @@
+16:03:35 **** 构建 of configuration Debug for project H7B0_OW25Qxx ****
+make all 
+正在构建文件： ../src/demo_spi_flash.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu11 -MMD -MP -MF"src/demo_spi_flash.d" -MT"src/demo_spi_flash.o" -c -o "src/demo_spi_flash.o" "../src/demo_spi_flash.c"
+../src/demo_spi_flash.c: In function 'DemoSpiFlash':
+../src/demo_spi_flash.c:48:11: warning: unused variable 'uiReadPageNo' [-Wunused-variable]
+  uint32_t uiReadPageNo = 0, id;
+           ^
+../src/demo_spi_flash.c:47:10: warning: unused variable 'cmd' [-Wunused-variable]
+  uint8_t cmd;
+          ^
+../src/demo_spi_flash.c: At top level:
+../src/demo_spi_flash.c:350:13: warning: 'sfDispMenu' defined but not used [-Wunused-function]
+ static void sfDispMenu(void)
+             ^
+../src/demo_spi_flash.c:123:13: warning: 'sfReadTest' defined but not used [-Wunused-function]
+ static void sfReadTest(void)
+             ^
+../src/demo_spi_flash.c:172:13: warning: 'sfWriteTest' defined but not used [-Wunused-function]
+ static void sfWriteTest(void)
+             ^
+../src/demo_spi_flash.c:282:13: warning: 'sfErase' defined but not used [-Wunused-function]
+ static void sfErase(void)
+             ^
+../src/demo_spi_flash.c:319:13: warning: 'sfViewData' defined but not used [-Wunused-function]
+ static void sfViewData(uint32_t _uiAddr)
+             ^
+../src/demo_spi_flash.c:237:13: warning: 'sfWriteAll' defined but not used [-Wunused-function]
+ static void sfWriteAll(uint8_t _ch)
+             ^
+已结束构建： ../src/demo_spi_flash.c
+ 
+正在构建文件： ../src/main.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:231:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t *file, uint32_t line)
+                             ^
+../src/main.c:231:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t *file, uint32_t line)
+                                            ^
+已结束构建： ../src/main.c
+ 
+正在构建目标： H7B0_OW25Qxx.elf
+正在调用： GNU Arm Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T libs.ld -T mem.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"H7B0_OW25Qxx.map" --specs=nano.specs -o "H7B0_OW25Qxx.elf"  ./system/src/stm32h7x-hal/stm32h7xx_hal.o ./system/src/stm32h7x-hal/stm32h7xx_hal_cortex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_exti.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_gpio.o ./system/src/stm32h7x-hal/stm32h7xx_hal_hsem.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_mdma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_ospi.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_spi.o ./system/src/stm32h7x-hal/stm32h7xx_hal_spi_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_uart.o ./system/src/stm32h7x-hal/stm32h7xx_hal_uart_ex.o ./system/src/stm32h7x-hal/system_stm32h7xx.o  ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/vectors_stm32f767xx.o  ./src/BSP_GPIO.o ./src/BSP_OSPI_W25Qxx.o ./src/BSP_USART.o ./src/bsp_timer.o ./src/demo_spi_flash.o ./src/gpio.o ./src/main.o ./src/octospi.o ./src/stm32h7xx_hal_msp.o ./src/stm32h7xx_it.o ./src/usart.o  ./KissFFT/kfc.o ./KissFFT/kiss_fft.o ./KissFFT/kiss_fftnd.o ./KissFFT/kiss_fftndr.o ./KissFFT/kiss_fftr.o   
+已结束构建目标： H7B0_OW25Qxx.elf
+ 
+正在调用： GNU Arm Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "H7B0_OW25Qxx.elf"  "H7B0_OW25Qxx.hex"
+已结束构建： H7B0_OW25Qxx.hex
+ 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B0_OW25Qxx.elf"
+   text	   data	    bss	    dec	    hex	filename
+  31517	    172	  18896	  50585	   c599	H7B0_OW25Qxx.elf
+已结束构建： H7B0_OW25Qxx.siz
+ 
+
+16:03:37 Build Finished. 0 errors, 10 warnings. (took 1s.871ms)
+

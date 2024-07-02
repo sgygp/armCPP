@@ -1,0 +1,11 @@
+15:30:33 **** Incremental Build of configuration Debug for project H7B0_USB_Storage ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B0_USB_Storage.elf"
+   text	   data	    bss	    dec	    hex	filename
+  63829	    444	  16644	  80917	  13c15	H7B0_USB_Storage.elf
+已结束构建： H7B0_USB_Storage.siz
+ 
+
+15:30:36 Build Finished. 0 errors, 0 warnings. (took 3s.308ms)
+

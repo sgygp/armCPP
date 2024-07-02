@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“AinstrumentIR2022/include/Exti9.h”重命名为“Exti.h”" description="重命名资源“Exti9.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/Exti9.h" name="Exti.h" stamp="1646358995426" updateReferences="true"/>&#x0A;<refactoring comment="将资源“AinstrumentIR2022/src/Exti9.cpp”重命名为“Exti.cpp”" description="重命名资源“Exti9.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Exti9.cpp" name="Exti.cpp" stamp="1646359004586" updateReferences="true"/>
+</session>

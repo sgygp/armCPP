@@ -1,0 +1,11 @@
+18:01:40 **** Incremental Build of configuration Debug for project C8T6_RFcard ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_RFcard.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8099	    176	    420	   8695	   21f7	C8T6_RFcard.elf
+已结束构建： C8T6_RFcard.siz
+ 
+
+18:01:40 Build Finished. 0 errors, 0 warnings. (took 332ms)
+

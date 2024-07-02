@@ -1,0 +1,11 @@
+11:16:46 **** Incremental Build of configuration Debug for project C8T6_Wenduji ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_Wenduji.elf"
+   text	   data	    bss	    dec	    hex	filename
+  20103	    176	    680	  20959	   51df	C8T6_Wenduji.elf
+已结束构建： C8T6_Wenduji.siz
+ 
+
+11:16:46 Build Finished. 0 errors, 0 warnings. (took 185ms)
+

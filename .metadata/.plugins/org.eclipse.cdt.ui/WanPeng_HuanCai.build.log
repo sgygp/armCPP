@@ -1,0 +1,11 @@
+11:09:32 **** 构建 of configuration Debug for project WanPeng_HuanCai ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "WanPeng_HuanCai.elf"
+   text	   data	    bss	    dec	    hex	filename
+  21123	    196	   2048	  23367	   5b47	WanPeng_HuanCai.elf
+已结束构建： WanPeng_HuanCai.siz
+ 
+
+11:09:32 Build Finished. 0 errors, 0 warnings. (took 222ms)
+

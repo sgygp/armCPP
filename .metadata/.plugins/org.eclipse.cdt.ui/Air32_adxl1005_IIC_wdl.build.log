@@ -1,0 +1,11 @@
+11:55:47 **** 构建 of configuration Debug for project Air32_adxl1005_IIC_wdl ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_adxl1005_IIC_wdl.elf"
+   text	   data	    bss	    dec	    hex	filename
+  48464	    136	  65488	 114088	  1bda8	Air32_adxl1005_IIC_wdl.elf
+已结束构建： Air32_adxl1005_IIC_wdl.siz
+ 
+
+11:55:47 Build Finished. 0 errors, 0 warnings. (took 390ms)
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Ainstrument_ganwei/include/O2.h”重命名为“XiangGuan.h”" description="重命名资源“O2.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/O2.h" name="XiangGuan.h" stamp="1629450641115" updateReferences="true"/>&#x0A;<refactoring comment="将资源“Ainstrument_ganwei/src/O2.cpp”重命名为“XiangGuan.cpp”" description="重命名资源“O2.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/O2.cpp" name="XiangGuan.cpp" stamp="1629450676036" updateReferences="true"/>
+</session>

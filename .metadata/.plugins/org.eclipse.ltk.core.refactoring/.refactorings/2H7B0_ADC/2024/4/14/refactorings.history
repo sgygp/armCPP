@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“2H7B0_ADC/src/stm32h7xx_it.c”重命名为“stm32h7xx_it.cpp”" description="重命名资源“stm32h7xx_it.c”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/stm32h7xx_it.c" name="stm32h7xx_it.cpp" stamp="1711963033827" updateReferences="false"/>
+</session>

@@ -1,0 +1,11 @@
+14:38:58 **** Incremental Build of configuration Debug for project Ainstrument_H2O_MZLT_C ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument_H2O_MZLT_C.elf"
+   text	   data	    bss	    dec	    hex	filename
+  52767	    200	   1480	  54447	   d4af	Ainstrument_H2O_MZLT_C.elf
+已结束构建： Ainstrument_H2O_MZLT_C.siz
+ 
+
+14:38:58 Build Finished. 0 errors, 0 warnings. (took 375ms)
+

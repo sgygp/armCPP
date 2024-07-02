@@ -1,0 +1,11 @@
+15:30:47 **** 构建 of configuration Debug for project AinstrumentZhao_ZrO ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentZhao_ZrO.elf"
+   text	   data	    bss	    dec	    hex	filename
+  52031	    180	    456	  52667	   cdbb	AinstrumentZhao_ZrO.elf
+已结束构建： AinstrumentZhao_ZrO.siz
+ 
+
+15:30:48 Build Finished. 0 errors, 0 warnings. (took 531ms)
+

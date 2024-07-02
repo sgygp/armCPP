@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Air32_adxl1005/说明”重命名为“说明.txt”" description="重命名资源“说明”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="说明" name="说明.txt" stamp="1700440224799" updateReferences="true"/>
+</session>

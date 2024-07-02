@@ -1,0 +1,11 @@
+14:58:23 **** 构建 of configuration Debug for project Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI.elf"
+   text	   data	    bss	    dec	    hex	filename
+  54791	    200	   1476	  56467	   dc93	Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI.elf
+已结束构建： Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI.siz
+ 
+
+14:58:23 Build Finished. 0 errors, 0 warnings. (took 373ms)
+

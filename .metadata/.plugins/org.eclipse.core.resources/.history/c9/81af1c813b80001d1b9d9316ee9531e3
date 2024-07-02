@@ -1,0 +1,3 @@
+src/Quxian0_1.o: ../src/Quxian0_1.cpp ../include/Quxian0_1.h
+
+../include/Quxian0_1.h:

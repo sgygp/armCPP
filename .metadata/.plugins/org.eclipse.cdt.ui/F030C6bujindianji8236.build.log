@@ -1,0 +1,11 @@
+16:21:08 **** Incremental Build of configuration Debug for project F030C6bujindianji8236 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030C6bujindianji8236.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5763	    176	    420	   6359	   18d7	F030C6bujindianji8236.elf
+已结束构建： F030C6bujindianji8236.siz
+ 
+
+16:21:08 Build Finished. 0 errors, 0 warnings. (took 331ms)
+

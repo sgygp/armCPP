@@ -1,0 +1,11 @@
+11:16:02 **** 构建 of configuration Debug for project AinstrumentTwo_UV ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentTwo_UV.elf"
+   text	   data	    bss	    dec	    hex	filename
+  53055	    200	   9328	  62583	   f477	AinstrumentTwo_UV.elf
+已结束构建： AinstrumentTwo_UV.siz
+ 
+
+11:16:03 Build Finished. 0 errors, 0 warnings. (took 879ms)
+

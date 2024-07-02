@@ -1,0 +1,11 @@
+18:19:55 **** Incremental Build of configuration Debug for project F030DingshiLCD ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030DingshiLCD.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16719	    176	    508	  17403	   43fb	F030DingshiLCD.elf
+已结束构建： F030DingshiLCD.siz
+ 
+
+18:19:55 Build Finished. 0 errors, 0 warnings. (took 173ms)
+

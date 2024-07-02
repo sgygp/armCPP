@@ -1,0 +1,11 @@
+09:49:53 **** Incremental Build of configuration Debug for project Zirconia_AD ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Zirconia_AD.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15375	    180	    464	  16019	   3e93	Zirconia_AD.elf
+已结束构建： Zirconia_AD.siz
+ 
+
+09:49:54 Build Finished. 0 errors, 0 warnings. (took 1s.101ms)
+

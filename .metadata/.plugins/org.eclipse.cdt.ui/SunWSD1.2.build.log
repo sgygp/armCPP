@@ -1,0 +1,11 @@
+10:35:38 **** Incremental Build of configuration Debug for project SunWSD1.2 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "SunWSD1.2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  20115	    196	    948	  21259	   530b	SunWSD1.2.elf
+已结束构建： SunWSD1.2.siz
+ 
+
+10:35:38 Build Finished. 0 errors, 0 warnings. (took 227ms)
+

@@ -1,0 +1,11 @@
+10:54:21 **** Incremental Build of configuration Debug for project TuRang ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "TuRang.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10595	    176	  16808	  27579	   6bbb	TuRang.elf
+已结束构建： TuRang.siz
+ 
+
+10:54:22 Build Finished. 0 errors, 0 warnings. (took 687ms)
+

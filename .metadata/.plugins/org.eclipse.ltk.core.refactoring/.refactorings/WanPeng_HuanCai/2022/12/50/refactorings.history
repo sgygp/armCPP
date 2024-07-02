@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“WanPeng_HuanCai/include/VDD2.h”重命名为“Power.h”" description="重命名资源“VDD2.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/VDD2.h" name="Power.h" stamp="1670460771150" updateReferences="true"/>&#x0A;<refactoring comment="将资源“WanPeng_HuanCai/src/VDD2.cpp”重命名为“Power.cpp”" description="重命名资源“VDD2.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/VDD2.cpp" name="Power.cpp" stamp="1670460774804" updateReferences="true"/>
+</session>

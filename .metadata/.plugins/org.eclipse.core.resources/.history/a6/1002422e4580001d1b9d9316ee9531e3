@@ -1,0 +1,113 @@
+################################################################################
+# 自动生成的文件。不要编辑！
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../src/_write.c \
+../src/stm32f10x_can.c \
+../src/stm32f10x_exti.c \
+../src/stm32f10x_iwdg.c \
+../src/stm32f10x_spi.c \
+../src/stm32f10x_tim.c \
+../src/stm32f10x_usart.c 
+
+CPP_SRCS += \
+../src/AT24C16.cpp \
+../src/Ainstrument.cpp \
+../src/Anjian.cpp \
+../src/BJ.cpp \
+../src/Beep.cpp \
+../src/BlinkLed.cpp \
+../src/COM.cpp \
+../src/DS18B20.cpp \
+../src/HeartPID.cpp \
+../src/LCD240128.cpp \
+../src/Quxian0_1.cpp \
+../src/RealQuxian.cpp \
+../src/SSR.cpp \
+../src/Screen.cpp \
+../src/Shuru.cpp \
+../src/Timer.cpp \
+../src/TimerPWM.cpp \
+../src/WatchDog.cpp \
+../src/delay.cpp \
+../src/main.cpp 
+
+OBJS += \
+./src/AT24C16.o \
+./src/Ainstrument.o \
+./src/Anjian.o \
+./src/BJ.o \
+./src/Beep.o \
+./src/BlinkLed.o \
+./src/COM.o \
+./src/DS18B20.o \
+./src/HeartPID.o \
+./src/LCD240128.o \
+./src/Quxian0_1.o \
+./src/RealQuxian.o \
+./src/SSR.o \
+./src/Screen.o \
+./src/Shuru.o \
+./src/Timer.o \
+./src/TimerPWM.o \
+./src/WatchDog.o \
+./src/_write.o \
+./src/delay.o \
+./src/main.o \
+./src/stm32f10x_can.o \
+./src/stm32f10x_exti.o \
+./src/stm32f10x_iwdg.o \
+./src/stm32f10x_spi.o \
+./src/stm32f10x_tim.o \
+./src/stm32f10x_usart.o 
+
+C_DEPS += \
+./src/_write.d \
+./src/stm32f10x_can.d \
+./src/stm32f10x_exti.d \
+./src/stm32f10x_iwdg.d \
+./src/stm32f10x_spi.d \
+./src/stm32f10x_tim.d \
+./src/stm32f10x_usart.d 
+
+CPP_DEPS += \
+./src/AT24C16.d \
+./src/Ainstrument.d \
+./src/Anjian.d \
+./src/BJ.d \
+./src/Beep.d \
+./src/BlinkLed.d \
+./src/COM.d \
+./src/DS18B20.d \
+./src/HeartPID.d \
+./src/LCD240128.d \
+./src/Quxian0_1.d \
+./src/RealQuxian.d \
+./src/SSR.d \
+./src/Screen.d \
+./src/Shuru.d \
+./src/Timer.d \
+./src/TimerPWM.d \
+./src/WatchDog.d \
+./src/delay.d \
+./src/main.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/%.o: ../src/%.cpp
+	@echo '正在构建文件： $<'
+	@echo '正在调用： Cross ARM GNU C++ Compiler'
+	arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	@echo '已结束构建： $<'
+	@echo ' '
+
+src/%.o: ../src/%.c
+	@echo '正在构建文件： $<'
+	@echo '正在调用： Cross ARM GNU C Compiler'
+	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	@echo '已结束构建： $<'
+	@echo ' '
+
+

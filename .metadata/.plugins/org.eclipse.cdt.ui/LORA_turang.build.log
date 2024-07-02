@@ -1,0 +1,11 @@
+19:39:27 **** 构建 of configuration Debug for project LORA_turang ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "LORA_turang.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15575	    196	   1484	  17255	   4367	LORA_turang.elf
+已结束构建： LORA_turang.siz
+ 
+
+19:39:31 Build Finished. 0 errors, 0 warnings. (took 4s.45ms)
+

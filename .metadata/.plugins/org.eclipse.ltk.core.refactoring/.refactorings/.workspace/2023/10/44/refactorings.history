@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Air32_adxl1002”重命名为“Air32_adxl1002--”" description="重命名资源“Air32_adxl1002”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Air32_adxl1002" name="Air32_adxl1002--" stamp="1698626904771" updateReferences="true"/>&#x0A;<refactoring comment="删除资源“Air32_adxl1002/Debug”" deleteContents="false" description="删除资源“Air32_adxl1002/Debug”" element1="/Air32_adxl1002/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1698742476428"/>
+</session>

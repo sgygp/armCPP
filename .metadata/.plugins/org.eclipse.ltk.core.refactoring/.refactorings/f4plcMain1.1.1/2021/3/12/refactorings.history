@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“F4ZET6_PLC/玻璃温室控制柜20201001地址对应表(1)(1)(1).xlsx”重命名为“玻璃温室控制柜.xlsx”" description="重命名资源“玻璃温室控制柜20201001地址对应表(1)(1)(1).xlsx”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="玻璃温室控制柜20201001地址对应表(1)(1)(1).xlsx" name="玻璃温室控制柜.xlsx" stamp="1615775435601" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“F4ZET6_CH4/Modbus10600”重命名为“Modbus12800”" description="重命名资源“Modbus10600”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Modbus10600" name="Modbus12800" stamp="1660090746939" updateReferences="true"/>
+</session>

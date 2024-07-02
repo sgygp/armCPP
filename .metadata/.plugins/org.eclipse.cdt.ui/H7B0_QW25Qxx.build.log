@@ -1,0 +1,88 @@
+11:30:11 **** Incremental Build of configuration Debug for project H7B0_QW25Qxx ****
+make all 
+正在构建文件： ../src/bsp.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu11 -MMD -MP -MF"src/bsp.d" -MT"src/bsp.o" -c -o "src/bsp.o" "../src/bsp.c"
+In file included from ../include/stm32h7xx_hal_conf.h:354:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_spi.h:193:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef          *hdmatx;                      /*!< SPI Tx DMA Handle parameters             */
+   ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_spi.h:195:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef          *hdmarx;                      /*!< SPI Rx DMA Handle parameters             */
+   ^
+In file included from ../include/stm32h7xx_hal_conf.h:362:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_swpmi.h:107:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef              *hdmatx;       /*!< SWPMI Tx DMA Handle parameters       */
+   ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_swpmi.h:109:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef              *hdmarx;       /*!< SWPMI Rx DMA Handle parameters       */
+   ^
+In file included from ../include/stm32h7xx_hal_conf.h:366:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:363:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef                  *hdma[7];          /*!< DMA Handlers array
+   ^
+In file included from ../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:2186:0,
+                 from ../include/stm32h7xx_hal_conf.h:366,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim_ex.h:513:31: error: unknown type name 'DMA_HandleTypeDef'
+ void TIMEx_DMACommutationCplt(DMA_HandleTypeDef *hdma);
+                               ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim_ex.h:514:35: error: unknown type name 'DMA_HandleTypeDef'
+ void TIMEx_DMACommutationHalfCplt(DMA_HandleTypeDef *hdma);
+                                   ^
+In file included from ../include/stm32h7xx_hal_conf.h:366:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:2435:32: error: unknown type name 'DMA_HandleTypeDef'
+ void TIM_DMADelayPulseHalfCplt(DMA_HandleTypeDef *hdma);
+                                ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:2436:19: error: unknown type name 'DMA_HandleTypeDef'
+ void TIM_DMAError(DMA_HandleTypeDef *hdma);
+                   ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:2437:25: error: unknown type name 'DMA_HandleTypeDef'
+ void TIM_DMACaptureCplt(DMA_HandleTypeDef *hdma);
+                         ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_tim.h:2438:29: error: unknown type name 'DMA_HandleTypeDef'
+ void TIM_DMACaptureHalfCplt(DMA_HandleTypeDef *hdma);
+                             ^
+In file included from ../include/stm32h7xx_hal_conf.h:370:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_uart.h:259:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef        *hdmatx;                  /*!< UART Tx DMA Handle parameters      */
+   ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_uart.h:261:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef        *hdmarx;                  /*!< UART Rx DMA Handle parameters      */
+   ^
+In file included from ../include/stm32h7xx_hal_conf.h:374:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp.c:17:
+../system/include/stm32h7x-hal/stm32h7xx_hal_usart.h:157:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef             *hdmatx;                 /*!< USART Tx DMA Handle parameters      */
+   ^
+../system/include/stm32h7x-hal/stm32h7xx_hal_usart.h:159:3: error: unknown type name 'DMA_HandleTypeDef'
+   DMA_HandleTypeDef             *hdmarx;                 /*!< USART Rx DMA Handle parameters      */
+   ^
+In file included from ../src/bsp.c:17:0:
+../include/bsp.h:73:23: fatal error: bsp_timer.h: No such file or directory
+compilation terminated.
+src/subdir.mk:30: recipe for target 'src/bsp.o' failed
+make: *** [src/bsp.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:30:11 Build Failed. 18 errors, 0 warnings. (took 336ms)
+

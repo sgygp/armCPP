@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“C8T6_LCD/include/LCD0301.h”重命名为“LCD0658.h”" description="重命名资源“LCD0301.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/LCD0301.h" name="LCD0658.h" stamp="1618485799053" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Ainstrument_Burn/双改单带反吹”重命名为“双改单带反吹burn”" description="重命名资源“双改单带反吹”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="双改单带反吹" name="双改单带反吹burn" stamp="1624499156986" updateReferences="true"/>
+</session>

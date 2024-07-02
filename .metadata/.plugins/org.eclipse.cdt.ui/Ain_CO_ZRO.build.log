@@ -1,0 +1,11 @@
+16:56:39 **** Incremental Build of configuration Debug for project Ain_CO_ZrO ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ain_CO_ZrO.elf"
+   text	   data	    bss	    dec	    hex	filename
+  51007	    200	   1496	  52703	   cddf	Ain_CO_ZrO.elf
+已结束构建： Ain_CO_ZrO.siz
+ 
+
+16:56:39 Build Finished. 0 errors, 0 warnings. (took 234ms)
+

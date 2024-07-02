@@ -1,0 +1,10 @@
+08:26:47 **** Incremental Build of configuration Debug for project test_c ****
+make all 
+正在构建目标： test_c
+正在调用： Cross G++ Linker
+g++  -o "test_c"  ./src/test_c.o   
+已结束构建目标： test_c
+ 
+
+08:26:47 Build Finished. 0 errors, 0 warnings. (took 288ms)
+

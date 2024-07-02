@@ -1,0 +1,11 @@
+16:08:28 **** Incremental Build of configuration Debug for project AinstrumentZhao_Liziliu ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentZhao_Liziliu.elf"
+   text	   data	    bss	    dec	    hex	filename
+  52111	    180	  16880	  69171	  10e33	AinstrumentZhao_Liziliu.elf
+已结束构建： AinstrumentZhao_Liziliu.siz
+ 
+
+16:08:29 Build Finished. 0 errors, 0 warnings. (took 556ms)
+

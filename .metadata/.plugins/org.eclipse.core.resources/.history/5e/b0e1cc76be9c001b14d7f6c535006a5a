@@ -1,0 +1,174 @@
+//#include "stm32f10x_conf.h"
+// ----------------------------------------------------------------------------
+//#include <stdio.h>
+//#include <stdlib.h>
+#include "diag/Trace.h"
+
+#include <Beep.h>
+#include <DS18B20.h>
+#include <string.h>
+#include <Timer2PWM.h>
+#include <usart1.h>
+#include "delay.h"
+#include "Timer.h"
+#include "BlinkLed.h"
+#include "Ainstrument.h"
+#include"Adc_Dma.h"
+#include "HistoryData.h"
+#include "math.h"
+#include "Screen.h"
+#include "WatchDog.h"
+#include "BJ.h"
+#include "CanF3.h"
+//#include <time.h>
+
+// ----- main() ---------------------------------------------------------------
+
+// Sample pragmas to cope with warnings. Please note the related line at
+// the end of this function, used to pop the compiler diagnostics status.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+void ChuliBJ(Ainstrument &ainstr, Beep &beep, BJ &baojing) {
+	if (((u8) (ainstr.getCanshuZhi(107)) & 0x02) != 0) { //高限报警
+		if (!ainstr.m_bXY) {
+			if (Timer::ms_jishu % 300 < 150)
+				Beep::turnOn();
+			else
+				Beep::turnOff();
+		}
+		baojing.turnOn1();
+	} else
+		baojing.turnOff1();
+
+	if (((u8) (ainstr.getCanshuZhi(107)) & 0x01) != 0) { //低限报警
+		if (!ainstr.m_bXY) {
+			if (Timer::ms_jishu % 600 < 300)
+				Beep::turnOn();
+			else
+				Beep::turnOff();
+		}
+		baojing.turnOn2();
+	} else
+		baojing.turnOff2();
+
+}
+
+void AinstrRun(Ainstrument &ainstr, u32 a, u32 b, float wenduS, float wendH) {
+	ainstr.setCanshuZhi(101, a);
+	ainstr.setCanshuZhi(102, b);
+	ainstr.setCanshuZhi(103, wenduS); //当前控制恒温的温度
+	ainstr.setCanshuZhi(104, wendH); //探测器温度
+	ainstr.online();
+
+}
+u16 m_adZhi[2]={0,0};
+u8 m_adOK;
+int main(int argc, char *argv[]) {
+	bool m_bWeicun = true;
+
+
+	Beep beep;
+	beep.init();
+	Beep::turnOn();
+	delay_ms(250); //开机响
+	Beep::turnOff();
+	BJ m_baojing;
+	m_baojing.init();
+
+	Ainstrument ainstr1(0); //参数存在0
+	ainstr1.init();
+//	Ainstrument ainstr2(1000); //参数存在1K(FM24CL16 内部2K空间)
+//	ainstr2.init();
+	HistoryData m_history1; //曲线初始化为24个正弦波
+//	HistoryData m_history1(&ainstr1); //曲线初始化为24个正弦波
+//	HistoryData m_history2(&ainstr2); //曲线初始化为24个正弦波
+	Screen m_screen(&ainstr1, NULL, &m_history1, NULL);
+	m_screen.start(); //先显示0号画面
+
+	Timer2PWM timer2;
+	timer2.init(4, 10000); //1.8KHz
+
+	AdcDMA m_adc;
+	m_adc.start();
+
+	Timer timer;
+	timer.start();
+	BlinkLed blinkLed;
+	blinkLed.init();
+	delay_ms(3000); //开机画面延时3秒
+
+	WatchDog dog;
+	dog.init(IWDG_Prescaler_8, 4000); //400毫秒为超时
+
+
+	DS18B20 m_ds(RCC_APB2Periph_GPIOB, GPIOB, GPIO_Pin_8, 1); //定义了4个18B20，PB12-PB15
+
+	m_ds.init();
+
+	CanF3 m_can;
+	m_can.init();
+
+	u32 ms=0;
+	while (1) {
+		__WFI();
+		if (Timer::m_bMS) {
+			Timer::m_bMS = false;
+			dog.run();
+			ms++;
+/*
+			if(ms%500==100)
+			{
+//				m_can.tx();
+				trace_puts("1");
+
+			}
+*/
+
+			if (ms % 3000 < 20) //闪烁指示灯
+				blinkLed.turnOn();
+			else
+				blinkLed.turnOff();
+
+			if (ms % 7500 < 3000) { //每7.5秒存储曲线
+				if (m_bWeicun) {
+					m_history1.WriteData(
+							ainstr1.getHanliang()
+									* pow(10, ainstr1.getCanshuZhi(2)));
+					m_screen.gengxinQuxian();
+					m_bWeicun = false;
+
+				}
+			} else {
+				m_bWeicun = true;
+			}
+			ChuliBJ(ainstr1, beep,m_baojing); //因为报警蜂鸣器的响声是以毫秒为单位，必须放在这里
+			if (ainstr1.getCanshuZhi(107) == 0) {
+				if (Timer::m_anxia == 0) //防止蜂鸣器在ON的时候报警解除后继续响
+					Beep::turnOff();
+			}
+
+
+			if (Timer::m_bSec) { //一秒一次
+				Timer::m_bSec=false;
+				m_ds.get_Temp();
+				m_screen.run();
+//					trace_printf("temp=%u,%u\n", u32(m_ds.m_wendu[0] * 100.0),u32(m_ds.m_wendu[1] * 100.0));
+			}
+			if (m_adOK) { //一秒一次
+				AinstrRun(ainstr1, m_adZhi[0], 1, m_ds.m_wendu[0],
+						m_ds.m_wendu[1]); //0为恒温温度，1为探测器温度
+				timer2.outPWM2(ainstr1.getCanshuZhi(106));
+				m_adOK = 0;
+
+
+
+			}
+			m_screen.show();
+		}
+	}
+}
+
+#pragma GCC diagnostic pop

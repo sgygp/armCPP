@@ -1,0 +1,11 @@
+11:24:26 **** Incremental Build of configuration Debug for project AinstrumentCH_H2O_Modbus_HLK ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentCH_H2O_Modbus_HLK.elf"
+   text	   data	    bss	    dec	    hex	filename
+  66399	    200	   4064	  70663	  11407	AinstrumentCH_H2O_Modbus_HLK.elf
+已结束构建： AinstrumentCH_H2O_Modbus_HLK.siz
+ 
+
+11:24:26 Build Finished. 0 errors, 0 warnings. (took 527ms)
+

@@ -1,0 +1,11 @@
+18:02:35 **** Incremental Build of configuration Debug for project F030_adxl355 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030_adxl355.elf"
+   text	   data	    bss	    dec	    hex	filename
+  36487	    196	   1036	  37719	   9357	F030_adxl355.elf
+已结束构建： F030_adxl355.siz
+ 
+
+18:02:35 Build Finished. 0 errors, 0 warnings. (took 232ms)
+

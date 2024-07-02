@@ -1,0 +1,11 @@
+16:33:37 **** Incremental Build of configuration Debug for project Ainstrument(Histroy_HL)_H2O2_BL24C04_huijing ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_H2O2_BL24C04_huijing.elf"
+   text	   data	    bss	    dec	    hex	filename
+  55423	    200	   1484	  57107	   df13	Ainstrument(Histroy_HL)_H2O2_BL24C04_huijing.elf
+已结束构建： Ainstrument(Histroy_HL)_H2O2_BL24C04_huijing.siz
+ 
+
+16:33:38 Build Finished. 0 errors, 0 warnings. (took 275ms)
+

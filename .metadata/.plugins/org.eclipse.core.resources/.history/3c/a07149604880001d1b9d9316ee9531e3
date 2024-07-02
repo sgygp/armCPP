@@ -1,0 +1,110 @@
+/*
+ * O2.cpp
+ *
+ *  Created on: 2021年8月13日
+ *      Author: Administrator
+ */
+#include "diag/Trace.h"
+#include "O2.h"
+#include "Timer.h"
+#include "string.h"
+
+O2::O2() {
+	// TODO 自动生成的构造函数存根
+	m_com1.init(19200);
+	m_NO[0]=0;
+}
+
+O2::~O2() {
+	// TODO 自动生成的析构函数存根
+}
+
+void O2::run(void) {
+	m_errJishi++;
+	if (m_errJishi >= ERROR_O2) {
+		m_bERROR = true;
+		m_errJishi = ERROR_O2;
+	} else
+		m_bERROR = false;
+	u32 d1 = 0;
+	if (!m_com1.m_data->m_shouPos)
+		return;
+	d1 = (Timer::ms5_jishu + Timer::MAXSHU - m_com1.m_data->m_curShou_ms5);
+	d1 = d1 % Timer::MAXSHU;
+	if (d1 < COM_SHOUKONGXIAN)
+		return;
+	u8 shoupos = m_com1.m_data->m_shouPos;
+	m_com1.m_data->m_shouPos = 0;
+	if (shoupos < 11)
+		return;
+
+	if (shoupos>12)
+	{
+		if(m_com1.m_data->m_SHOU[0]=='!')
+			memcpy(m_NO,m_com1.m_data->m_SHOU+1, 20);
+		trace_puts((const char *)m_NO);
+		return;
+	}
+
+	memcpy(m_buf, m_com1.m_COM_SHOU, 20);
+
+	bool isFu = false;
+	if (m_buf[0] == '-') {
+		isFu = true;
+		m_buf[0] = '0';
+	} else if (m_buf[1] == '-') {
+		isFu = true;
+		m_buf[1] = '0';
+	}
+	for (int i = 0; i < 7; i++) {
+		if (m_buf[i] == ' ')
+			m_buf[i] = '0';
+		if (i == 3) //小数点
+			continue;
+		if (m_buf[i] < '0' || m_buf[i] > '9') //不是数字，无法解析
+			return;
+		m_buf[i] -= '0';
+	}
+	int zhengshu = 0;
+	int xiaoshu = 0;
+	zhengshu = m_buf[0] * 100 + m_buf[1] * 10 + m_buf[2];
+	xiaoshu = m_buf[4] * 100 + m_buf[5] * 10 + m_buf[6];
+
+	m_errJishi = 0; //清错误计时
+
+	zhengshu = zhengshu*1000 + xiaoshu ;
+	if (isFu)
+		m_value = -zhengshu;
+	else
+		m_value = zhengshu;
+
+}
+void O2::readNO()
+{
+
+	m_com1.m_COM_FA[0]='!';
+	m_com1.m_COM_FA[1]=0x0d;
+	m_com1.m_COM_FA[2]=0x0a;
+	m_com1.FasongX(3);
+
+}
+void O2::sendData(float ff)
+{
+	ff*=100;
+	int xx=ff;
+	if(xx>9999)
+		xx=9999;
+	if(xx<0)
+		xx=0;
+	u8 a=xx/100;
+	m_com1.m_COM_FA[0]=a/10+'0';
+	m_com1.m_COM_FA[1]=a%10+'0';
+	m_com1.m_COM_FA[2]='.';
+	a=xx%100;
+	m_com1.m_COM_FA[3]=a/10+'0';
+	m_com1.m_COM_FA[4]=a%10+'0';
+	m_com1.m_COM_FA[5]=0x0d;
+	m_com1.m_COM_FA[6]=0x0a;
+	m_com1.FasongX(7);
+
+}

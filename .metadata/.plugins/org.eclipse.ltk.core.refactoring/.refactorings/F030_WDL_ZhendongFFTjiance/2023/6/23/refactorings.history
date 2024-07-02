@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“F030_WDL_ZhendongFFTjiance/Debug/F030_WDL_ZhendongFFTjiance.hex”重命名为“FFTjiance_set.hex”" description="重命名资源“F030_WDL_ZhendongFFTjiance.hex”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/F030_WDL_ZhendongFFTjiance.hex" name="FFTjiance_set.hex" stamp="1686189184984" updateReferences="true"/>
+</session>

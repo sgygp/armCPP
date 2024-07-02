@@ -1,0 +1,20 @@
+17:16:36 **** 构建 of configuration Debug for project F4ZET6_PLC2 ****
+make all 
+正在构建目标： F4ZET6_PLC2.elf
+正在调用： GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"F4ZET6_PLC2.map" --specs=nano.specs -o "F4ZET6_PLC2.elf"  ./system/src/stm32f4-stdperiph/misc.o ./system/src/stm32f4-stdperiph/stm32f4xx_adc.o ./system/src/stm32f4-stdperiph/stm32f4xx_dac.o ./system/src/stm32f4-stdperiph/stm32f4xx_dma.o ./system/src/stm32f4-stdperiph/stm32f4xx_gpio.o ./system/src/stm32f4-stdperiph/stm32f4xx_pwr.o ./system/src/stm32f4-stdperiph/stm32f4xx_rcc.o ./system/src/stm32f4-stdperiph/stm32f4xx_rtc.o ./system/src/stm32f4-stdperiph/stm32f4xx_sdio.o ./system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o ./system/src/stm32f4-stdperiph/stm32f4xx_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f407xx.o  ./src/AdcDma10.o ./src/BlinkLed.o ./src/CalendarTimer.o ./src/DACF4.o ./src/Timer.o ./src/_write.o ./src/main.o   
+已结束构建目标： F4ZET6_PLC2.elf
+ 
+正在调用： GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "F4ZET6_PLC2.elf"  "F4ZET6_PLC2.hex"
+已结束构建： F4ZET6_PLC2.hex
+ 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "F4ZET6_PLC2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13415	    176	  10444	  24035	   5de3	F4ZET6_PLC2.elf
+已结束构建： F4ZET6_PLC2.siz
+ 
+
+17:16:37 Build Finished. 0 errors, 0 warnings. (took 1s.250ms)
+

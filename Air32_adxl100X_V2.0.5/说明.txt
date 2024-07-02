@@ -1,0 +1,6 @@
+
+1，c++构建设置中C++link General 中去掉Do not use standard start files (-nostartfiles)
+2，c++构建设置中C++link 改为AIR32F103XB_FLASH.ld
+3，ld文件添加了sections.ld中的一部分，要不会提示“_end_noinit”找不到
+4，在使用时用到的air32中的c文件，移动到src文件夹中
+5.TRACE指令在调试时可以打开，最终下载必须注释掉

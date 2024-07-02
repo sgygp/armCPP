@@ -1,0 +1,5 @@
+architecture=cortex-m3
+board=---  none ---
+chip=STM32F10X_MD
+eclipse.preferences.version=1
+vendor=STMicro

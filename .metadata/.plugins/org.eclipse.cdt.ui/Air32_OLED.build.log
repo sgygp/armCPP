@@ -1,0 +1,11 @@
+11:09:13 **** Incremental Build of configuration Debug for project Air32_OLED ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_OLED.elf"
+   text	   data	    bss	    dec	    hex	filename
+   7392	    132	   2044	   9568	   2560	Air32_OLED.elf
+已结束构建： Air32_OLED.siz
+ 
+
+11:09:13 Build Finished. 0 errors, 0 warnings. (took 251ms)
+

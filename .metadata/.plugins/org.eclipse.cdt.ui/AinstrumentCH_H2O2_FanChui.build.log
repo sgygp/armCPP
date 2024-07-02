@@ -1,0 +1,11 @@
+10:49:27 **** Incremental Build of configuration Debug for project AinstrumentCH_H2O2_FanChui ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentCH_H2O2_FanChui.elf"
+   text	   data	    bss	    dec	    hex	filename
+  49667	    196	   2060	  51923	   cad3	AinstrumentCH_H2O2_FanChui.elf
+已结束构建： AinstrumentCH_H2O2_FanChui.siz
+ 
+
+10:49:28 Build Finished. 0 errors, 0 warnings. (took 482ms)
+

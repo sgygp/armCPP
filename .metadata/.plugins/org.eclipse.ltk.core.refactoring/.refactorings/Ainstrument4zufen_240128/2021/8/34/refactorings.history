@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Ainstrument4zufen_240128/include/Timer4PWM2.h”重命名为“TimerPWM.h”" description="重命名资源“Timer4PWM2.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/Timer4PWM2.h" name="TimerPWM.h" stamp="1629257814568" updateReferences="true"/>&#x0A;<refactoring comment="将资源“Ainstrument4zufen_240128/src/Timer4PWM2.cpp”重命名为“TimerPWM.cpp”" description="重命名资源“Timer4PWM2.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Timer4PWM2.cpp" name="TimerPWM.cpp" stamp="1629257852560" updateReferences="true"/>
+</session>

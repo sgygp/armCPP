@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“7H7B0_SD/FATFS/MyFATdef.c”重命名为“MyFATdef.h”" description="重命名资源“MyFATdef.c”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FATFS/MyFATdef.c" name="MyFATdef.h" stamp="1712820504290" updateReferences="true"/>
+</session>

@@ -1,0 +1,94 @@
+#include <antdata/Terminal.h>
+//#include "diag/Trace.h"
+#include "Timer.h"
+#include "BlinkLed.h"
+#include"WatchDog.h"
+#include "antdata/AntData_Device.h"
+#include "antdata/AntData_Huanjing.h"
+#include "Screen.h"
+#include "delay.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
+bool AntData_Device::YuanKong;
+u32 AntData_Device::KeyWord;
+u32 AntData_Device::m_jicunqiValue;
+
+int main(int argc, char *argv[]) {
+	AntData_PortSet::init(); //输入输出口初始化
+	Timer timer; //创建一个定时器
+	timer.start();
+	BlinkLed blinkLed; //创建一个闪烁灯
+	blinkLed.init();
+	WatchDog m_dog; //养一只狗
+	m_dog.init(IWDG_Prescaler_8, 400); //400毫秒为超时
+	AT24C16 m_24c02; //创建一个存储器
+	m_24c02.Init();
+	CTime m_time; //创建一个时钟
+	m_time.set(m_24c02);
+	m_time.ReadTime();
+	AntData_Huanjing m_data; //创建一个环境数据单元,485主机，用地址16发送读取数据
+	m_data.init();
+	AntData_Device m_devices[8];	//创建一个设备集合
+	AntData_Device::set(&m_24c02, &m_data, &m_time);
+//	AntData_Device::testOut(); //测试输出灯是否正常
+	m_devices[0] = AntData_Device(0, true);      //卷帘1电机类
+	m_devices[1] = AntData_Device(1, true);      //卷帘2电机类
+	m_devices[2] = AntData_Device(2, true);     //卷膜1电机类
+	m_devices[3] = AntData_Device(3, true);     //卷膜2电机类
+	m_devices[4] = AntData_Device(4, false);    //风机1不是电机类型，开关型
+	m_devices[5] = AntData_Device(5, false);    //风机,2不是电机类型，开关型
+	m_devices[6] = AntData_Device(6, false);   //照明1不是电机类型，开关型
+	m_devices[7] = AntData_Device(7, false);    //照明2不是电机类型，开关型
+	Terminal m_terminal;	//创建一个485从机（终端）（含4G收发）
+	m_terminal.init(m_devices);
+	Screen m_screen; //创建一个显示屏
+	m_screen.start(m_devices, &m_terminal);
+	for (int i = 0; i < 30; i++) {
+		m_dog.run(); //看门狗喂好
+		delay_ms(100);
+	}
+
+	u32 m_MSgeshu = 0;
+	while (1) {
+		__WFI(); //程序小睡一会儿
+		if (Timer::m_bMS5) { //每5毫秒进入执行一下
+			Timer::m_bMS5 = false;
+			m_MSgeshu += 5;
+			m_dog.run(); //看门狗喂好
+			m_terminal.run();
+			m_data.run();
+			m_screen.show();
+
+			if (m_MSgeshu % 3000 < 20) //闪烁指示灯
+				blinkLed.turnOn();
+			else
+				blinkLed.turnOff();
+			if (m_MSgeshu % 500 == 0) //每0.5秒去看看有没有要执行的命令
+				m_data.DoCommand();
+			if (m_MSgeshu % (1000 * m_data.m_chaxunzhouqi) == 0)
+				m_data.putReadCommand();
+
+			u16 a = m_MSgeshu % 1000;
+			if (a == 600) { //每秒
+				m_time.ReadTime();
+			} else if (a == 300) { //每秒
+				m_screen.run();
+			}
+			if (!m_terminal.m_isConect && m_terminal.m_lock.m_connectCtr)
+				continue;
+			u16 b = a / 125;
+			if (a == b * 125) { //每秒轮回8个，正好一遍
+				if (a == 0)  //读取按键值
+					AntData_Device::KeyWord = AntData_PortSet::getKeyWords();
+				m_devices[b].run();
+			}
+
+		}
+	}
+}
+#pragma GCC diagnostic pop
+

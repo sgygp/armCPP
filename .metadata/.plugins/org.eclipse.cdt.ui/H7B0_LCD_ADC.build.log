@@ -1,0 +1,14 @@
+17:37:35 **** Incremental Build of configuration Debug for project H7B0_LCD_ADC ****
+make all 
+正在构建目标： H7B0_LCD_ADC.elf
+正在调用： GNU Arm Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T sections.ld -T libs.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"H7B0_LCD_ADC.map" --specs=nano.specs -o "H7B0_LCD_ADC.elf"  ./system/src/stm32h7x-hal/stm32h7xx_hal.o ./system/src/stm32h7x-hal/stm32h7xx_hal_adc.o ./system/src/stm32h7x-hal/stm32h7xx_hal_adc_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_cortex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_exti.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_gpio.o ./system/src/stm32h7x-hal/stm32h7xx_hal_hsem.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_mdma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_spi.o ./system/src/stm32h7x-hal/stm32h7xx_hal_spi_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_uart.o ./system/src/stm32h7x-hal/stm32h7xx_hal_uart_ex.o ./system/src/stm32h7x-hal/system_stm32h7xx.o  ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/vectors_stm32f767xx.o  ./src/BSP_SPI.o ./src/LEDrgb.o ./src/Tft114.o ./src/gpio.o ./src/main.o ./src/spi.o ./src/stm32h7xx_it.o ./src/tftlcd.o  ./KissFFT/kfc.o ./KissFFT/kiss_fft.o ./KissFFT/kiss_fftnd.o ./KissFFT/kiss_fftndr.o ./KissFFT/kiss_fftr.o   
+./src/stm32h7xx_it.o: In function `DMA1_Stream0_IRQHandler':
+E:\2024\armCPP\H7B0_LCD_ADC\Debug/../src/stm32h7xx_it.cpp:7: undefined reference to `hdma_adc1'
+collect2.exe: error: ld returned 1 exit status
+makefile:63: recipe for target 'H7B0_LCD_ADC.elf' failed
+make: *** [H7B0_LCD_ADC.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+17:37:36 Build Failed. 3 errors, 0 warnings. (took 631ms)
+

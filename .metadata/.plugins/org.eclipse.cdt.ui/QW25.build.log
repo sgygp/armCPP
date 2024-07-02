@@ -1,0 +1,558 @@
+11:52:35 **** Incremental Build of configuration Debug for project QW25 ****
+make all 
+正在构建文件： ../system/src/stm32h7x-hal/stm32h7xx_hal_qspi.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu11 -MMD -MP -MF"system/src/stm32h7x-hal/stm32h7xx_hal_qspi.d" -MT"system/src/stm32h7x-hal/stm32h7xx_hal_qspi.o" -c -o "system/src/stm32h7x-hal/stm32h7xx_hal_qspi.o" "../system/src/stm32h7x-hal/stm32h7xx_hal_qspi.c"
+已结束构建： ../system/src/stm32h7x-hal/stm32h7xx_hal_qspi.c
+ 
+正在构建文件： ../src/bsp_qspi_w25q256.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu11 -MMD -MP -MF"src/bsp_qspi_w25q256.d" -MT"src/bsp_qspi_w25q256.o" -c -o "src/bsp_qspi_w25q256.o" "../src/bsp_qspi_w25q256.c"
+../src/bsp_qspi_w25q256.c:70:8: error: unknown type name 'QSPI_HandleTypeDef'
+ static QSPI_HandleTypeDef  QSPIHandle;
+        ^
+../src/bsp_qspi_w25q256.c:74:30: error: unknown type name 'QSPI_HandleTypeDef'
+ static void QSPI_WriteEnable(QSPI_HandleTypeDef *hqspi);
+                              ^
+../src/bsp_qspi_w25q256.c:75:38: error: unknown type name 'QSPI_HandleTypeDef'
+ static void QSPI_AutoPollingMemReady(QSPI_HandleTypeDef *hqspi);
+                                      ^
+../src/bsp_qspi_w25q256.c: In function 'bsp_InitQSPI_W25Q256':
+../src/bsp_qspi_w25q256.c:89:12: error: request for member 'Instance' in something not a structure or union
+  QSPIHandle.Instance = QUADSPI;
+            ^
+../src/bsp_qspi_w25q256.c:89:24: error: 'QUADSPI' undeclared (first use in this function)
+  QSPIHandle.Instance = QUADSPI;
+                        ^
+../src/bsp_qspi_w25q256.c:89:24: note: each undeclared identifier is reported only once for each function it appears in
+../src/bsp_qspi_w25q256.c:90:6: warning: implicit declaration of function 'HAL_QSPI_DeInit' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_DeInit(&QSPIHandle) != HAL_OK)
+      ^
+../src/bsp_qspi_w25q256.c:96:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.ClockPrescaler  = 1;  
+            ^
+../src/bsp_qspi_w25q256.c:99:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.FifoThreshold   = 32; 
+            ^
+../src/bsp_qspi_w25q256.c:105:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.SampleShifting  = QSPI_SAMPLE_SHIFTING_HALFCYCLE; 
+            ^
+../src/bsp_qspi_w25q256.c:105:36: error: 'QSPI_SAMPLE_SHIFTING_HALFCYCLE' undeclared (first use in this function)
+  QSPIHandle.Init.SampleShifting  = QSPI_SAMPLE_SHIFTING_HALFCYCLE; 
+                                    ^
+../src/bsp_qspi_w25q256.c:109:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.FlashSize       = QSPI_FLASH_SIZE; 
+            ^
+../src/bsp_qspi_w25q256.c:112:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_2_CYCLE;
+            ^
+../src/bsp_qspi_w25q256.c:112:39: error: 'QSPI_CS_HIGH_TIME_2_CYCLE' undeclared (first use in this function)
+  QSPIHandle.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_2_CYCLE;
+                                       ^
+../src/bsp_qspi_w25q256.c:118:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.ClockMode = QSPI_CLOCK_MODE_0;
+            ^
+../src/bsp_qspi_w25q256.c:118:30: error: 'QSPI_CLOCK_MODE_0' undeclared (first use in this function)
+  QSPIHandle.Init.ClockMode = QSPI_CLOCK_MODE_0;
+                              ^
+../src/bsp_qspi_w25q256.c:121:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.FlashID   = QSPI_FLASH_ID_1;
+            ^
+../src/bsp_qspi_w25q256.c:121:30: error: 'QSPI_FLASH_ID_1' undeclared (first use in this function)
+  QSPIHandle.Init.FlashID   = QSPI_FLASH_ID_1;
+                              ^
+../src/bsp_qspi_w25q256.c:124:12: error: request for member 'Init' in something not a structure or union
+  QSPIHandle.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
+            ^
+../src/bsp_qspi_w25q256.c:124:30: error: 'QSPI_DUALFLASH_DISABLE' undeclared (first use in this function)
+  QSPIHandle.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
+                              ^
+../src/bsp_qspi_w25q256.c:127:6: warning: implicit declaration of function 'HAL_QSPI_Init' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Init(&QSPIHandle) != HAL_OK)
+      ^
+../src/bsp_qspi_w25q256.c: At top level:
+../src/bsp_qspi_w25q256.c:141:23: error: unknown type name 'QSPI_HandleTypeDef'
+ void HAL_QSPI_MspInit(QSPI_HandleTypeDef *hqspi)
+                       ^
+../src/bsp_qspi_w25q256.c:238:25: error: unknown type name 'QSPI_HandleTypeDef'
+ void HAL_QSPI_MspDeInit(QSPI_HandleTypeDef *hqspi)
+                         ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_EraseSector':
+../src/bsp_qspi_w25q256.c:266:2: error: unknown type name 'QSPI_CommandTypeDef'
+  QSPI_CommandTypeDef sCommand={0};
+  ^
+../src/bsp_qspi_w25q256.c:272:2: warning: implicit declaration of function 'QSPI_WriteEnable' [-Wimplicit-function-declaration]
+  QSPI_WriteEnable(&QSPIHandle); 
+  ^
+../src/bsp_qspi_w25q256.c:275:10: error: request for member 'InstructionMode' in something not a structure or union
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+          ^
+../src/bsp_qspi_w25q256.c:275:31: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+                               ^
+../src/bsp_qspi_w25q256.c:276:10: error: request for member 'AddressSize' in something not a structure or union
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+          ^
+../src/bsp_qspi_w25q256.c:276:31: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+                               ^
+../src/bsp_qspi_w25q256.c:277:10: error: request for member 'AlternateByteMode' in something not a structure or union
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+          ^
+../src/bsp_qspi_w25q256.c:277:31: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+                               ^
+../src/bsp_qspi_w25q256.c:278:10: error: request for member 'DdrMode' in something not a structure or union
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+          ^
+../src/bsp_qspi_w25q256.c:278:31: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+                               ^
+../src/bsp_qspi_w25q256.c:279:10: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+          ^
+../src/bsp_qspi_w25q256.c:279:31: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+                               ^
+../src/bsp_qspi_w25q256.c:280:10: error: request for member 'SIOOMode' in something not a structure or union
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输都发指令 */ 
+          ^
+../src/bsp_qspi_w25q256.c:280:31: error: 'QSPI_SIOO_INST_EVERY_CMD' undeclared (first use in this function)
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输都发指令 */ 
+                               ^
+../src/bsp_qspi_w25q256.c:283:10: error: request for member 'Instruction' in something not a structure or union
+  sCommand.Instruction = SUBSECTOR_ERASE_4_BYTE_ADDR_CMD;   /* 32bit地址方式的扇区擦除命令，扇区大小4KB*/       
+          ^
+../src/bsp_qspi_w25q256.c:284:10: error: request for member 'AddressMode' in something not a structure or union
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE;  /* 地址发送是1线方式 */       
+          ^
+../src/bsp_qspi_w25q256.c:284:25: error: 'QSPI_ADDRESS_1_LINE' undeclared (first use in this function)
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE;  /* 地址发送是1线方式 */       
+                         ^
+../src/bsp_qspi_w25q256.c:285:10: error: request for member 'Address' in something not a structure or union
+  sCommand.Address     = _uiSectorAddr;        /* 扇区首地址，保证是4KB整数倍 */    
+          ^
+../src/bsp_qspi_w25q256.c:286:10: error: request for member 'DataMode' in something not a structure or union
+  sCommand.DataMode    = QSPI_DATA_NONE;       /* 无需发送数据 */  
+          ^
+../src/bsp_qspi_w25q256.c:286:25: error: 'QSPI_DATA_NONE' undeclared (first use in this function)
+  sCommand.DataMode    = QSPI_DATA_NONE;       /* 无需发送数据 */  
+                         ^
+../src/bsp_qspi_w25q256.c:287:10: error: request for member 'DummyCycles' in something not a structure or union
+  sCommand.DummyCycles = 0;                    /* 无需空周期 */  
+          ^
+../src/bsp_qspi_w25q256.c:289:6: warning: implicit declaration of function 'HAL_QSPI_Command_IT' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Command_IT(&QSPIHandle, &sCommand) != HAL_OK)
+      ^
+../src/bsp_qspi_w25q256.c:300:2: warning: implicit declaration of function 'QSPI_AutoPollingMemReady' [-Wimplicit-function-declaration]
+  QSPI_AutoPollingMemReady(&QSPIHandle); 
+  ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_EraseChip':
+../src/bsp_qspi_w25q256.c:315:2: error: unknown type name 'QSPI_CommandTypeDef'
+  QSPI_CommandTypeDef sCommand={0};
+  ^
+../src/bsp_qspi_w25q256.c:324:10: error: request for member 'InstructionMode' in something not a structure or union
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+          ^
+../src/bsp_qspi_w25q256.c:324:31: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+                               ^
+../src/bsp_qspi_w25q256.c:325:10: error: request for member 'AddressSize' in something not a structure or union
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+          ^
+../src/bsp_qspi_w25q256.c:325:31: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+                               ^
+../src/bsp_qspi_w25q256.c:326:10: error: request for member 'AlternateByteMode' in something not a structure or union
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+          ^
+../src/bsp_qspi_w25q256.c:326:31: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+                               ^
+../src/bsp_qspi_w25q256.c:327:10: error: request for member 'DdrMode' in something not a structure or union
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+          ^
+../src/bsp_qspi_w25q256.c:327:31: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+                               ^
+../src/bsp_qspi_w25q256.c:328:10: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+          ^
+../src/bsp_qspi_w25q256.c:328:31: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+                               ^
+../src/bsp_qspi_w25q256.c:329:10: error: request for member 'SIOOMode' in something not a structure or union
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输都发指令 */ 
+          ^
+../src/bsp_qspi_w25q256.c:329:31: error: 'QSPI_SIOO_INST_EVERY_CMD' undeclared (first use in this function)
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输都发指令 */ 
+                               ^
+../src/bsp_qspi_w25q256.c:332:10: error: request for member 'Instruction' in something not a structure or union
+  sCommand.Instruction = BULK_ERASE_CMD;       /* 整个芯片擦除命令*/       
+          ^
+../src/bsp_qspi_w25q256.c:333:10: error: request for member 'AddressMode' in something not a structure or union
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE;  /* 地址发送是1线方式 */       
+          ^
+../src/bsp_qspi_w25q256.c:333:25: error: 'QSPI_ADDRESS_1_LINE' undeclared (first use in this function)
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE;  /* 地址发送是1线方式 */       
+                         ^
+../src/bsp_qspi_w25q256.c:334:10: error: request for member 'Address' in something not a structure or union
+  sCommand.Address     = 0;                    /* 地址 */    
+          ^
+../src/bsp_qspi_w25q256.c:335:10: error: request for member 'DataMode' in something not a structure or union
+  sCommand.DataMode    = QSPI_DATA_NONE;       /* 无需发送数据 */  
+          ^
+../src/bsp_qspi_w25q256.c:335:25: error: 'QSPI_DATA_NONE' undeclared (first use in this function)
+  sCommand.DataMode    = QSPI_DATA_NONE;       /* 无需发送数据 */  
+                         ^
+../src/bsp_qspi_w25q256.c:336:10: error: request for member 'DummyCycles' in something not a structure or union
+  sCommand.DummyCycles = 0;                    /* 无需空周期 */  
+          ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_WriteBuffer':
+../src/bsp_qspi_w25q256.c:366:2: error: unknown type name 'QSPI_CommandTypeDef'
+  QSPI_CommandTypeDef sCommand={0};
+  ^
+../src/bsp_qspi_w25q256.c:375:10: error: request for member 'InstructionMode' in something not a structure or union
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+          ^
+../src/bsp_qspi_w25q256.c:375:31: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+                               ^
+../src/bsp_qspi_w25q256.c:376:10: error: request for member 'AddressSize' in something not a structure or union
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+          ^
+../src/bsp_qspi_w25q256.c:376:31: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+                               ^
+../src/bsp_qspi_w25q256.c:377:10: error: request for member 'AlternateByteMode' in something not a structure or union
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+          ^
+../src/bsp_qspi_w25q256.c:377:31: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+                               ^
+../src/bsp_qspi_w25q256.c:378:10: error: request for member 'DdrMode' in something not a structure or union
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+          ^
+../src/bsp_qspi_w25q256.c:378:31: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+                               ^
+../src/bsp_qspi_w25q256.c:379:10: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+          ^
+../src/bsp_qspi_w25q256.c:379:31: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+                               ^
+../src/bsp_qspi_w25q256.c:380:10: error: request for member 'SIOOMode' in something not a structure or union
+  sCommand.SIOOMode          = QSPI_SIOO_INST_ONLY_FIRST_CMD;  /* 仅发送一次命令 */ 
+          ^
+../src/bsp_qspi_w25q256.c:380:31: error: 'QSPI_SIOO_INST_ONLY_FIRST_CMD' undeclared (first use in this function)
+  sCommand.SIOOMode          = QSPI_SIOO_INST_ONLY_FIRST_CMD;  /* 仅发送一次命令 */ 
+                               ^
+../src/bsp_qspi_w25q256.c:383:10: error: request for member 'Instruction' in something not a structure or union
+  sCommand.Instruction = QUAD_IN_FAST_PROG_4_BYTE_ADDR_CMD; /* 32bit地址的4线快速写入命令 */
+          ^
+../src/bsp_qspi_w25q256.c:384:10: error: request for member 'DummyCycles' in something not a structure or union
+  sCommand.DummyCycles = 0;                    /* 不需要空周期 */
+          ^
+../src/bsp_qspi_w25q256.c:385:10: error: request for member 'AddressMode' in something not a structure or union
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE; /* 4线地址方式 */
+          ^
+../src/bsp_qspi_w25q256.c:385:25: error: 'QSPI_ADDRESS_1_LINE' undeclared (first use in this function)
+  sCommand.AddressMode = QSPI_ADDRESS_1_LINE; /* 4线地址方式 */
+                         ^
+../src/bsp_qspi_w25q256.c:386:10: error: request for member 'DataMode' in something not a structure or union
+  sCommand.DataMode    = QSPI_DATA_4_LINES;    /* 4线数据方式 */
+          ^
+../src/bsp_qspi_w25q256.c:386:25: error: 'QSPI_DATA_4_LINES' undeclared (first use in this function)
+  sCommand.DataMode    = QSPI_DATA_4_LINES;    /* 4线数据方式 */
+                         ^
+../src/bsp_qspi_w25q256.c:387:10: error: request for member 'NbData' in something not a structure or union
+  sCommand.NbData      = _usWriteSize;         /* 写数据大小 */   
+          ^
+../src/bsp_qspi_w25q256.c:388:10: error: request for member 'Address' in something not a structure or union
+  sCommand.Address     = _uiWriteAddr;         /* 写入地址 */
+          ^
+../src/bsp_qspi_w25q256.c:390:6: warning: implicit declaration of function 'HAL_QSPI_Command' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Command(&QSPIHandle, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+      ^
+In file included from ../system/include/stm32h7x-hal/stm32h7xx_hal_def.h:34:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal_rcc.h:27,
+                 from ../include/stm32h7xx_hal_conf.h:246,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp_qspi_w25q256.c:18:
+../system/include/stm32h7x-hal/Legacy/stm32_hal_legacy.h:3997:40: error: 'HAL_QSPI_TIMEOUT_DEFAULT_VALUE' undeclared (first use in this function)
+ #define HAL_QPSI_TIMEOUT_DEFAULT_VALUE HAL_QSPI_TIMEOUT_DEFAULT_VALUE
+                                        ^
+../src/bsp_qspi_w25q256.c:390:47: note: in expansion of macro 'HAL_QPSI_TIMEOUT_DEFAULT_VALUE'
+  if (HAL_QSPI_Command(&QSPIHandle, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+                                               ^
+../src/bsp_qspi_w25q256.c:396:6: warning: implicit declaration of function 'HAL_QSPI_Transmit_DMA' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Transmit_DMA(&QSPIHandle, _pBuf) != HAL_OK)
+      ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_ReadBuffer':
+../src/bsp_qspi_w25q256.c:427:2: error: unknown type name 'QSPI_CommandTypeDef'
+  QSPI_CommandTypeDef sCommand = {0};
+  ^
+../src/bsp_qspi_w25q256.c:433:10: error: request for member 'InstructionMode' in something not a structure or union
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;     /* 1线方式发送指令 */
+          ^
+../src/bsp_qspi_w25q256.c:433:31: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+  sCommand.InstructionMode   = QSPI_INSTRUCTION_1_LINE;     /* 1线方式发送指令 */
+                               ^
+../src/bsp_qspi_w25q256.c:434:10: error: request for member 'AddressSize' in something not a structure or union
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+          ^
+../src/bsp_qspi_w25q256.c:434:31: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+  sCommand.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+                               ^
+../src/bsp_qspi_w25q256.c:435:10: error: request for member 'AlternateByteMode' in something not a structure or union
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;   /* 无交替字节 */
+          ^
+../src/bsp_qspi_w25q256.c:435:31: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+  sCommand.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;   /* 无交替字节 */
+                               ^
+../src/bsp_qspi_w25q256.c:436:10: error: request for member 'DdrMode' in something not a structure or union
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;       /* W25Q256JV不支持DDR */
+          ^
+../src/bsp_qspi_w25q256.c:436:31: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+  sCommand.DdrMode           = QSPI_DDR_MODE_DISABLE;       /* W25Q256JV不支持DDR */
+                               ^
+../src/bsp_qspi_w25q256.c:437:10: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;   /* DDR模式，数据输出延迟 */
+          ^
+../src/bsp_qspi_w25q256.c:437:31: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+  sCommand.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;   /* DDR模式，数据输出延迟 */
+                               ^
+../src/bsp_qspi_w25q256.c:438:10: error: request for member 'SIOOMode' in something not a structure or union
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输要发指令 */ 
+          ^
+../src/bsp_qspi_w25q256.c:438:31: error: 'QSPI_SIOO_INST_EVERY_CMD' undeclared (first use in this function)
+  sCommand.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;  /* 每次传输要发指令 */ 
+                               ^
+../src/bsp_qspi_w25q256.c:441:10: error: request for member 'Instruction' in something not a structure or union
+  sCommand.Instruction = QUAD_INOUT_FAST_READ_4_BYTE_ADDR_CMD; /* 32bit地址的4线快速读取命令 */
+          ^
+../src/bsp_qspi_w25q256.c:442:10: error: request for member 'DummyCycles' in something not a structure or union
+  sCommand.DummyCycles = 6;                    /* 空周期 */
+          ^
+../src/bsp_qspi_w25q256.c:443:10: error: request for member 'AddressMode' in something not a structure or union
+  sCommand.AddressMode = QSPI_ADDRESS_4_LINES; /* 4线地址 */
+          ^
+../src/bsp_qspi_w25q256.c:443:25: error: 'QSPI_ADDRESS_4_LINES' undeclared (first use in this function)
+  sCommand.AddressMode = QSPI_ADDRESS_4_LINES; /* 4线地址 */
+                         ^
+../src/bsp_qspi_w25q256.c:444:10: error: request for member 'DataMode' in something not a structure or union
+  sCommand.DataMode    = QSPI_DATA_4_LINES;    /* 4线数据 */ 
+          ^
+../src/bsp_qspi_w25q256.c:444:25: error: 'QSPI_DATA_4_LINES' undeclared (first use in this function)
+  sCommand.DataMode    = QSPI_DATA_4_LINES;    /* 4线数据 */ 
+                         ^
+../src/bsp_qspi_w25q256.c:445:10: error: request for member 'NbData' in something not a structure or union
+  sCommand.NbData      = _uiSize;              /* 读取的数据大小 */ 
+          ^
+../src/bsp_qspi_w25q256.c:446:10: error: request for member 'Address' in something not a structure or union
+  sCommand.Address     = _uiReadAddr;          /* 读取数据的起始地址 */ 
+          ^
+In file included from ../system/include/stm32h7x-hal/stm32h7xx_hal_def.h:34:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal_rcc.h:27,
+                 from ../include/stm32h7xx_hal_conf.h:246,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp_qspi_w25q256.c:18:
+../system/include/stm32h7x-hal/Legacy/stm32_hal_legacy.h:3997:40: error: 'HAL_QSPI_TIMEOUT_DEFAULT_VALUE' undeclared (first use in this function)
+ #define HAL_QPSI_TIMEOUT_DEFAULT_VALUE HAL_QSPI_TIMEOUT_DEFAULT_VALUE
+                                        ^
+../src/bsp_qspi_w25q256.c:448:47: note: in expansion of macro 'HAL_QPSI_TIMEOUT_DEFAULT_VALUE'
+  if (HAL_QSPI_Command(&QSPIHandle, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+                                               ^
+../src/bsp_qspi_w25q256.c:454:6: warning: implicit declaration of function 'HAL_QSPI_Receive_DMA' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Receive_DMA(&QSPIHandle, _pBuf) != HAL_OK)
+      ^
+../src/bsp_qspi_w25q256.c: At top level:
+../src/bsp_qspi_w25q256.c:472:30: error: unknown type name 'QSPI_HandleTypeDef'
+ static void QSPI_WriteEnable(QSPI_HandleTypeDef *hqspi)
+                              ^
+../src/bsp_qspi_w25q256.c:510:38: error: unknown type name 'QSPI_HandleTypeDef'
+ static void QSPI_AutoPollingMemReady(QSPI_HandleTypeDef *hqspi)
+                                      ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_MemoryMapped':
+../src/bsp_qspi_w25q256.c:554:5: error: unknown type name 'QSPI_CommandTypeDef'
+     QSPI_CommandTypeDef s_command = {0};
+     ^
+../src/bsp_qspi_w25q256.c:555:5: error: unknown type name 'QSPI_MemoryMappedTypeDef'
+     QSPI_MemoryMappedTypeDef s_mem_mapped_cfg = {0};
+     ^
+../src/bsp_qspi_w25q256.c:558:14: error: request for member 'InstructionMode' in something not a structure or union
+     s_command.InstructionMode = QSPI_INSTRUCTION_1_LINE;      /* 1线方式发送指令 */ 
+              ^
+../src/bsp_qspi_w25q256.c:558:33: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+     s_command.InstructionMode = QSPI_INSTRUCTION_1_LINE;      /* 1线方式发送指令 */ 
+                                 ^
+../src/bsp_qspi_w25q256.c:559:14: error: request for member 'AddressSize' in something not a structure or union
+     s_command.AddressSize = QSPI_ADDRESS_32_BITS;             /* 32位地址 */
+              ^
+../src/bsp_qspi_w25q256.c:559:29: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+     s_command.AddressSize = QSPI_ADDRESS_32_BITS;             /* 32位地址 */
+                             ^
+../src/bsp_qspi_w25q256.c:560:14: error: request for member 'AlternateByteMode' in something not a structure or union
+     s_command.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+              ^
+../src/bsp_qspi_w25q256.c:560:35: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+     s_command.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+                                   ^
+../src/bsp_qspi_w25q256.c:561:14: error: request for member 'DdrMode' in something not a structure or union
+     s_command.DdrMode = QSPI_DDR_MODE_DISABLE;                /* W25Q256JV不支持DDR */
+              ^
+../src/bsp_qspi_w25q256.c:561:25: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+     s_command.DdrMode = QSPI_DDR_MODE_DISABLE;                /* W25Q256JV不支持DDR */
+                         ^
+../src/bsp_qspi_w25q256.c:562:14: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+     s_command.DdrHoldHalfCycle = QSPI_DDR_HHC_ANALOG_DELAY;   /* DDR模式，数据输出延迟 */
+              ^
+../src/bsp_qspi_w25q256.c:562:34: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+     s_command.DdrHoldHalfCycle = QSPI_DDR_HHC_ANALOG_DELAY;   /* DDR模式，数据输出延迟 */
+                                  ^
+../src/bsp_qspi_w25q256.c:563:14: error: request for member 'SIOOMode' in something not a structure or union
+     s_command.SIOOMode = QSPI_SIOO_INST_EVERY_CMD;            /* 每次传输都发指令 */
+              ^
+../src/bsp_qspi_w25q256.c:563:26: error: 'QSPI_SIOO_INST_EVERY_CMD' undeclared (first use in this function)
+     s_command.SIOOMode = QSPI_SIOO_INST_EVERY_CMD;            /* 每次传输都发指令 */
+                          ^
+../src/bsp_qspi_w25q256.c:566:14: error: request for member 'Instruction' in something not a structure or union
+     s_command.Instruction = QUAD_INOUT_FAST_READ_4_BYTE_ADDR_CMD; /* 快速读取命令 */
+              ^
+../src/bsp_qspi_w25q256.c:567:14: error: request for member 'AddressMode' in something not a structure or union
+     s_command.AddressMode = QSPI_ADDRESS_4_LINES;                 /* 4个地址线 */
+              ^
+../src/bsp_qspi_w25q256.c:567:29: error: 'QSPI_ADDRESS_4_LINES' undeclared (first use in this function)
+     s_command.AddressMode = QSPI_ADDRESS_4_LINES;                 /* 4个地址线 */
+                             ^
+../src/bsp_qspi_w25q256.c:568:14: error: request for member 'DataMode' in something not a structure or union
+     s_command.DataMode = QSPI_DATA_4_LINES;                       /* 4个数据线 */
+              ^
+../src/bsp_qspi_w25q256.c:568:26: error: 'QSPI_DATA_4_LINES' undeclared (first use in this function)
+     s_command.DataMode = QSPI_DATA_4_LINES;                       /* 4个数据线 */
+                          ^
+../src/bsp_qspi_w25q256.c:569:14: error: request for member 'DummyCycles' in something not a structure or union
+     s_command.DummyCycles = 6;                                    /* 空周期 */
+              ^
+../src/bsp_qspi_w25q256.c:572:21: error: request for member 'TimeOutActivation' in something not a structure or union
+     s_mem_mapped_cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
+                     ^
+../src/bsp_qspi_w25q256.c:572:42: error: 'QSPI_TIMEOUT_COUNTER_DISABLE' undeclared (first use in this function)
+     s_mem_mapped_cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
+                                          ^
+../src/bsp_qspi_w25q256.c:573:21: error: request for member 'TimeOutPeriod' in something not a structure or union
+     s_mem_mapped_cfg.TimeOutPeriod = 0;
+                     ^
+../src/bsp_qspi_w25q256.c:575:9: warning: implicit declaration of function 'HAL_QSPI_MemoryMapped' [-Wimplicit-function-declaration]
+     if (HAL_QSPI_MemoryMapped(&QSPIHandle, &s_command, &s_mem_mapped_cfg) != HAL_OK)
+         ^
+../src/bsp_qspi_w25q256.c: In function 'QSPI_ReadID':
+../src/bsp_qspi_w25q256.c:592:2: error: unknown type name 'QSPI_CommandTypeDef'
+  QSPI_CommandTypeDef s_command = {0};
+  ^
+../src/bsp_qspi_w25q256.c:596:11: error: request for member 'InstructionMode' in something not a structure or union
+  s_command.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+           ^
+../src/bsp_qspi_w25q256.c:596:32: error: 'QSPI_INSTRUCTION_1_LINE' undeclared (first use in this function)
+  s_command.InstructionMode   = QSPI_INSTRUCTION_1_LINE;    /* 1线方式发送指令 */
+                                ^
+../src/bsp_qspi_w25q256.c:597:11: error: request for member 'AddressSize' in something not a structure or union
+  s_command.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+           ^
+../src/bsp_qspi_w25q256.c:597:32: error: 'QSPI_ADDRESS_32_BITS' undeclared (first use in this function)
+  s_command.AddressSize       = QSPI_ADDRESS_32_BITS;       /* 32位地址 */
+                                ^
+../src/bsp_qspi_w25q256.c:598:11: error: request for member 'AlternateByteMode' in something not a structure or union
+  s_command.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+           ^
+../src/bsp_qspi_w25q256.c:598:32: error: 'QSPI_ALTERNATE_BYTES_NONE' undeclared (first use in this function)
+  s_command.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;  /* 无交替字节 */
+                                ^
+../src/bsp_qspi_w25q256.c:599:11: error: request for member 'DdrMode' in something not a structure or union
+  s_command.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+           ^
+../src/bsp_qspi_w25q256.c:599:32: error: 'QSPI_DDR_MODE_DISABLE' undeclared (first use in this function)
+  s_command.DdrMode           = QSPI_DDR_MODE_DISABLE;      /* W25Q256JV不支持DDR */
+                                ^
+../src/bsp_qspi_w25q256.c:600:11: error: request for member 'DdrHoldHalfCycle' in something not a structure or union
+  s_command.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+           ^
+../src/bsp_qspi_w25q256.c:600:32: error: 'QSPI_DDR_HHC_ANALOG_DELAY' undeclared (first use in this function)
+  s_command.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;  /* DDR模式，数据输出延迟 */
+                                ^
+../src/bsp_qspi_w25q256.c:601:11: error: request for member 'SIOOMode' in something not a structure or union
+  s_command.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;   /* 每次传输都发指令 */
+           ^
+../src/bsp_qspi_w25q256.c:601:32: error: 'QSPI_SIOO_INST_EVERY_CMD' undeclared (first use in this function)
+  s_command.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;   /* 每次传输都发指令 */
+                                ^
+../src/bsp_qspi_w25q256.c:604:11: error: request for member 'Instruction' in something not a structure or union
+  s_command.Instruction = READ_ID_CMD2;         /* 读取ID命令 */
+           ^
+../src/bsp_qspi_w25q256.c:605:11: error: request for member 'AddressMode' in something not a structure or union
+  s_command.AddressMode = QSPI_ADDRESS_NONE;    /* 1线地址 */
+           ^
+../src/bsp_qspi_w25q256.c:605:26: error: 'QSPI_ADDRESS_NONE' undeclared (first use in this function)
+  s_command.AddressMode = QSPI_ADDRESS_NONE;    /* 1线地址 */
+                          ^
+../src/bsp_qspi_w25q256.c:606:11: error: request for member 'DataMode' in something not a structure or union
+  s_command.DataMode = QSPI_DATA_1_LINE;        /* 1线地址 */
+           ^
+../src/bsp_qspi_w25q256.c:606:23: error: 'QSPI_DATA_1_LINE' undeclared (first use in this function)
+  s_command.DataMode = QSPI_DATA_1_LINE;        /* 1线地址 */
+                       ^
+../src/bsp_qspi_w25q256.c:607:11: error: request for member 'DummyCycles' in something not a structure or union
+  s_command.DummyCycles = 0;                    /* 无空周期 */
+           ^
+../src/bsp_qspi_w25q256.c:608:11: error: request for member 'NbData' in something not a structure or union
+  s_command.NbData = 3;                         /* 读取三个数据 */
+           ^
+In file included from ../system/include/stm32h7x-hal/stm32h7xx_hal_def.h:34:0,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal_rcc.h:27,
+                 from ../include/stm32h7xx_hal_conf.h:246,
+                 from ../system/include/stm32h7x-hal/stm32h7xx_hal.h:30,
+                 from ../include/bsp.h:54,
+                 from ../src/bsp_qspi_w25q256.c:18:
+../system/include/stm32h7x-hal/Legacy/stm32_hal_legacy.h:3997:40: error: 'HAL_QSPI_TIMEOUT_DEFAULT_VALUE' undeclared (first use in this function)
+ #define HAL_QPSI_TIMEOUT_DEFAULT_VALUE HAL_QSPI_TIMEOUT_DEFAULT_VALUE
+                                        ^
+../src/bsp_qspi_w25q256.c:610:48: note: in expansion of macro 'HAL_QPSI_TIMEOUT_DEFAULT_VALUE'
+  if (HAL_QSPI_Command(&QSPIHandle, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) 
+                                                ^
+../src/bsp_qspi_w25q256.c:615:6: warning: implicit declaration of function 'HAL_QSPI_Receive' [-Wimplicit-function-declaration]
+  if (HAL_QSPI_Receive(&QSPIHandle, buf, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) 
+      ^
+../src/bsp_qspi_w25q256.c: At top level:
+../src/bsp_qspi_w25q256.c:633:31: error: unknown type name 'QSPI_HandleTypeDef'
+ void HAL_QSPI_CmdCpltCallback(QSPI_HandleTypeDef *hqspi)
+                               ^
+../src/bsp_qspi_w25q256.c:646:30: error: unknown type name 'QSPI_HandleTypeDef'
+ void HAL_QSPI_RxCpltCallback(QSPI_HandleTypeDef *hqspi)
+                              ^
+../src/bsp_qspi_w25q256.c:659:31: error: unknown type name 'QSPI_HandleTypeDef'
+  void HAL_QSPI_TxCpltCallback(QSPI_HandleTypeDef *hqspi)
+                               ^
+../src/bsp_qspi_w25q256.c:672:35: error: unknown type name 'QSPI_HandleTypeDef'
+ void HAL_QSPI_StatusMatchCallback(QSPI_HandleTypeDef *hqspi)
+                                   ^
+../src/bsp_qspi_w25q256.c: In function 'QUADSPI_IRQHandler':
+../src/bsp_qspi_w25q256.c:687:2: warning: implicit declaration of function 'HAL_QSPI_IRQHandler' [-Wimplicit-function-declaration]
+  HAL_QSPI_IRQHandler(&QSPIHandle);
+  ^
+../src/bsp_qspi_w25q256.c: In function 'MDMA_IRQHandler':
+../src/bsp_qspi_w25q256.c:700:32: error: request for member 'hmdma' in something not a structure or union
+  HAL_MDMA_IRQHandler(QSPIHandle.hmdma);
+                                ^
+../src/bsp_qspi_w25q256.c: At top level:
+../src/bsp_qspi_w25q256.c:69:27: warning: 'hmdma' defined but not used [-Wunused-variable]
+ static MDMA_HandleTypeDef hmdma;
+                           ^
+src/subdir.mk:114: recipe for target 'src/bsp_qspi_w25q256.o' failed
+make: *** [src/bsp_qspi_w25q256.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:52:36 Build Failed. 157 errors, 12 warnings. (took 1s.443ms)
+

@@ -1,0 +1,11 @@
+18:47:37 **** Incremental Build of configuration Debug for project f4plcMain3.3 ****
+make all 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "f4plcMain3.3.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29603	    216	  13204	  43023	   a80f	f4plcMain3.3.elf
+已结束构建： f4plcMain3.3.siz
+ 
+
+18:47:38 Build Finished. 0 errors, 0 warnings. (took 469ms)
+

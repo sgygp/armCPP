@@ -1,0 +1,448 @@
+/*
+ * Screen.cpp
+ *
+ *  Created on: 2020年2月2日
+ *      Author: Administrator
+ */
+
+#include "Screen.h"
+#include "Timer.h"
+#include "DIANZHEN.H"
+#include "delay.h"
+#include "string.h"
+#include <math.h>
+#include "Set.h"
+#include "Sleep.h"
+#define HANGGAO 30
+
+Screen::Screen(Ainstrument *ainstr1) {
+	// TODO 自动生成的构造函数存根
+	this->ainstr = ainstr1;
+	m_show = 0xff;
+	m_once = true;
+	m_bShuaxin = true;
+	m_guoTimes = 0;
+	bSec2 = false;
+	m_jiaozhun = 0;
+}
+
+bool Screen::showBat(u32 ms) {
+	if(ms%1000)
+		return true;
+	float ff=ainstr->getCanshuZhi(200);
+	m_lcd.WriteShuju(32+20,3,	ff,1);
+	int a=0;
+	if(ff>=90)
+		a=5;
+	else if(ff<10)
+		a=0;
+	else
+	{
+		a=(ff-10)/20;
+		a++;
+	}
+	m_lcd.WriteZi(20,  3, 32,2,1,(u8*) (DIANCHIFUHAO+64*a), false); //电量
+	m_lcd.WriteString(80+20,  3, (u8*) "#",false); //充电符号
+	if(!Set::getV33())
+		Sleep::sleep();
+	u32 jian=getKey();
+	if((jian>>16)>3&&((jian&0x00001)==ENTER))
+		return false;
+	else
+		return true;
+}
+
+void Screen::initUSB() {
+//	GPIO_InitTypeDef GPIO_InitStructure;
+//	GPIO_InitStructure.GPIO_Pin =PINS_LED;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;  		//输入模式
+//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz; //
+//	GPIO_Init(PORTS_LED, &GPIO_InitStructure);
+//	GPIO_ResetBits(PORTS_LED,PINS_LED);//上电先开灯,指示已打开
+	m_lcd.init();
+	m_lcd.Clear(0);
+	showBat(0);
+}
+
+void Screen::init() {
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin =PINS_LED;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;  		//输入模式
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz; //
+	GPIO_Init(PORTS_LED, &GPIO_InitStructure);
+	GPIO_ResetBits(PORTS_LED,PINS_LED);//上电先开灯,指示已打开
+
+	m_lcd.init();
+	m_show = 0xff;
+	m_lcd.Clear(0);
+	m_lcd.WriteZi(0, 3, 16, 2, 8, GONGSI, false);
+	m_pump.init();
+
+	delay_ms(1500);
+	if(ainstr->getCanshuZhi(7)<0.5)//要是默认关机
+		GPIO_SetBits(PORTS_LED,PINS_LED);//
+}
+
+Screen::~Screen() {
+	// TODO 自动生成的析构函数存根
+}
+u32 Screen::getKey() {
+	u32 uuu=Anjian::GetKey();
+	if(uuu)
+		wuanjianjishu=0;
+	return uuu;
+}
+bool Screen::show() {
+
+	u32 jian = 0;
+	u8 DOT = ainstr->getCanshuZhi(2);
+
+	switch (m_show) {
+	case 1:
+		if (m_once) {
+			m_once = false;
+			m_lcd.Clear(0);
+			IInt();
+		}
+		if (m_bShuaxin) {
+			m_bShuaxin = false;
+			ShowMain();
+		}
+
+		jian = getKey();
+		if((jian>>16)>3&&((jian&0x00001)==ENTER))
+			return false;
+		if((jian>>16)>3&&((jian&0x00002)==UP))
+		{
+			if(GPIO_ReadOutputDataBit(PORTS_LED,PINS_LED)==SET)
+				GPIO_ResetBits(PORTS_LED,PINS_LED);//上电先开灯,指示已打开
+			else
+				GPIO_SetBits(PORTS_LED,PINS_LED);//上电先开灯,指示已打开
+		}
+
+		if (jian == ENTER) {
+			if (m_jiaozhun > 0) {
+				ainstr->setJiaozhun(m_jiaozhun);
+				m_jiaozhun = 0;
+			} else {
+				m_show = 2;
+				m_once = true;
+				m_curline = 0;
+			}
+		} else if (jian != 0) {
+			m_jiaozhun = 0;
+		}
+		break;
+	case 2:
+		if (m_once) {
+			m_once = false;
+			m_lcd.Clear(0);
+
+			m_lcd.WriteHZx(16, 0, 4, QIBENGCAOZUO, m_curline == 1);
+			m_lcd.WriteHZx(0, 2, 5, MORENBEIJINGDENG, m_curline == 2);
+			m_lcd.WriteHZx(0, 4, 5, WUANJIAN, m_curline == 3);
+			m_lcd.WriteHZx(48, 6, 2, JIAOZHUN, m_curline == 4);
+
+			u16 aaa=(m_pump.isOpen);
+			m_lcd.WriteHZx(112,0,1,KAIGUAN+aaa*32,false);
+			aaa=ainstr->getCanshuZhi(7);//4毫安源码值用于默认背景灯
+			if(aaa)
+				aaa=1;
+			m_lcd.WriteHZx(112,2,1,KAIGUAN+aaa*32,false);
+			aaa=ainstr->getCanshuZhi(8);//20毫安源码值用于无按键关机时间
+			aaa%=10;
+			u8 *a1=(u8*)&aaa;a1[0]=aaa+'0';a1[1]=0;
+			m_lcd.WriteString(90,4,a1,0);
+			m_lcd.WriteString(104,4,(u8 *)"min",false);
+		}
+		jian = getKey();
+		if (jian & DOWN) //向上
+		{
+			m_once = true;
+			m_curline = (m_curline + 4) % 5;
+		} else if (jian == UP) //向下
+		{
+			m_once = true;
+			m_curline = (m_curline + 1) % 5;
+		} else if (jian == ENTER) //MENU按钮
+		{
+			u16 aaa=0;
+			m_once = true;
+			switch(m_curline) {
+			case 1:
+				m_pump.turn();
+				break;
+			case 2:
+				aaa=ainstr->getCanshuZhi(7);//4毫安源码值用于默认背景灯
+				if(aaa)
+					aaa=0;
+				else
+					aaa=1;
+				ainstr->setCanshuZhi(7,aaa);
+				ainstr->WriteCanshu();
+				break;
+			case 3:
+				aaa=ainstr->getCanshuZhi(8);//20毫安源码值用于无按键关机时间
+				aaa++;
+				aaa%=10;
+				ainstr->setCanshuZhi(8,aaa);
+				ainstr->WriteCanshu();
+				break;
+			case 4:
+				inQueren();
+				m_show=3;
+				break;
+			default:
+				m_show = 0xff;
+				break;
+			}
+
+
+		}
+		break;
+	case 3: ///////////////////////////
+		if (m_once) {
+			m_lcd.WriteHZx(56 - 16, 4, 1, FOUSHI, m_shifou);
+			m_lcd.WriteHZx(56 - 8 + 32, 4, 1, FOUSHI + 32, !m_shifou);
+		}
+
+		jian = getKey();
+		if (jian & ENTER) {
+			if (m_shifou) {
+				m_show = 4;
+				m_gai = 3;
+				m_shuju = 20.6;
+				m_fu = false;
+				m_lcd.Fill(1, 16, 2, 112, 0XF0);
+				m_lcd.Fill(2, 16, 6, 112, 0XFF);
+				m_lcd.Fill(6, 16, 7, 112, 0X0F);
+				m_lcd.WriteHZx(36, 2, 4, QITIHANLIANG, 1); //
+				fanhuiHuamian=0;
+				returnItem=0;
+			}else			{
+				m_curline = 4;
+				m_show = 2;
+				m_once = true;
+
+			}
+		} else if ((jian ==UP)) {
+			m_shifou = !m_shifou;
+			m_once = true;
+		}
+		break;
+	case 4:
+		jian = ShowItem(&m_shuju, DOT, 0);
+		if (jian & ENTER) {
+			ainstr->setCanshuZhi(11, m_shuju);
+			ainstr->WriteCanshu();
+			m_show = fanhuiHuamian;
+			m_curline = returnItem;
+			m_jiaozhun=2;
+		}
+		break;
+
+	default:
+		m_once = true;
+		m_show = 1;
+		break;
+	}
+
+	if (jian != 0)
+		m_guoTimes = 0;
+	return true;
+
+}
+bool Screen::run(u32 ms) { //每秒运行一次
+	// TODO 自动生成的析构函数存根
+	if (ms % 1000 == 0) {
+		bSec2 = !bSec2;
+		ms += 5;
+		if (m_guoTimes >= GUOTIMES) {
+			m_guoTimes = GUOTIMES;
+			if (m_show > 1 ) {
+				m_show = 0xff;
+			}
+			if (ms % 1200 == 0)	//20分钟
+				m_show = 0xff;
+		} else {
+			m_guoTimes++;
+		}
+		m_bShuaxin = true;
+		wuanjianjishu++;
+		int a=ainstr->getCanshuZhi(8);
+		if(a&&!Set::getV33())
+		{
+			if(wuanjianjishu>a*60)
+				return false;
+		}
+	}
+
+	return show();
+}
+void Screen::ShowWord(u8 lie, u16 ww, u8 shan, u8 dot) {
+	u8 x = 0;
+	u8 y;
+	for (; x < 4; x++) {
+		if (x < dot)
+			y = 0;
+		else
+			y = 1;
+		m_lcd.WriteShuzi(56 + (lie + 3 - x - y) * 8, 4, 1,
+				ASCII + 16 * ((ww % 10) + '0' - ' '), (shan != x));
+		ww = ww / 10;
+	}
+	if (dot)
+		m_lcd.WriteShuzi(56 + (lie + 3 - dot) * 8, 4, 1,
+				ASCII + 16 * ('.' - ' '), 1);	//.
+
+}
+void Screen::inQueren() {
+	m_show += m_curline;
+	m_once = true;
+	m_lcd.Fill(1, 16, 2, 112, 0XF0);
+	m_lcd.Fill(2, 16, 6, 112, 0XFF);
+	m_lcd.Fill(6, 16, 7, 112, 0X0F);
+	m_lcd.WriteHZx(48, 2, 2, QUEREN, 1); //
+	m_shifou = false;
+}
+void Screen::Input() {
+	m_lcd.Fill(1, 16, 2, 112, 0XF0);
+	m_lcd.Fill(2, 16, 6, 112, 0XFF);
+	m_lcd.Fill(6, 16, 7, 112, 0X0F);
+	m_lcd.WriteHZx(48, 2, 2, SHURU, 1); //
+	if (m_shuju < 0) {
+		m_shuju = 0 - m_shuju;
+		m_fu = true;
+	} else
+		m_fu = false;
+
+	m_gai = 3;
+	m_once = true;
+	returnItem = m_curline;
+	fanhuiHuamian = m_show;
+	m_show += m_curline;
+
+}
+
+void Screen::Gaishu(double *ff, u8 shan, u8 dot, bool ADD_SUB) {
+	u8 b;
+	u16 w1, w2;
+	if (shan == 4) {
+		m_fu = !m_fu;
+		return;
+	}
+	w1 = 1;
+	for (b = 0; b < dot; b++)
+		*ff = *ff * 10.0;
+	w2 = *ff;
+	w2 = w2 % 10000;
+	*ff = w2;
+
+	for (b = 0; b < shan; b++)
+		w1 *= 10;
+	w2 = *ff + 0.5;
+	b = (w2 / w1) % 10;
+	if (ADD_SUB) {
+		if (b == 9)
+			w2 = w2 - w1 * 9;
+		else
+			w2 += w1;
+	} else {
+		if (b == 0)
+			w2 = w2 + w1 * 9;
+		else
+			w2 -= w1;
+	}
+	*ff = w2;
+	for (b = 0; b < dot; b++)
+		*ff /= 10.0;
+}
+u8 Screen::ShowItem(double *shuju, u8 xiaoshu, bool yunxufu) {
+	u32 i;
+	u16 ww = 1;
+	if (m_once) {
+		m_lcd.Fill(4, 40, 6, 80, 0xff);
+		for (i = 0; i < xiaoshu; i++)
+			ww *= 10;
+		if ((*shuju) > 9999.0 || (*shuju) < -9999.0)
+			*shuju = 0;
+		ww = (*shuju) * ww + 0.5;
+		if (yunxufu) {
+			if (m_fu)
+				m_lcd.WriteShuzi(56 - 16, 4, 1, ASCII + 16 * ('-' - ' '),
+						m_gai != 4);
+			else {
+				if (m_gai == 4)
+					m_lcd.WriteShuzi(56 - 16, 4, 1, ASCII + 16 * ('+' - ' '),
+							0);
+			}
+		}
+		ShowWord(0, ww, m_gai, xiaoshu);
+		m_once = false;
+	}
+
+	i = getKey();
+	if (i & UP)
+	{
+		if(i==UP)
+			m_gai = (m_gai + (3 + yunxufu)) % (4 + yunxufu);
+		else
+			Gaishu(shuju, m_gai, xiaoshu, 1);
+
+	}
+	else if (i & DOWN)
+		Gaishu(shuju, m_gai, xiaoshu, 0);
+	else if (i & LEFT)
+		m_gai = (m_gai + 1) % (4 + yunxufu);
+	else if (i & RIGHT)
+		m_gai = (m_gai + (3 + yunxufu)) % (4 + yunxufu);
+	else if (i & ENTER) {
+		if (m_fu)
+			m_shuju = 0 - m_shuju;
+	}
+	if (i)
+		m_once = true;
+	return i;
+}
+
+void Screen::IInt() {
+
+	m_lcd.WriteString(2,  3 ,(u8*) "O|",false); //名称
+	m_lcd.WriteString(120,  3, (u8*) "%",false); //名称
+	//	m_lcd.WriteString(0,  6, (u8*) "BatLV:", false); //电量
+
+}
+void Screen::ShowMain() {
+	u8 DOT = ainstr->getCanshuZhi(2);
+	float ff = ainstr->getHanliang();
+	//	if ((u8) ainstr->getCanshuZhi(52))
+	//		ff = ainstr->getHanliang2();
+
+	m_lcd.WriteShujuD(0, 1, ff, DOT,bSec2&&m_jiaozhun);
+	ff=ainstr->getCanshuZhi(200);
+	m_lcd.WriteShuju(32,6,	ff,1);
+	int a=0;
+	if(ff>=90)
+		a=5;
+	else if(ff<10)
+		a=0;
+	else
+	{
+		a=(ff-10)/20;
+		a++;
+	}
+	m_lcd.WriteZi(0,  6, 32,2,1,(u8*) (DIANCHIFUHAO+64*a), false); //电量
+	//	0	 1	  2		3	 4  	5
+	// 10-30-50-70--90
+
+
+	if(m_pump.isOpen)
+		m_lcd.WriteHZx(112,6,1,QIBENGCAOZUO+32,bSec2);
+	else
+		m_lcd.WriteHZx(112,6,1,LCDZHENGFU2032+16*10,false);
+	if(Set::getV33())
+		m_lcd.WriteString(80,  6, (u8*) "#",false); //充电符号
+	else
+		m_lcd.WriteString(80,  6, (u8*) " ",false); //
+
+}

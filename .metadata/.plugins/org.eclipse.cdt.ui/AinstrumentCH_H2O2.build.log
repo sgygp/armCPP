@@ -1,0 +1,11 @@
+10:38:45 **** 构建 of configuration Debug for project AinstrumentCH_H2O2 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentCH_H2O2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  73464	    640	   4156	  78260	  131b4	AinstrumentCH_H2O2.elf
+已结束构建： AinstrumentCH_H2O2.siz
+ 
+
+10:38:45 Build Finished. 0 errors, 0 warnings. (took 536ms)
+

@@ -1,0 +1,11 @@
+10:18:25 **** Incremental Build of configuration Debug for project AinstrumentTwo ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentTwo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  51071	    200	    996	  52267	   cc2b	AinstrumentTwo.elf
+已结束构建： AinstrumentTwo.siz
+ 
+
+10:18:25 Build Finished. 0 errors, 0 warnings. (took 227ms)
+

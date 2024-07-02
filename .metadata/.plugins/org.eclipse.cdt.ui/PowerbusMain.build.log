@@ -1,0 +1,11 @@
+18:06:36 **** Incremental Build of configuration Debug for project PowerbusMain ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "PowerbusMain.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18099	    196	   2004	  20299	   4f4b	PowerbusMain.elf
+已结束构建： PowerbusMain.siz
+ 
+
+18:06:37 Build Finished. 0 errors, 0 warnings. (took 424ms)
+

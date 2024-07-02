@@ -1,0 +1,11 @@
+18:55:36 **** Incremental Build of configuration Debug for project AinstrumentIR2022old ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "AinstrumentIR2022old.elf"
+   text	   data	    bss	    dec	    hex	filename
+  50079	    200	  17372	  67651	  10843	AinstrumentIR2022old.elf
+已结束构建： AinstrumentIR2022old.siz
+ 
+
+18:55:36 Build Finished. 0 errors, 0 warnings. (took 222ms)
+

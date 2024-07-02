@@ -1,0 +1,68 @@
+/*
+ * Screen.h
+ *
+ *  Created on: 2020年2月2日
+ *      Author: Administrator
+ */
+#ifndef SCREEN_H_
+#define SCREEN_H_
+
+#include "Ainstrument.h"
+#include "Shuru.h"
+#include "LCD240128.h"
+#include "RealQuxian.h"
+
+#define GUOTIMES 30//30秒无按键自动返回主画面
+#define NEIBUMIMA 1213
+
+class Screen {
+public:
+	Screen(Ainstrument *ainstr1,Ainstrument *ainstr2,RealQuxian *quxian1,RealQuxian *quxian2);
+	virtual ~Screen();
+	void run(); //每秒运行一次
+	void show();
+	void start();
+	void LOGO();
+	void gengxinQuxian();
+	void setShuaxinQuxian();
+	void ShuaxinQuxian();
+
+private:
+	u32 ms=0;
+	Ainstrument *ainstr1;
+	Ainstrument *ainstr2;
+	LCD240128 m_lcd;
+	RealQuxian *m_quxian1;
+	RealQuxian *m_quxian2;
+
+	Shuru m_shuru;
+	u8 m_show;
+	bool m_once;
+	bool m_bShuaxin;
+	bool m_bShuaxinQuxian;
+	int m_guoTimes;
+	u16 m4_20;
+	bool bSec2; //
+
+private:
+	u8 m_curline = -1;
+	float m_shuju = 0;
+	u8 m_gai = 0;
+	bool m_fu = false;
+	u8 m_shifou=false;
+	u8 m_jiaozhun;
+	void ShowWord(u8 lie, u16 ww, u8 shan, u8 dot);
+	void Gaishu(float *ff, u8 shan, u8 dot, bool ADD_SUB);
+	u8 ShowItem(float *shuju, u8 xiaoshu);
+	u8 ShowItem_(float *shuju, u8 xiaoshu);
+	void IInt();
+	void ShowMain();
+	void ShowInfo();
+	void ShowInfoData();
+	void ShowQuxian();
+
+};
+
+#endif /* SCREEN_H_ */
+// ----------------------------------------------------------------------------
+

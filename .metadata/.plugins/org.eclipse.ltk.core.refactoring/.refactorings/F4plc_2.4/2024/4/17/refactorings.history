@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“F4plc_2.4/include/AntData_Device.h”重命名为“Device.h”" description="重命名资源“AntData_Device.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/AntData_Device.h" name="Device.h" stamp="1713956346223" updateReferences="true"/>&#x0A;<refactoring comment="将资源“F4plc_2.4/W806shuifeiji/AntData_Device.cpp”重命名为“Device.cpp”" description="重命名资源“AntData_Device.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="W806shuifeiji/AntData_Device.cpp" name="Device.cpp" stamp="1713956356221" updateReferences="true"/>
+</session>

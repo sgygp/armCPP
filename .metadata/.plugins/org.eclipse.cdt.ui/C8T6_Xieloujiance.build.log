@@ -1,0 +1,11 @@
+15:03:37 **** Incremental Build of configuration Debug for project C8T6_Xieloujiance ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_Xieloujiance.elf"
+   text	   data	    bss	    dec	    hex	filename
+  17295	    200	    952	  18447	   480f	C8T6_Xieloujiance.elf
+已结束构建： C8T6_Xieloujiance.siz
+ 
+
+15:03:38 Build Finished. 0 errors, 0 warnings. (took 384ms)
+

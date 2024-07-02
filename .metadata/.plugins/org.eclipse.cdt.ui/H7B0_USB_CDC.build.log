@@ -1,0 +1,91 @@
+18:59:37 **** Incremental Build of configuration Debug for project H7B0_USB_CDC ****
+make all 
+正在构建文件： ../src/LEDrgb.cpp
+正在调用： GNU Arm Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../USB_DEVICE" -I"../include" -I"../KissFFT" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/LEDrgb.d" -MT"src/LEDrgb.o" -c -o "src/LEDrgb.o" "../src/LEDrgb.cpp"
+已结束构建： ../src/LEDrgb.cpp
+ 
+正在构建文件： ../src/main.cpp
+正在调用： GNU Arm Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../USB_DEVICE" -I"../include" -I"../KissFFT" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:61:23: warning: unused variable 'xx' [-Wunused-variable]
+  volatile u32 nTick=0,xx=0;
+                       ^
+../src/main.cpp: At global scope:
+../src/main.cpp:26:16: warning: 'work' defined but not used [-Wunused-variable]
+ static uint8_t work[4096];
+                ^
+已结束构建： ../src/main.cpp
+ 
+正在构建文件： ../src/stm32h7xx_it.cpp
+正在调用： GNU Arm Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../USB_DEVICE" -I"../include" -I"../KissFFT" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/stm32h7xx_it.d" -MT"src/stm32h7xx_it.o" -c -o "src/stm32h7xx_it.o" "../src/stm32h7xx_it.cpp"
+已结束构建： ../src/stm32h7xx_it.cpp
+ 
+正在构建文件： ../USB_DEVICE/usb_device.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usb_device.d" -MT"USB_DEVICE/usb_device.o" -c -o "USB_DEVICE/usb_device.o" "../USB_DEVICE/usb_device.c"
+已结束构建： ../USB_DEVICE/usb_device.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_cdc.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_cdc.d" -MT"USB_DEVICE/usbd_cdc.o" -c -o "USB_DEVICE/usbd_cdc.o" "../USB_DEVICE/usbd_cdc.c"
+已结束构建： ../USB_DEVICE/usbd_cdc.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_cdc_if.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_cdc_if.d" -MT"USB_DEVICE/usbd_cdc_if.o" -c -o "USB_DEVICE/usbd_cdc_if.o" "../USB_DEVICE/usbd_cdc_if.c"
+已结束构建： ../USB_DEVICE/usbd_cdc_if.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_conf.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_conf.d" -MT"USB_DEVICE/usbd_conf.o" -c -o "USB_DEVICE/usbd_conf.o" "../USB_DEVICE/usbd_conf.c"
+已结束构建： ../USB_DEVICE/usbd_conf.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_core.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_core.d" -MT"USB_DEVICE/usbd_core.o" -c -o "USB_DEVICE/usbd_core.o" "../USB_DEVICE/usbd_core.c"
+已结束构建： ../USB_DEVICE/usbd_core.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_ctlreq.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_ctlreq.d" -MT"USB_DEVICE/usbd_ctlreq.o" -c -o "USB_DEVICE/usbd_ctlreq.o" "../USB_DEVICE/usbd_ctlreq.c"
+已结束构建： ../USB_DEVICE/usbd_ctlreq.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_desc.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_desc.d" -MT"USB_DEVICE/usbd_desc.o" -c -o "USB_DEVICE/usbd_desc.o" "../USB_DEVICE/usbd_desc.c"
+../USB_DEVICE/usbd_desc.c: In function 'Get_SerialNum':
+../USB_DEVICE/usbd_desc.c:383:17: warning: 'deviceserial0' is used uninitialized in this function [-Wuninitialized]
+   deviceserial0 += deviceserial2;
+                 ^
+../USB_DEVICE/usbd_desc.c:383:17: warning: 'deviceserial2' is used uninitialized in this function [-Wuninitialized]
+../USB_DEVICE/usbd_desc.c:388:5: warning: 'deviceserial1' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     IntToUnicode(deviceserial1, &USBD_StringSerial[18], 4);
+     ^
+已结束构建： ../USB_DEVICE/usbd_desc.c
+ 
+正在构建文件： ../USB_DEVICE/usbd_ioreq.c
+正在调用： GNU Arm Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DUSE_FULL_ASSERT -DTRACE -DSTM32H7B0xx -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../USB_DEVICE" -I"../FATFS" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32h7x-hal" -I"C:\MinGW\include" -std=gnu11 -MMD -MP -MF"USB_DEVICE/usbd_ioreq.d" -MT"USB_DEVICE/usbd_ioreq.o" -c -o "USB_DEVICE/usbd_ioreq.o" "../USB_DEVICE/usbd_ioreq.c"
+已结束构建： ../USB_DEVICE/usbd_ioreq.c
+ 
+正在构建目标： H7B0_USB_CDC.elf
+正在调用： GNU Arm Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T sections.ld -T libs.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"H7B0_USB_CDC.map" --specs=nano.specs -o "H7B0_USB_CDC.elf"  ./system/src/stm32h7x-hal/stm32h7xx_hal.o ./system/src/stm32h7x-hal/stm32h7xx_hal_cortex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_dma_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_exti.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash.o ./system/src/stm32h7x-hal/stm32h7xx_hal_flash_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_gpio.o ./system/src/stm32h7x-hal/stm32h7xx_hal_hsem.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c.o ./system/src/stm32h7x-hal/stm32h7xx_hal_i2c_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_mdma.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pcd.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pcd_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr.o ./system/src/stm32h7x-hal/stm32h7xx_hal_pwr_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc.o ./system/src/stm32h7x-hal/stm32h7xx_hal_rcc_ex.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim.o ./system/src/stm32h7x-hal/stm32h7xx_hal_tim_ex.o ./system/src/stm32h7x-hal/stm32h7xx_ll_usb.o  ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/vectors_stm32f767xx.o  ./src/LEDrgb.o ./src/main.o ./src/stm32h7xx_it.o ./src/system_stm32h7xx.o  ./USB_DEVICE/usb_device.o ./USB_DEVICE/usbd_cdc.o ./USB_DEVICE/usbd_cdc_if.o ./USB_DEVICE/usbd_conf.o ./USB_DEVICE/usbd_core.o ./USB_DEVICE/usbd_ctlreq.o ./USB_DEVICE/usbd_desc.o ./USB_DEVICE/usbd_ioreq.o  ./KissFFT/kfc.o ./KissFFT/kiss_fft.o ./KissFFT/kiss_fftnd.o ./KissFFT/kiss_fftndr.o ./KissFFT/kiss_fftr.o   
+已结束构建目标： H7B0_USB_CDC.elf
+ 
+正在调用： GNU Arm Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "H7B0_USB_CDC.elf"  "H7B0_USB_CDC.hex"
+已结束构建： H7B0_USB_CDC.hex
+ 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B0_USB_CDC.elf"
+   text	   data	    bss	    dec	    hex	filename
+  30341	    408	  40076	  70825	  114a9	H7B0_USB_CDC.elf
+已结束构建： H7B0_USB_CDC.siz
+ 
+
+18:59:43 Build Finished. 0 errors, 5 warnings. (took 5s.885ms)
+

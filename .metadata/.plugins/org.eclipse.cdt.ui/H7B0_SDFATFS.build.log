@@ -1,0 +1,11 @@
+16:53:40 **** Incremental Build of configuration Debug for project H7B0_SDFATFS ****
+make all 
+正在调用： GNU Arm Cross Print Size
+arm-none-eabi-size --format=berkeley "H7B0_SDFATFS.elf"
+   text	   data	    bss	    dec	    hex	filename
+  36999	    176	   2636	  39811	   9b83	H7B0_SDFATFS.elf
+已结束构建： H7B0_SDFATFS.siz
+ 
+
+16:53:41 Build Finished. 0 errors, 0 warnings. (took 732ms)
+

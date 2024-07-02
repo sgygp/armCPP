@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“AinstrumentIR2022/液晶DGUS”重命名为“2022红外DGUS”" description="重命名资源“液晶DGUS”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="液晶DGUS" name="2022红外DGUS" stamp="1646728922783" updateReferences="true"/>
+</session>

@@ -1,0 +1,11 @@
+16:23:48 **** Incremental Build of configuration Debug for project C8T6_LCD_L ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_LCD_L.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15287	    432	    676	  16395	   400b	C8T6_LCD_L.elf
+已结束构建： C8T6_LCD_L.siz
+ 
+
+16:23:48 Build Finished. 0 errors, 0 warnings. (took 172ms)
+

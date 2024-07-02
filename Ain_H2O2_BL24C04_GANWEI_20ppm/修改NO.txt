@@ -1,0 +1,6 @@
+﻿1改main.C，增加cpu百分比
+2修改Ainstrument.h 增加m_cpuUsed,修改m_NO数据类型为u32
+3改Screen.C 6号画面中修改NO，高4位或者低4位
+4改Degus.CPP中，显示NO,跟显示INFO函数。使之能正常显示NO，跟cpuUsed。
+5Ainstrument类中，setCanshu getCanshu 用double传送
+记得组态NO值是4字节长整数，整数显示8位

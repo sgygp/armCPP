@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“f4plcMain2.1/控制柜固件需改进地方(2).txt”重命名为“控制柜固件改.txt”" description="重命名资源“控制柜固件需改进地方(2).txt”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="控制柜固件需改进地方(2).txt" name="控制柜固件改.txt" stamp="1621216928353" updateReferences="true"/>
+</session>

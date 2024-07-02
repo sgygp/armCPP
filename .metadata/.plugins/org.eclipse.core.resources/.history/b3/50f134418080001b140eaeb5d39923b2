@@ -1,0 +1,173 @@
+/*
+ * Can1.cpp
+ *
+ *  Created on: 2021年3月5日
+ *      Author: Administrator
+ */
+
+#include "Can1.h"
+CanRxMsg Can_1::CAN_Rx_Msg;
+
+Can_1::Can_1() {
+	// TODO 自动生成的构造函数存根
+
+}
+
+Can_1::~Can_1() {
+	// TODO 自动生成的析构函数存根
+}
+void Can_1::init()
+{
+	GPIO_InitTypeDef GPIO_init;
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE);
+	GPIO_PinAFConfig(CAN_Tx_Port,GPIO_PinSource0,GPIO_AF_CAN1);
+	GPIO_PinAFConfig(CAN_Rx_Port,GPIO_PinSource1,GPIO_AF_CAN1);
+	GPIO_init.GPIO_Pin = CAN_Tx_Pin|CAN_Rx_Pin;
+	GPIO_init.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_init.GPIO_OType  = GPIO_OType_PP;
+	GPIO_init.GPIO_PuPd  = GPIO_PuPd_UP;
+	GPIO_init.GPIO_Speed = GPIO_Fast_Speed;
+	GPIO_Init(CAN_Tx_Port,&GPIO_init);
+
+	CAN_InitTypeDef CAN_init;
+	CAN_FilterInitTypeDef CAN_Filter_init;
+	CAN_DeInit(CAN1);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1,ENABLE);
+	//工作模式的设置
+	CAN_init.CAN_Mode  = CAN_Mode_Normal;
+       //工作模式的配置:可配置为正常模式,静默模式,回环模式,静默回环模式;
+
+	//发送FIFO使能
+	CAN_init.CAN_TXFP  = DISABLE;
+	//自动重发功能使能
+	CAN_init.CAN_NART = ENABLE;//使能
+	//FIFO锁定功能
+	/*
+		FIFO锁定功能主要用于管理接收邮箱
+		如果不使能FIFO锁定功能,当FIFO使能时,则在FIFO邮箱已满之后,后续的信息将会覆盖最后接收的信息
+		如果使能FIFO锁定功能,则在FIFO邮箱已满之后,将丢弃最新的消息，保留最原始的三则消息
+	*/
+	CAN_init.CAN_RFLM = DISABLE;
+	//总线自动恢复功能
+	/*
+		当 TEC 大于 255 时，达到总线关闭状态，该状态由 CAN_ESR 寄存器的 BOFF 位指示。在总线关闭状态下， bxCAN 不能再发送和接收消息。
+        bxCAN 可以自动或者应软件请求而从总线关闭状态中恢复（恢复错误主动状态），具体取决于 CAN_MCR 寄存器的 ABOM 位。但在两种情况下， bxCAN 都必须至少等待 CAN 标准中指定的恢复序列完成（在 CANRX 上监测到 128 次 11 个连续隐性位）。
+		如果 ABOM 位置 1， bxCAN 将在进入总线关闭状态后自动启动恢复序列。
+		如果 ABOM 位清零，则软件必须请求 bxCAN 先进入再退出初始化模式，从而启动恢复序列。
+		注意： 在初始化模式下， bxCAN 不会监视 CANRX 信号，因此无法完成恢复序列。 要进行恢复，bxCAN 必须处于正常模式。
+	*/
+	CAN_init.CAN_ABOM  = DISABLE;
+	CAN_init.CAN_AWUM = DISABLE;
+	CAN_init.CAN_TTCM = DISABLE;
+	//--------------------------
+	//关于CAN总线比特率计算
+	/*
+		NominalBitTime = 1*Tq +tBS1 +  tBS2
+		tBS1 = tq x (TS1[3:0] + 1);
+		tBS2 = tq x (TS2[2:0] + 1)，
+		Tq = (BRP[9:0] + 1) x TPCLK;
+		TPCLK = APB 时钟的时间周期;
+		BRP[9:0], TS1[3:0] 和 TS2[2:0] 在 CAN_BTR 寄存器中定义;
+	//-------------------------------------------------------------
+			CAN 波特率 = RCC_APB1Periph_CAN1 / Prescaler / (SJW + BS1 + BS2);
+
+		SJW = synchronisation_jump_width
+		BS = bit_segment
+		本例中，设置CAN波特率为500Kbps
+		CAN 波特率 = 420000000 / 2 / (12+8 +1) / = 1 MBps
+	*/
+	CAN_init.CAN_BS1 = CAN_BS1_12tq;
+	CAN_init.CAN_BS2 = CAN_BS2_8tq;
+	CAN_init.CAN_SJW = CAN_SJW_1tq;
+	CAN_init.CAN_Prescaler = 8;
+	CAN_Init(CAN1,&CAN_init);
+	//------------------------------------
+	CAN_Filter_init.CAN_FilterActivation = ENABLE;//过滤器使能
+//选择使用哪个FIFO,可为CAN_FilterFIFO0,CAN_FilterFIFO1;
+	CAN_Filter_init.CAN_FilterFIFOAssignment = CAN_FilterFIFO0;
+
+	CAN_Filter_init.CAN_FilterMode = CAN_FilterMode_IdList;//掩码模式,此处可配置为掩码模式和列表模式
+	CAN_Filter_init.CAN_FilterScale = CAN_FilterScale_16bit;//
+	CAN_Filter_init.CAN_FilterNumber = 3;
+	CAN_Filter_init.CAN_FilterIdHigh = 0x0101;
+	CAN_Filter_init.CAN_FilterMaskIdHigh = 0x0102;
+	CAN_Filter_init.CAN_FilterIdLow = 0x0103;
+	CAN_Filter_init.CAN_FilterMaskIdLow = 0x0104;
+	CAN_FilterInit(&CAN_Filter_init);
+
+//	CAN_Filter_init.CAN_FilterMode = CAN_FilterMode_IdMask;//列表模式
+//	CAN_Filter_init.CAN_FilterScale = CAN_FilterScale_32bit;//
+//	CAN_Filter_init.CAN_FilterNumber = 0;
+//	CAN_Filter_init.CAN_FilterIdHigh = 0x000;
+//	CAN_Filter_init.CAN_FilterIdLow = 0x0101;
+//	CAN_Filter_init.CAN_FilterMaskIdHigh =0x0000;
+//	CAN_Filter_init.CAN_FilterMaskIdLow =0xFFF0;
+//	CAN_FilterInit(&CAN_Filter_init);
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+	NVIC_InitTypeDef NVIC_init;
+	NVIC_init.NVIC_IRQChannel = CAN1_RX0_IRQn;
+	NVIC_init.NVIC_IRQChannelCmd  =ENABLE;
+	NVIC_init.NVIC_IRQChannelPreemptionPriority  =0x02;
+	NVIC_init.NVIC_IRQChannelSubPriority = 0x02;
+	NVIC_Init(&NVIC_init);
+	CAN_ITConfig(CAN1,CAN_IT_FMP0,ENABLE);
+}
+u8 Can_1::CAN_send_massage(u8 *data,u8 leng,u32 massage_id)
+{
+
+	u8 tx_cnt;
+	u32 tx_time_out_cnt = 0;
+	/*
+		当数据帧的ID大于0x7FF时就认为是拓展帧,否则都为标准帧
+	*/
+	if(massage_id > 0x7FF)
+	{
+			CAN_Tx_Msg.IDE = CAN_ID_EXT  ;//发送帧的类型:CAN_Id_Standard   标准帧; CAN_Id_Extended  拓展帧
+	}
+	else
+	{
+			CAN_Tx_Msg.IDE = CAN_ID_STD  ;//发送帧的类型:CAN_Id_Standard   标准帧; CAN_Id_Extended  拓展帧
+	}
+	CAN_Tx_Msg.DLC = leng;//发送数据长度
+
+	CAN_Tx_Msg.RTR = CAN_RTR_DATA;//发送帧的类型:CAN_RTR_DATA  发送数据帧;CAN_RTR_REMOTE 远程帧,远程帧中没有数据;
+	CAN_Tx_Msg.StdId = massage_id;//标准帧的ID,11位
+	CAN_Tx_Msg.ExtId = massage_id;//拓展帧的ID,29位
+	for(tx_cnt = 0;tx_cnt < leng;tx_cnt++)
+	{
+		CAN_Tx_Msg.Data[tx_cnt] = data[tx_cnt];
+	}
+	do
+	{
+		tx_time_out_cnt++;
+		msg_box = CAN_Transmit(CAN1,&CAN_Tx_Msg);
+	}
+	while(((CAN_GetFlagStatus(CAN1, CAN_FLAG_RQCP0) !=RESET) || \
+              (CAN_GetFlagStatus(CAN1, CAN_FLAG_RQCP1) !=RESET) || \
+              (CAN_GetFlagStatus(CAN1, CAN_FLAG_RQCP2) !=RESET))&&(tx_time_out_cnt < 10000));
+
+
+	tx_time_out_cnt++;
+	if(tx_time_out_cnt > 10000)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
+}
+
+
+extern "C" void CAN1_RX0_IRQHandler(void)
+{
+	if(CAN_GetITStatus(CAN1,CAN_IT_FMP0) == SET)
+	{
+		CAN_Receive(CAN1,CAN_FIFO0,&Can_1::CAN_Rx_Msg);
+//		CAN_send_massage(&CAN_Rx_Msg.Data[0],CAN_Rx_Msg.DLC,CAN_Rx_Msg.ExtId);
+	//	CAN_ClearITPendingBit(CAN1,CAN_IT_FMP0);
+	}
+}
+
+

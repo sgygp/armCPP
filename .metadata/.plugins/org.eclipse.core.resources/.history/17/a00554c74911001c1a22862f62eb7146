@@ -1,0 +1,107 @@
+/*
+ * Stop.cpp
+ *
+ *  Created on: 2021年8月31日
+ *      Author: Administrator
+ */
+
+#include "Stop.h"
+
+Stop::Stop() {
+	// TODO 自动生成的构造函数存根
+
+}
+
+Stop::~Stop() {
+	// TODO 自动生成的析构函数存根
+}
+
+void Stop::run()
+{
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOD, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOF, ENABLE);
+
+	//进入低功耗模式，IO配置原则为不悬空输入、不形成回路
+
+	//下面是配置输出为0
+	//输出
+	GPIOA->MODER = 0x55555555;
+	GPIOB->MODER = 0x55555555;
+	GPIOC->MODER = 0x55555555;
+	GPIOD->MODER = 0x55555555;
+	GPIOF->MODER = 0x55555555;
+	//即不上拉，也不下拉
+	GPIOA->PUPDR = 0x00000000;
+	GPIOB->PUPDR = 0x00000000;
+	GPIOC->PUPDR = 0x00000000;
+	GPIOD->PUPDR = 0x00000000;
+	GPIOF->PUPDR = 0x00000000;
+	//输出0
+	GPIOA->ODR=0x00000000;
+	GPIOB->ODR=0x00000000;
+	GPIOC->ODR=0x00000000;
+	GPIOD->ODR=0x00000000;
+	GPIOF->ODR=0x00000000;
+
+	//
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;  		//输入模式
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;   		//推挽输出
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz; //串口的应用波特率最大115200.2M足够，既省电噪声也小
+
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+	PWR_WakeUpPinCmd(PWR_WakeUpPin_1,ENABLE);  //使能唤醒管脚功能
+	PWR_EnterSTOPMode(PWR_Regulator_LowPower, PWR_STOPEntry_WFI);
+
+//	PWR_WakeUpPinCmd(PWR_WakeUpPin_1,ENABLE);
+//	PWR_ClearFlag(PWR_FLAG_WU);
+//	PWR_EnterSTANDBYMode();
+	while(1);
+}
+
+/*
+1、进入睡眠的关键语句
+
+RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+
+PWR_EnterSTOPMode(PWR_Regulator_LowPower, PWR_STOPEntry_WFI);
+
+2、进入低功耗需要的配置，GPIO配置原则：不回路，不悬空输入。下面是将所有IO输出为0
+
+//输出
+GPIOA->MODER = 0x55555555;
+GPIOB->MODER = 0x55555555;
+GPIOC->MODER = 0x55555555;
+GPIOD->MODER = 0x55555555;
+GPIOF->MODER = 0x55555555;
+//即不上拉，也不下拉
+GPIOA->PUPDR = 0x00000000;
+GPIOB->PUPDR = 0x00000000;
+GPIOC->PUPDR = 0x00000000;
+GPIOD->PUPDR = 0x00000000;
+GPIOF->PUPDR = 0x00000000;
+//输出0
+GPIOA->ODR=0x00000000;
+GPIOB->ODR=0x00000000;
+GPIOC->ODR=0x00000000;
+GPIOD->ODR=0x00000000;
+GPIOF->ODR=0x00000000;
+
+3、非常重要：在配置IO之前，一定要先开启GPIO时钟
+
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOD, ENABLE);
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOF, ENABLE);
+
+
+
+好了，以上三点在程序中的顺序是反的，配置好之后，11uA！
+*/

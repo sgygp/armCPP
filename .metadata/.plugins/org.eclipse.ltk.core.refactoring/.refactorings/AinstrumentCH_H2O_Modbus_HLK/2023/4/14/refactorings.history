@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“AinstrumentCH_H2O_Modbus_HLK/src/HLKscreen.cpp”重命名为“HLKcom.cpp”" description="重命名资源“HLKscreen.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/HLKscreen.cpp" name="HLKcom.cpp" stamp="1680432579603" updateReferences="true"/>&#x0A;<refactoring comment="将资源“AinstrumentCH_H2O_Modbus_HLK/include/HLKscreen.h”重命名为“HLKcom.h”" description="重命名资源“HLKscreen.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/HLKscreen.h" name="HLKcom.h" stamp="1680432594834" updateReferences="true"/>
+</session>

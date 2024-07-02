@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Air32/system/include/cortexm/ExceptionHandlers.h”重命名为“ExceptionHandlers.hhhh”" description="重命名资源“ExceptionHandlers.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="system/include/cortexm/ExceptionHandlers.h" name="ExceptionHandlers.hhhh" stamp="1685192896848" updateReferences="true"/>
+</session>

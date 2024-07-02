@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“C8T6_RFcard/src/RC522.C”重命名为“RC522.cpp”" description="重命名资源“RC522.C”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/RC522.C" name="RC522.cpp" stamp="1630202477271" updateReferences="true"/>&#x0A;<refactoring comment="将资源“C8T6_RFcard/include/MFRC522.H”重命名为“RC522.H”" description="重命名资源“MFRC522.H”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/MFRC522.H" name="RC522.H" stamp="1630205893963" updateReferences="true"/>
+</session>

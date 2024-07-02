@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI”重命名为“Ain_H2O2_BL24C04_GANWEI_20ppm”" description="重命名资源“Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Ainstrument(Histroy_HL)_H2O2_BL24C04_GANWEI" name="Ain_H2O2_BL24C04_GANWEI_20ppm" stamp="1716450426354" updateReferences="true"/>&#x0A;<refactoring comment="删除资源“Ain_H2O2_BL24C04_GANWEI_20ppm/Debug”" deleteContents="false" description="删除资源“Ain_H2O2_BL24C04_GANWEI_20ppm/Debug”" element1="/Ain_H2O2_BL24C04_GANWEI_20ppm/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1716450493419"/>
+</session>

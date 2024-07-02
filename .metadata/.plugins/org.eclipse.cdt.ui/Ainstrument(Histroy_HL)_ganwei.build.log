@@ -1,0 +1,11 @@
+17:11:47 **** 构建 of configuration Debug for project Ainstrument(Histroy_HL)_ganwei ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_ganwei.elf"
+   text	   data	    bss	    dec	    hex	filename
+  46135	    200	   1480	  47815	   bac7	Ainstrument(Histroy_HL)_ganwei.elf
+已结束构建： Ainstrument(Histroy_HL)_ganwei.siz
+ 
+
+17:11:47 Build Finished. 0 errors, 0 warnings. (took 226ms)
+

@@ -1,0 +1,119 @@
+//#include "stm32f10x_conf.h"
+// ----------------------------------------------------------------------------
+//#include <stdio.h>
+//#include <stdlib.h>
+#include "diag/Trace.h"
+
+#include <Beep.h>
+#include <DS18B20.h>
+#include <string.h>
+#include <TimerPWM.h>
+#include "delay.h"
+#include "Timer.h"
+#include "BlinkLed.h"
+#include "Ainstrument.h"
+#include "math.h"
+#include "Screen.h"
+#include "WatchDog.h"
+#include "RealQuxian.h"
+//#include <time.h>
+
+// ----- main() ---------------------------------------------------------------
+
+// Sample pragmas to cope with warnings. Please note the related line at
+// the end of this function, used to pop the compiler diagnostics status.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wreturn-type"
+void AinstrRun(Ainstrument &ainstr, u32 a, u32 b, float wenduS, float wendH) {
+	ainstr.setCanshuZhi(101, a);
+	ainstr.setCanshuZhi(102, b);
+	ainstr.setCanshuZhi(103, wenduS); //当前控制恒温的温度
+	ainstr.setCanshuZhi(104, wendH); //探测器温度
+	ainstr.online();
+
+}
+int main(int argc, char *argv[]) {
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //NVIC_Group:NVIC分组 0~4 总共5组,最高2位抢占
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE); //使能GPIO外设时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); //使能GPIO外设时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); //使能GPIO外设时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); //使能GPIO外设时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE); //使能GPIO外设时钟
+
+	Timer timer;
+	timer.start();
+
+	Beep beep;
+	beep.init();
+	Beep::turnOn();
+	Delay::delay2_ms(250); //开机响
+	Beep::turnOff();
+	TimerPWM m_pwmOut;
+	m_pwmOut.init(4, 10000); //1.8KHz
+
+	Ainstrument ainstr1(0); //参数存在0
+	ainstr1.init();
+
+	Ainstrument ainstr2(512); //参数存在0
+	ainstr2.init();
+
+	RealQuxian m_quxian1;
+	RealQuxian m_quxian2;
+
+	Screen m_screen(&ainstr1,&ainstr2,& m_quxian1,&m_quxian2);
+	m_screen.start(); //先显示0号画面
+	if (RCC_GetFlagStatus(RCC_FLAG_PORRST) != RESET) // 上电掉电复位
+		m_screen.LOGO();	//显示开机画面，延时3秒
+
+	BlinkLed blinkLed;
+	blinkLed.init();
+
+	WatchDog dog;
+	dog.init(IWDG_Prescaler_8, 4000); //400毫秒为超时
+
+
+	Delay::delay2_ms(250); //开机响
+	u32 m_ms = 0;
+
+
+	DS18B20 m_ds(RCC_APB2Periph_GPIOB, GPIOB, GPIO_Pin_8, 1); //定义了4个18B20，PB12-PB15
+	m_ds.init();
+
+//	bool shangci=false;
+	while (1) {
+//		__WFI();
+		if (Timer::m_bMS) {
+			Timer::m_bMS = false;
+			m_ms += 5;
+			if (m_ms >= 1000000000)
+				m_ms = 0;
+			dog.run();
+
+			if (m_ms % 3000 < 20) //闪烁指示灯
+				blinkLed.turnOn();
+			else
+				blinkLed.turnOff();
+
+			if (m_ms % 1000 == 500) { //一秒一次
+				m_ds.get_Temp();
+				AinstrRun(ainstr1, 1, 1, m_ds.m_wendu[0],
+						m_ds.m_wendu[0]); //0为恒温温度，1为探测器温度
+				m_pwmOut.outPWM2(ainstr1.getCanshuZhi(106));
+
+			}
+			if (m_ms % 22500 == 0) { //22.5秒一次
+				m_screen.setShuaxinQuxian();
+	//			trace_printf("%u\n", m_ms / 1000);
+			}
+			if (m_ms % 1000 == 800) { //一秒一次
+				m_screen.run();
+			}
+			m_screen.show();
+		}
+	}
+}
+
+#pragma GCC diagnostic pop

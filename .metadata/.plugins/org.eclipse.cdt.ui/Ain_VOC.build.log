@@ -1,0 +1,11 @@
+15:18:44 **** Incremental Build of configuration Debug for project Ain_VOC ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ain_VOC.elf"
+   text	   data	    bss	    dec	    hex	filename
+  53103	    200	   3536	  56839	   de07	Ain_VOC.elf
+已结束构建： Ain_VOC.siz
+ 
+
+15:18:44 Build Finished. 0 errors, 0 warnings. (took 222ms)
+

@@ -1,0 +1,11 @@
+11:56:26 **** Incremental Build of configuration Debug for project Air32_adxl1005_IIC ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_adxl1005_IIC.elf"
+   text	   data	    bss	    dec	    hex	filename
+  50824	    136	  65488	 116448	  1c6e0	Air32_adxl1005_IIC.elf
+已结束构建： Air32_adxl1005_IIC.siz
+ 
+
+11:56:27 Build Finished. 0 errors, 0 warnings. (took 434ms)
+

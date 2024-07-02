@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“DianCiLiuLiangJi/include/Light.h”重命名为“DianyaPWM.h”" description="重命名资源“Light.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/Light.h" name="DianyaPWM.h" stamp="1633852729186" updateReferences="true"/>&#x0A;<refactoring comment="将资源“DianCiLiuLiangJi/src/Light.cpp”重命名为“DianyaPWM.cpp”" description="重命名资源“Light.cpp”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Light.cpp" name="DianyaPWM.cpp" stamp="1633852747810" updateReferences="true"/>
+</session>

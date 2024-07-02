@@ -1,0 +1,11 @@
+15:38:42 **** Incremental Build of configuration Debug for project F030_Xiangguandianji ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030_Xiangguandianji.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5723	    176	    420	   6319	   18af	F030_Xiangguandianji.elf
+已结束构建： F030_Xiangguandianji.siz
+ 
+
+15:38:43 Build Finished. 0 errors, 0 warnings. (took 377ms)
+

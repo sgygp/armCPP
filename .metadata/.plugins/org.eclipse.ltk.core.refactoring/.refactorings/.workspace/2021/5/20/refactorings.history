@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“f4plcMain2.0”重命名为“f4plcMain2.1”" description="重命名资源“f4plcMain2.0”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/f4plcMain2.0" name="f4plcMain2.1" stamp="1620715955166" updateReferences="true"/>&#x0A;<refactoring comment="删除资源“f4plcMain2.1/Debug”" deleteContents="false" description="删除资源“f4plcMain2.1/Debug”" element1="/f4plcMain2.1/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1620716176155"/>
+</session>

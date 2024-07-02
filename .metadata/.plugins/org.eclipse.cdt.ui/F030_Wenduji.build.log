@@ -1,0 +1,11 @@
+10:14:38 **** Incremental Build of configuration Debug for project F030_Wenduji ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "F030_Wenduji.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15091	    432	    680	  16203	   3f4b	F030_Wenduji.elf
+已结束构建： F030_Wenduji.siz
+ 
+
+10:14:38 Build Finished. 0 errors, 0 warnings. (took 233ms)
+

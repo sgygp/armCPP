@@ -1,0 +1,136 @@
+/*
+ * COM.cpp
+ *
+ *  Created on: 2021年3月9日
+ *      Author: Administrator
+ */
+
+#include "COM.h"
+#include "Timer.h"
+#include "delay.h"
+#include "string.h"
+COMDATA COM::m_data0;
+//COMDATA COM::m_data1;
+//COMDATA COM::m_data2;
+
+COM::COM(u8 no) {
+	// TODO 自动生成的构造函数存根
+	m_no = no;
+	m_data = &m_data0;
+}
+
+COM::~COM() {
+	// TODO 自动生成的析构函数存根
+}
+
+void COM::init(u32 baud) {
+	if (m_no == 0)
+		init0(baud);
+	else if (m_no == 1)
+		init1(baud);
+	else if (m_no == 2)
+		init2(baud);
+	memset(m_data->m_FA, 0, DATALEN);
+	memset(m_data->m_SHOU, 0, DATALEN);
+	m_data->m_curShou_ms5 = 0;
+	m_data->m_faPos = 0;
+	m_data->m_shouPos = 0;
+	m_data->m_yaofaShu = 0;
+}
+void COM::init0(u32 baud) {
+	m_data = &m_data0;
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	USART_InitTypeDef USART_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE); //开启时钟
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_1);  //引脚复用配置
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource10, GPIO_AF_1);
+
+	USART_InitStructure.USART_BaudRate = baud;
+	USART_InitStructure.USART_HardwareFlowControl =
+			USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_Init(USART1, &USART_InitStructure);
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;  		//复用模式
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;   		//推挽输出
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz; //串口的应用波特率最大115200.2M足够，既省电噪声也小
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+	NVIC_Init(&NVIC_InitStructure);	//配置串口接收中断
+
+	USART_Cmd(USART1, ENABLE);	//使能串口1
+
+	USART_ClearITPendingBit(USART1, USART_IT_NE);
+	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);	//接收缓冲区不空中断（收到数据）
+	USART_ClearITPendingBit(USART1, USART_IT_TC);
+	USART_ITConfig(USART1, USART_IT_TC, ENABLE);	//发送完成中断
+
+}
+void COM::init1(u32 baud) {
+//	m_data = &m_data1;
+
+}
+void COM::init2(u32 baud) {
+//	m_data = &m_data2;
+
+}
+void COM::FasongX(u8 geshu) {
+	if (geshu == 0)
+		return;
+	USART_TypeDef *uartx;
+	if (m_no == 0)
+		uartx = USART1;
+	else/* if (m_no == 1) {
+		uartx = USART2;
+		enableTX1();
+	} else if (m_no == 2) {
+		uartx = UART3;
+		enableTX2();
+	} else*/
+		return;
+/*
+	for (int i = 0; i < 1000; i++)        //检测是否发送完成
+			{
+		if (m_data->m_bFasongWan)
+			break;
+		delay_us(1);
+	}
+*/
+	m_data->m_yaofaShu = geshu;
+	m_data->m_bFasongWan = false;
+	m_data->m_faPos = 1;
+	USART_SendData(uartx, m_data->m_FA[0]);
+}
+
+extern "C" void USART1_IRQHandler(void) {
+	COMDATA *ddd = &COM::m_data0;
+	if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) {
+		ddd->m_SHOU[ddd->m_shouPos] = USART_ReceiveData(USART1); //读取接收到的数据
+		ddd->m_shouPos++;
+		ddd->m_curShou_ms5 = Timer::ms5_jishu;
+	}
+	if (USART_GetITStatus(USART1, USART_IT_TC) == SET) {
+		USART_ClearITPendingBit(USART1, USART_IT_TC);
+
+		if (ddd->m_faPos < ddd->m_yaofaShu) //
+				{
+			USART_SendData(USART1, ddd->m_FA[ddd->m_faPos]);
+			ddd->m_faPos++;
+		} else
+			ddd->m_bFasongWan = true;
+
+	}
+
+}

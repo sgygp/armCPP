@@ -1,0 +1,11 @@
+10:30:21 **** Incremental Build of configuration Debug for project Lora_F030_1.2(E220) ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Lora_F030_1.2(E220).elf"
+   text	   data	    bss	    dec	    hex	filename
+  12507	    192	    952	  13651	   3553	Lora_F030_1.2(E220).elf
+已结束构建： Lora_F030_1.2(E220).siz
+ 
+
+10:30:21 Build Finished. 0 errors, 0 warnings. (took 439ms)
+

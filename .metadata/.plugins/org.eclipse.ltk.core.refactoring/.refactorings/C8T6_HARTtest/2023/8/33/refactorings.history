@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“C8T6_HARTtest/kissFFT”重命名为“kissFFT1”" description="重命名资源“kissFFT”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="kissFFT" name="kissFFT1" stamp="1692324030631" updateReferences="true"/>
+</session>

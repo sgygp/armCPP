@@ -1,0 +1,11 @@
+21:02:51 **** 构建 of configuration Debug for project Lora_F030_1.5 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Lora_F030_1.5.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13763	    192	    944	  14899	   3a33	Lora_F030_1.5.elf
+已结束构建： Lora_F030_1.5.siz
+ 
+
+21:02:52 Build Finished. 0 errors, 0 warnings. (took 430ms)
+

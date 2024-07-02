@@ -1,0 +1,11 @@
+09:55:50 **** 构建 of configuration Debug for project f4plcTeminal3.3 ****
+make all 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "f4plcTeminal3.3.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19803	    216	   2504	  22523	   57fb	f4plcTeminal3.3.elf
+已结束构建： f4plcTeminal3.3.siz
+ 
+
+09:55:51 Build Finished. 0 errors, 0 warnings. (took 547ms)
+

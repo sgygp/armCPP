@@ -1,0 +1,11 @@
+19:03:06 **** Incremental Build of configuration Debug for project eFlowmeter2023 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "eFlowmeter2023.elf"
+   text	   data	    bss	    dec	    hex	filename
+  47296	    136	   1920	  49352	   c0c8	eFlowmeter2023.elf
+已结束构建： eFlowmeter2023.siz
+ 
+
+19:03:07 Build Finished. 0 errors, 0 warnings. (took 442ms)
+

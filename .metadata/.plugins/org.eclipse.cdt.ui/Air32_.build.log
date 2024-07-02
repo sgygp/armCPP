@@ -1,0 +1,21 @@
+17:58:52 **** Incremental Build of configuration Debug for project Air32_ ****
+make all 
+正在构建目标： Air32_.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T libs.ld -T mem.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Air32_.map" --specs=nano.specs -o "Air32_.elf"   
+f:/eclipse2019/gnu/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 08000028
+已结束构建目标： Air32_.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Air32_.elf"  "Air32_.hex"
+已结束构建： Air32_.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_.elf"
+   text	   data	    bss	    dec	    hex	filename
+      0	     40	    256	    296	    128	Air32_.elf
+已结束构建： Air32_.siz
+ 
+
+17:58:53 Build Finished. 0 errors, 1 warnings. (took 330ms)
+

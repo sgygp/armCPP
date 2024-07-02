@@ -1,0 +1,11 @@
+16:19:44 **** Incremental Build of configuration Debug for project Ainstrument(Histroy_HL)_H2O2_BL24C04_THmodbus ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Ainstrument(Histroy_HL)_H2O2_BL24C04_THmodbus.elf"
+   text	   data	    bss	    dec	    hex	filename
+  54535	    200	   1484	  56219	   db9b	Ainstrument(Histroy_HL)_H2O2_BL24C04_THmodbus.elf
+已结束构建： Ainstrument(Histroy_HL)_H2O2_BL24C04_THmodbus.siz
+ 
+
+16:19:44 Build Finished. 0 errors, 0 warnings. (took 280ms)
+

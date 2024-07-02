@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Ainstrument_Ciyang/双改单”重命名为“OLD”" description="重命名资源“双改单”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="双改单" name="OLD" stamp="1629509613802" updateReferences="true"/>
+</session>

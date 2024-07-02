@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“AinstrumentCH_H2O2/整理后的变量地址.xlsx”重命名为“数据地址1.0.xlsx”" description="重命名资源“整理后的变量地址.xlsx”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="整理后的变量地址.xlsx" name="数据地址1.0.xlsx" stamp="1682039243360" updateReferences="true"/>
+</session>

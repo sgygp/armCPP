@@ -1,0 +1,11 @@
+15:46:49 **** Incremental Build of configuration Debug for project C8T6_LiDianJiance ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "C8T6_LiDianJiance.elf"
+   text	   data	    bss	    dec	    hex	filename
+  17771	    592	    420	  18783	   495f	C8T6_LiDianJiance.elf
+已结束构建： C8T6_LiDianJiance.siz
+ 
+
+15:46:49 Build Finished. 0 errors, 0 warnings. (took 222ms)
+

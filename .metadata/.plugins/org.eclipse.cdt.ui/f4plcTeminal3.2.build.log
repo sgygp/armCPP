@@ -1,0 +1,190 @@
+19:17:50 **** 构建 of configuration Debug for project f4plcTeminal3.2 ****
+make all 
+正在构建文件： ../system/src/stm32f4-stdperiph/misc.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/misc.d" -MT"system/src/stm32f4-stdperiph/misc.o" -c -o "system/src/stm32f4-stdperiph/misc.o" "../system/src/stm32f4-stdperiph/misc.c"
+已结束构建： ../system/src/stm32f4-stdperiph/misc.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_can.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_can.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_can.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_can.o" "../system/src/stm32f4-stdperiph/stm32f4xx_can.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_can.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_gpio.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_gpio.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_gpio.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_gpio.o" "../system/src/stm32f4-stdperiph/stm32f4xx_gpio.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_gpio.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_iwdg.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_iwdg.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_iwdg.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_iwdg.o" "../system/src/stm32f4-stdperiph/stm32f4xx_iwdg.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_iwdg.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_rcc.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_rcc.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_rcc.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_rcc.o" "../system/src/stm32f4-stdperiph/stm32f4xx_rcc.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_rcc.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_syscfg.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_syscfg.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o" "../system/src/stm32f4-stdperiph/stm32f4xx_syscfg.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_syscfg.c
+ 
+正在构建文件： ../system/src/stm32f4-stdperiph/stm32f4xx_usart.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-stdperiph/stm32f4xx_usart.d" -MT"system/src/stm32f4-stdperiph/stm32f4xx_usart.o" -c -o "system/src/stm32f4-stdperiph/stm32f4xx_usart.o" "../system/src/stm32f4-stdperiph/stm32f4xx_usart.c"
+已结束构建： ../system/src/stm32f4-stdperiph/stm32f4xx_usart.c
+ 
+正在构建文件： ../system/src/newlib/_cxx.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"system/src/newlib/_cxx.d" -MT"system/src/newlib/_cxx.o" -c -o "system/src/newlib/_cxx.o" "../system/src/newlib/_cxx.cpp"
+已结束构建： ../system/src/newlib/_cxx.cpp
+ 
+正在构建文件： ../system/src/newlib/_exit.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/newlib/_exit.d" -MT"system/src/newlib/_exit.o" -c -o "system/src/newlib/_exit.o" "../system/src/newlib/_exit.c"
+已结束构建： ../system/src/newlib/_exit.c
+ 
+正在构建文件： ../system/src/newlib/_sbrk.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/newlib/_sbrk.d" -MT"system/src/newlib/_sbrk.o" -c -o "system/src/newlib/_sbrk.o" "../system/src/newlib/_sbrk.c"
+已结束构建： ../system/src/newlib/_sbrk.c
+ 
+正在构建文件： ../system/src/newlib/_startup.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/newlib/_startup.d" -MT"system/src/newlib/_startup.o" -c -o "system/src/newlib/_startup.o" "../system/src/newlib/_startup.c"
+已结束构建： ../system/src/newlib/_startup.c
+ 
+正在构建文件： ../system/src/newlib/_syscalls.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/newlib/_syscalls.d" -MT"system/src/newlib/_syscalls.o" -c -o "system/src/newlib/_syscalls.o" "../system/src/newlib/_syscalls.c"
+已结束构建： ../system/src/newlib/_syscalls.c
+ 
+正在构建文件： ../system/src/newlib/assert.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/newlib/assert.d" -MT"system/src/newlib/assert.o" -c -o "system/src/newlib/assert.o" "../system/src/newlib/assert.c"
+已结束构建： ../system/src/newlib/assert.c
+ 
+正在构建文件： ../system/src/diag/Trace.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/diag/Trace.d" -MT"system/src/diag/Trace.o" -c -o "system/src/diag/Trace.o" "../system/src/diag/Trace.c"
+已结束构建： ../system/src/diag/Trace.c
+ 
+正在构建文件： ../system/src/diag/trace_impl.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/diag/trace_impl.d" -MT"system/src/diag/trace_impl.o" -c -o "system/src/diag/trace_impl.o" "../system/src/diag/trace_impl.c"
+已结束构建： ../system/src/diag/trace_impl.c
+ 
+正在构建文件： ../system/src/cortexm/_initialize_hardware.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/cortexm/_initialize_hardware.d" -MT"system/src/cortexm/_initialize_hardware.o" -c -o "system/src/cortexm/_initialize_hardware.o" "../system/src/cortexm/_initialize_hardware.c"
+已结束构建： ../system/src/cortexm/_initialize_hardware.c
+ 
+正在构建文件： ../system/src/cortexm/_reset_hardware.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/cortexm/_reset_hardware.d" -MT"system/src/cortexm/_reset_hardware.o" -c -o "system/src/cortexm/_reset_hardware.o" "../system/src/cortexm/_reset_hardware.c"
+已结束构建： ../system/src/cortexm/_reset_hardware.c
+ 
+正在构建文件： ../system/src/cortexm/exception_handlers.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/cortexm/exception_handlers.d" -MT"system/src/cortexm/exception_handlers.o" -c -o "system/src/cortexm/exception_handlers.o" "../system/src/cortexm/exception_handlers.c"
+已结束构建： ../system/src/cortexm/exception_handlers.c
+ 
+正在构建文件： ../system/src/cmsis/system_stm32f4xx.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/cmsis/system_stm32f4xx.d" -MT"system/src/cmsis/system_stm32f4xx.o" -c -o "system/src/cmsis/system_stm32f4xx.o" "../system/src/cmsis/system_stm32f4xx.c"
+已结束构建： ../system/src/cmsis/system_stm32f4xx.c
+ 
+正在构建文件： ../system/src/cmsis/vectors_stm32f407xx.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"system/src/cmsis/vectors_stm32f407xx.d" -MT"system/src/cmsis/vectors_stm32f407xx.o" -c -o "system/src/cmsis/vectors_stm32f407xx.o" "../system/src/cmsis/vectors_stm32f407xx.c"
+已结束构建： ../system/src/cmsis/vectors_stm32f407xx.c
+ 
+正在构建文件： ../src/AntData_PortSet.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/AntData_PortSet.d" -MT"src/AntData_PortSet.o" -c -o "src/AntData_PortSet.o" "../src/AntData_PortSet.cpp"
+已结束构建： ../src/AntData_PortSet.cpp
+ 
+正在构建文件： ../src/BenjiTerminal.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BenjiTerminal.d" -MT"src/BenjiTerminal.o" -c -o "src/BenjiTerminal.o" "../src/BenjiTerminal.cpp"
+已结束构建： ../src/BenjiTerminal.cpp
+ 
+正在构建文件： ../src/BlinkLed.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BlinkLed.d" -MT"src/BlinkLed.o" -c -o "src/BlinkLed.o" "../src/BlinkLed.cpp"
+已结束构建： ../src/BlinkLed.cpp
+ 
+正在构建文件： ../src/COM.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/COM.d" -MT"src/COM.o" -c -o "src/COM.o" "../src/COM.cpp"
+已结束构建： ../src/COM.cpp
+ 
+正在构建文件： ../src/CRC16.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/CRC16.d" -MT"src/CRC16.o" -c -o "src/CRC16.o" "../src/CRC16.cpp"
+已结束构建： ../src/CRC16.cpp
+ 
+正在构建文件： ../src/Can1.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Can1.d" -MT"src/Can1.o" -c -o "src/Can1.o" "../src/Can1.cpp"
+已结束构建： ../src/Can1.cpp
+ 
+正在构建文件： ../src/Cunchu.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Cunchu.d" -MT"src/Cunchu.o" -c -o "src/Cunchu.o" "../src/Cunchu.cpp"
+已结束构建： ../src/Cunchu.cpp
+ 
+正在构建文件： ../src/Modbus.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Modbus.d" -MT"src/Modbus.o" -c -o "src/Modbus.o" "../src/Modbus.cpp"
+已结束构建： ../src/Modbus.cpp
+ 
+正在构建文件： ../src/Timer.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/Timer.d" -MT"src/Timer.o" -c -o "src/Timer.o" "../src/Timer.cpp"
+已结束构建： ../src/Timer.cpp
+ 
+正在构建文件： ../src/W25X16.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/W25X16.d" -MT"src/W25X16.o" -c -o "src/W25X16.o" "../src/W25X16.cpp"
+已结束构建： ../src/W25X16.cpp
+ 
+正在构建文件： ../src/WatchDog.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/WatchDog.d" -MT"src/WatchDog.o" -c -o "src/WatchDog.o" "../src/WatchDog.cpp"
+已结束构建： ../src/WatchDog.cpp
+ 
+正在构建文件： ../src/_write.c
+正在调用： GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F40_41xxx -DSTM32F407 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu11 -MMD -MP -MF"src/_write.d" -MT"src/_write.o" -c -o "src/_write.o" "../src/_write.c"
+已结束构建： ../src/_write.c
+ 
+正在构建文件： ../src/delay.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/delay.d" -MT"src/delay.o" -c -o "src/delay.o" "../src/delay.cpp"
+已结束构建： ../src/delay.cpp
+ 
+正在构建文件： ../src/main.cpp
+正在调用： GNU ARM Cross C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DSTM32F407 -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建目标： f4plcTeminal3.2.elf
+正在调用： GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"f4plcTeminal3.2.map" --specs=nano.specs -o "f4plcTeminal3.2.elf"  ./system/src/stm32f4-stdperiph/misc.o ./system/src/stm32f4-stdperiph/stm32f4xx_can.o ./system/src/stm32f4-stdperiph/stm32f4xx_gpio.o ./system/src/stm32f4-stdperiph/stm32f4xx_iwdg.o ./system/src/stm32f4-stdperiph/stm32f4xx_rcc.o ./system/src/stm32f4-stdperiph/stm32f4xx_syscfg.o ./system/src/stm32f4-stdperiph/stm32f4xx_usart.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f407xx.o  ./src/AntData_PortSet.o ./src/BenjiTerminal.o ./src/BlinkLed.o ./src/COM.o ./src/CRC16.o ./src/Can1.o ./src/Cunchu.o ./src/Modbus.o ./src/Timer.o ./src/W25X16.o ./src/WatchDog.o ./src/_write.o ./src/delay.o ./src/main.o   
+已结束构建目标： f4plcTeminal3.2.elf
+ 
+正在调用： GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "f4plcTeminal3.2.elf"  "f4plcTeminal3.2.hex"
+已结束构建： f4plcTeminal3.2.hex
+ 
+正在调用： GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "f4plcTeminal3.2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19803	    216	   2504	  22523	   57fb	f4plcTeminal3.2.elf
+已结束构建： f4plcTeminal3.2.siz
+ 
+
+19:18:09 Build Finished. 0 errors, 0 warnings. (took 18s.790ms)
+

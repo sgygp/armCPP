@@ -1,0 +1,45 @@
+11:57:14 **** Incremental Build of configuration Debug for project Air32_adxl1002 ****
+make all 
+正在构建文件： ../src/BlinkLed.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/BlinkLed.d" -MT"src/BlinkLed.o" -c -o "src/BlinkLed.o" "../src/BlinkLed.cpp"
+已结束构建： ../src/BlinkLed.cpp
+ 
+正在构建文件： ../src/RTCwakeup.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/RTCwakeup.d" -MT"src/RTCwakeup.o" -c -o "src/RTCwakeup.o" "../src/RTCwakeup.cpp"
+已结束构建： ../src/RTCwakeup.cpp
+ 
+正在构建文件： ../src/TongxunChuli.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/TongxunChuli.d" -MT"src/TongxunChuli.o" -c -o "src/TongxunChuli.o" "../src/TongxunChuli.cpp"
+已结束构建： ../src/TongxunChuli.cpp
+ 
+正在构建文件： ../src/W25X16.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/W25X16.d" -MT"src/W25X16.o" -c -o "src/W25X16.o" "../src/W25X16.cpp"
+已结束构建： ../src/W25X16.cpp
+ 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建目标： Air32_adxl1002.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T AIR32F103XB_FLASH.ld -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Air32_adxl1002.map" --specs=nano.specs -o "Air32_adxl1002.elf"  ./system/src/stm32f1-stdperiph/air32f10x_adc.o ./system/src/stm32f1-stdperiph/air32f10x_bkp.o ./system/src/stm32f1-stdperiph/air32f10x_can.o ./system/src/stm32f1-stdperiph/air32f10x_cec.o ./system/src/stm32f1-stdperiph/air32f10x_dac.o ./system/src/stm32f1-stdperiph/air32f10x_dbgmcu.o ./system/src/stm32f1-stdperiph/air32f10x_dma.o ./system/src/stm32f1-stdperiph/air32f10x_exti.o ./system/src/stm32f1-stdperiph/air32f10x_flash.o ./system/src/stm32f1-stdperiph/air32f10x_fsmc.o ./system/src/stm32f1-stdperiph/air32f10x_i2c.o ./system/src/stm32f1-stdperiph/air32f10x_iwdg.o ./system/src/stm32f1-stdperiph/air32f10x_otp.o ./system/src/stm32f1-stdperiph/air32f10x_pwr.o ./system/src/stm32f1-stdperiph/air32f10x_rtc.o ./system/src/stm32f1-stdperiph/air32f10x_sdio.o ./system/src/stm32f1-stdperiph/air32f10x_spi.o ./system/src/stm32f1-stdperiph/air32f10x_tim.o ./system/src/stm32f1-stdperiph/air32f10x_trng.o ./system/src/stm32f1-stdperiph/air32f10x_usart.o ./system/src/stm32f1-stdperiph/air32f10x_wwdg.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./src/Adc32.o ./src/Anjian.o ./src/BlinkLed.o ./src/COM.o ./src/RCC256.o ./src/RTCwakeup.o ./src/RtcBkp.o ./src/SPI2C.o ./src/Set.o ./src/Shuju.o ./src/Sleep.o ./src/Timer.o ./src/TongxunChuli.o ./src/W25X16.o ./src/_write.o ./src/delay.o ./src/main.o  ./kissFFT/kfc.o ./kissFFT/kiss_fft.o ./kissFFT/kiss_fftnd.o ./kissFFT/kiss_fftndr.o ./kissFFT/kiss_fftr.o  ./air32/_exit.o ./air32/air32f10x_gpio.o ./air32/air32f10x_rcc.o ./air32/air32f10x_rcc_ex.o ./air32/assert.o ./air32/misc.o ./air32/startup_air32f10x.o ./air32/system_air32f10x.o   
+已结束构建目标： Air32_adxl1002.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Air32_adxl1002.elf"  "Air32_adxl1002.hex"
+已结束构建： Air32_adxl1002.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_adxl1002.elf"
+   text	   data	    bss	    dec	    hex	filename
+  26536	    132	  40228	  66896	  10550	Air32_adxl1002.elf
+已结束构建： Air32_adxl1002.siz
+ 
+
+11:57:17 Build Finished. 0 errors, 0 warnings. (took 2s.853ms)
+

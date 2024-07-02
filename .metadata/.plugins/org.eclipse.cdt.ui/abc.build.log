@@ -1,0 +1,11 @@
+20:56:55 **** Incremental Build of configuration Debug for project abc ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "abc.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5979	    176	    420	   6575	   19af	abc.elf
+已结束构建： abc.siz
+ 
+
+20:56:55 Build Finished. 0 errors, 0 warnings. (took 333ms)
+

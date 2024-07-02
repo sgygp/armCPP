@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“Ainstrument(Histroy_HL)_ganwei3zufenJiguang/O2.hex”重命名为“O2-J10.hex”" description="重命名资源“O2.hex”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="O2.hex" name="O2-J10.hex" stamp="1684492164625" updateReferences="true"/>
+</session>

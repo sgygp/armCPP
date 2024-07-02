@@ -1,0 +1,11 @@
+15:45:21 **** 构建 of configuration Debug for project Air32_HandheldAinstrument ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_HandheldAinstrument.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38152	    136	   1776	  40064	   9c80	Air32_HandheldAinstrument.elf
+已结束构建： Air32_HandheldAinstrument.siz
+ 
+
+15:45:22 Build Finished. 0 errors, 0 warnings. (took 296ms)
+

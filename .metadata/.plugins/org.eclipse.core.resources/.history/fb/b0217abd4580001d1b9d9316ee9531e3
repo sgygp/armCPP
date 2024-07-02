@@ -1,0 +1,31 @@
+/*
+ * O2.h
+ *
+ *  Created on: 2021Äê8ÔÂ13ÈÕ
+ *      Author: Administrator
+ */
+
+#ifndef O2_H_
+#define O2_H_
+
+#include  "COM.h"
+#define ERROR_O2 1000
+class O2 {
+public:
+	O2();
+	virtual ~O2();
+	COM m_com1(2);
+	void run(void);
+	int m_value=0;
+	bool m_bERROR=false;
+
+	void readNO();
+	void sendData(float ff);
+	static char m_NO[20];
+
+private:
+	u8 m_buf[20];
+	int m_errJishi=0;
+};
+
+#endif /* O2_H_ */

@@ -1,0 +1,40 @@
+11:40:11 **** Incremental Build of configuration Debug for project PowerbusTerminal ****
+make all 
+正在构建文件： ../src/main.cpp
+正在调用： Cross ARM GNU C++ Compiler
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.cpp"
+已结束构建： ../src/main.cpp
+ 
+正在构建文件： ../src/stm32f10x_dma.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/stm32f10x_dma.d" -MT"src/stm32f10x_dma.o" -c -o "src/stm32f10x_dma.o" "../src/stm32f10x_dma.c"
+已结束构建： ../src/stm32f10x_dma.c
+ 
+正在构建文件： ../src/stm32f10x_iwdg.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/stm32f10x_iwdg.d" -MT"src/stm32f10x_iwdg.o" -c -o "src/stm32f10x_iwdg.o" "../src/stm32f10x_iwdg.c"
+已结束构建： ../src/stm32f10x_iwdg.c
+ 
+正在构建文件： ../src/stm32f10x_usart.c
+正在调用： Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/stm32f10x_usart.d" -MT"src/stm32f10x_usart.o" -c -o "src/stm32f10x_usart.o" "../src/stm32f10x_usart.c"
+已结束构建： ../src/stm32f10x_usart.c
+ 
+正在构建目标： PowerbusTerminal.elf
+正在调用： Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PowerbusTerminal.map" --specs=nano.specs -o "PowerbusTerminal.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/AT24C16.o ./src/BlinkLed.o ./src/CRC16.o ./src/DianCiFa.o ./src/Terminal.o ./src/Timer.o ./src/Usart1.o ./src/WatchDog.o ./src/_write.o ./src/delay.o ./src/main.o ./src/stm32f10x_dma.o ./src/stm32f10x_iwdg.o ./src/stm32f10x_usart.o   
+已结束构建目标： PowerbusTerminal.elf
+ 
+正在调用： Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "PowerbusTerminal.elf"  "PowerbusTerminal.hex"
+已结束构建： PowerbusTerminal.hex
+ 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "PowerbusTerminal.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13411	    196	    960	  14567	   38e7	PowerbusTerminal.elf
+已结束构建： PowerbusTerminal.siz
+ 
+
+11:40:25 Build Finished. 0 errors, 0 warnings. (took 14s.297ms)
+

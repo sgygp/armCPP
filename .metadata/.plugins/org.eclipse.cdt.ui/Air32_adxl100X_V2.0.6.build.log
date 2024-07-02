@@ -1,0 +1,11 @@
+15:59:07 **** 构建 of configuration Debug for project Air32_adxl100X_V2.0.6 ****
+make all 
+正在调用： Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Air32_adxl100X_V2.0.6.elf"
+   text	   data	    bss	    dec	    hex	filename
+  51552	    136	  65584	 117272	  1ca18	Air32_adxl100X_V2.0.6.elf
+已结束构建： Air32_adxl100X_V2.0.6.siz
+ 
+
+15:59:08 Build Finished. 0 errors, 0 warnings. (took 469ms)
+
